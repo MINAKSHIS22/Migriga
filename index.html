@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIGRIGA | Haute Beauté & Premium Makeup</title>
+  <meta name="description" content="Discover MIGRIGA luxury makeup, skincare, haircare, and fragrances. Crafted to enhance your natural glow with clean, high-performance formulations." />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP PROMOTIONAL ANNOUNCEMENT BAR
+       ======================================================================== -->
+  <aside class="announcement-bar" role="region" aria-label="Promotions">
+    <div class="container">
+      <div class="bar-inner">
+        <span class="bar-tag">Complimentary</span>
+        <span>FREE SHIPPING ON ORDERS OVER ₹999</span>
+        <span class="desktop-only">• USE CODE <strong>GLOW20</strong> FOR 20% OFF</span>
+        <span style="margin-left: 14px; font-weight: normal; opacity: 0.9;">
+          <a href="/welcome.html" style="text-decoration: underline;">← Get Started</a> • 
+          <a href="/login.html" style="text-decoration: underline;">Portal Sign In</a>
+        </span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       CLEAN NAVIGATION BAR
+       ======================================================================== -->
+  <header class="main-header" id="main-header">
+    <div class="container header-container">
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo-link" aria-label="MIGRIGA Beauty Homepage">
+        <span class="brand-logo">MIGRIGA</span>
+        <span class="brand-tagline">HAUTE BEAUTÉ</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#hero" class="nav-link active">HOME</a></li>
+          <li class="nav-item"><a href="#shop" class="nav-link">SHOP</a></li>
+          <li class="nav-item"><a href="#categories" class="nav-link" data-cat-trigger="skincare">SKINCARE</a></li>
+          <li class="nav-item"><a href="#categories" class="nav-link" data-cat-trigger="makeup">MAKEUP</a></li>
+          <li class="nav-item"><a href="#categories" class="nav-link" data-cat-trigger="haircare">HAIRCARE</a></li>
+          <li class="nav-item"><a href="#categories" class="nav-link" data-cat-trigger="fragrance">FRAGRANCE</a></li>
+          <li class="nav-item"><a href="#bestsellers" class="nav-link">NEW ARRIVALS</a></li>
+          <li class="nav-item"><a href="#promo-banner" class="nav-link offers-link">OFFERS</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Icons -->
+      <div class="header-actions">
+        <!-- Search Icon -->
+        <button class="action-btn nav-search-trigger" aria-label="Search products" title="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Wishlist Icon -->
+        <button class="action-btn nav-wishlist-trigger" aria-label="View Wishlist" title="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="action-badge wishlist-count-badge" style="display: none;">0</span>
+        </button>
+
+        <!-- Account Icon -->
+        <button class="action-btn nav-account-trigger" aria-label="My Account" title="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+
+        <!-- Shopping Bag / Cart Icon -->
+        <button class="action-btn nav-cart-trigger" aria-label="Shopping Bag" title="Shopping Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="action-badge cart-count-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ========================================================================
+         HERO SECTION
+         ======================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <!-- Left Side: Editorial Typography & CTAs -->
+        <div class="hero-content">
+          <span class="eyebrow-text">DISCOVER YOUR GLOW</span>
+          <h1 class="hero-heading">
+            Beauty That <br />Feels <em>Like You</em>
+          </h1>
+          <p class="hero-description">
+            Discover premium beauty essentials crafted to enhance your natural glow and celebrate every version of you. Clean, clinically-tested formulas paired with exquisite textures.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#bestsellers" class="btn btn-primary">SHOP NOW</a>
+            <a href="#shop" class="btn btn-outline">EXPLORE COLLECTION</a>
+          </div>
+
+          <div class="hero-trust-badge">
+            <div class="trust-avatars">
+              <img src="assets/images/user-sarah.jpg" alt="Customer avatar" class="trust-avatar" />
+              <img src="assets/images/user-ananya.jpg" alt="Customer avatar" class="trust-avatar" />
+              <img src="assets/images/user-elena.jpg" alt="Customer avatar" class="trust-avatar" />
+              <img src="assets/images/user-priya.jpg" alt="Customer avatar" class="trust-avatar" />
+            </div>
+            <div class="trust-text">
+              <strong>★ 4.9/5 Rating</strong>
+              <span>from 25,000+ happy beauty lovers across India</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Editorial Photography & Floating Cards -->
+        <div class="hero-media-wrap">
+          <div class="hero-image-frame">
+            <img src="assets/images/hero-model.jpg" alt="MIGRIGA Beauty Model with radiant glowing skin and luxury cosmetics" />
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="floating-badge badge-left">
+            <div class="floating-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+            </div>
+            <div class="floating-info">
+              <h5>Best Clean Beauty 2026</h5>
+              <p>Dermatologically Certified</p>
+            </div>
+          </div>
+
+          <div class="floating-badge badge-right">
+            <div class="floating-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+              </svg>
+            </div>
+            <div class="floating-info">
+              <h5>72h Dewy Radiance</h5>
+              <p>Pure Botanical Squalane</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         USP BENEFITS STRIP
+         ======================================================================== -->
+    <section class="usp-section" aria-label="Brand Benefits">
+      <div class="container usp-grid">
+        <!-- 1. FREE SHIPPING -->
+        <div class="usp-item">
+          <div class="usp-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <div class="usp-text">
+            <h4>FREE SHIPPING</h4>
+            <p>On orders over ₹999</p>
+          </div>
+        </div>
+
+        <!-- 2. 100% ORIGINAL -->
+        <div class="usp-item">
+          <div class="usp-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <div class="usp-text">
+            <h4>100% ORIGINAL</h4>
+            <p>Authentic beauty products</p>
+          </div>
+        </div>
+
+        <!-- 3. EASY RETURNS -->
+        <div class="usp-item">
+          <div class="usp-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <polyline points="1 20 1 14 7 14"></polyline>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+          </div>
+          <div class="usp-text">
+            <h4>EASY RETURNS</h4>
+            <p>Hassle-free returns</p>
+          </div>
+        </div>
+
+        <!-- 4. 24/7 SUPPORT -->
+        <div class="usp-item">
+          <div class="usp-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <div class="usp-text">
+            <h4>24/7 SUPPORT</h4>
+            <p>We're always here to help</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CATEGORY SECTION (4 ATTRACTIVE CARDS)
+         ======================================================================== -->
+    <section class="categories-section" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow-text">CURATED RITUALS</span>
+          <h2 class="section-title">Shop by Category</h2>
+          <p class="section-subtitle">Explore luxurious formulations engineered for radiant transformation and timeless self-expression.</p>
+        </div>
+
+        <div class="category-grid">
+          <!-- 1. MAKEUP -->
+          <div class="category-card" data-category="makeup">
+            <img src="assets/images/cat-makeup.jpg" alt="MIGRIGA Makeup Category" loading="lazy" />
+            <div class="category-card-overlay">
+              <span class="cat-eyebrow">Haute Pigments</span>
+              <h3 class="cat-title">MAKEUP</h3>
+              <p class="cat-tagline">“Enhance Your Beauty”</p>
+              <span class="cat-cta-link">
+                SHOP NOW
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- 2. SKINCARE -->
+          <div class="category-card" data-category="skincare">
+            <img src="assets/images/cat-skincare.jpg" alt="MIGRIGA Skincare Category" loading="lazy" />
+            <div class="category-card-overlay">
+              <span class="cat-eyebrow">Dermal Elixirs</span>
+              <h3 class="cat-title">SKINCARE</h3>
+              <p class="cat-tagline">“Glow From Within”</p>
+              <span class="cat-cta-link">
+                SHOP NOW
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- 3. HAIRCARE -->
+          <div class="category-card" data-category="haircare">
+            <img src="assets/images/cat-haircare.jpg" alt="MIGRIGA Haircare Category" loading="lazy" />
+            <div class="category-card-overlay">
+              <span class="cat-eyebrow">Silk & Keratin</span>
+              <h3 class="cat-title">HAIRCARE</h3>
+              <p class="cat-tagline">“Stronger. Healthier. Beautiful.”</p>
+              <span class="cat-cta-link">
+                SHOP NOW
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- 4. FRAGRANCE -->
+          <div class="category-card" data-category="fragrance">
+            <img src="assets/images/cat-fragrance.jpg" alt="MIGRIGA Fragrance Category" loading="lazy" />
+            <div class="category-card-overlay">
+              <span class="cat-eyebrow">Artisanal Sillage</span>
+              <h3 class="cat-title">FRAGRANCE</h3>
+              <p class="cat-tagline">“Find Your Signature Scent”</p>
+              <span class="cat-cta-link">
+                DISCOVER NOW
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         BESTSELLERS SECTION (5 ICONIC PRODUCTS)
+         ======================================================================== -->
+    <section class="bestsellers-section" id="bestsellers">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow-text">ICONIC MUST-HAVES</span>
+          <h2 class="section-title">BESTSELLERS</h2>
+          <p class="section-subtitle">Loved by beauty enthusiasts everywhere</p>
+        </div>
+
+        <!-- Filter Pill Tabs -->
+        <div class="bestsellers-filter-nav">
+          <button class="bestseller-tab active" data-category="all">All Bestsellers</button>
+          <button class="bestseller-tab" data-category="skincare">Skincare</button>
+          <button class="bestseller-tab" data-category="makeup">Makeup</button>
+          <button class="bestseller-tab" data-category="fragrance">Fragrance</button>
+          <button class="bestseller-tab" data-category="haircare">Haircare</button>
+        </div>
+
+        <!-- 5-Product Bestsellers Grid -->
+        <div class="bestsellers-grid" id="bestsellers-grid">
+          <!-- Rendered via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PROMOTIONAL BANNER SECTION
+         ======================================================================== -->
+    <section class="promo-banner-section" id="promo-banner">
+      <div class="container">
+        <div class="promo-banner-card">
+          <!-- Left Content -->
+          <div class="promo-banner-content">
+            <span class="promo-badge-tag">LIMITED TIME OFFER</span>
+            <h2 class="promo-heading">Glow More. Spend Less.</h2>
+            <div class="promo-discount-highlight">UP TO 30% OFF</div>
+            <p class="promo-subtext">On selected beauty essentials formulated to illuminate your beauty ritual.</p>
+
+            <!-- Live Countdown Timer -->
+            <div class="promo-countdown">
+              <div class="timer-box">
+                <span class="timer-digit" id="timer-hours">48</span>
+                <span class="timer-label">Hours</span>
+              </div>
+              <span class="timer-sep">:</span>
+              <div class="timer-box">
+                <span class="timer-digit" id="timer-mins">35</span>
+                <span class="timer-label">Mins</span>
+              </div>
+              <span class="timer-sep">:</span>
+              <div class="timer-box">
+                <span class="timer-digit" id="timer-secs">20</span>
+                <span class="timer-label">Secs</span>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="promo-actions-group">
+              <a href="#shop" class="btn btn-primary">SHOP THE SALE</a>
+              <div class="promo-coupon-pill">
+                <span>Code: <strong>GLOW30</strong></span>
+                <button class="copy-coupon-btn" data-coupon="GLOW30">Tap to Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Flat-lay Image -->
+          <div class="promo-banner-media">
+            <img src="assets/images/promo-banner.jpg" alt="Luxury cosmetics flat lay with powders, lipsticks and brushes" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         FULL SHOP / EXPANDED CATALOG SECTION
+         ======================================================================== -->
+    <section class="shop-section" id="shop">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow-text">EXPLORE THE ARCHIVE</span>
+          <h2 class="section-title">The Complete Collection</h2>
+          <p class="section-subtitle">Explore all 20 of our dermatologist-approved, cruelty-free beauty creations.</p>
+        </div>
+
+        <!-- Filter & Sort Bar -->
+        <div class="shop-controls-bar">
+          <div class="catalog-filters">
+            <button class="catalog-filter-btn active" data-filter="all">All Products</button>
+            <button class="catalog-filter-btn" data-filter="makeup">Makeup</button>
+            <button class="catalog-filter-btn" data-filter="skincare">Skincare</button>
+            <button class="catalog-filter-btn" data-filter="haircare">Haircare</button>
+            <button class="catalog-filter-btn" data-filter="fragrance">Fragrance</button>
+          </div>
+
+          <div class="shop-sort-controls">
+            <select class="shop-select-filter" id="catalog-price-filter">
+              <option value="all">Price: All</option>
+              <option value="under-800">Under ₹800</option>
+              <option value="800-1200">₹800 – ₹1,200</option>
+              <option value="over-1200">Over ₹1,200</option>
+            </select>
+
+            <select class="shop-select-filter" id="catalog-sort-select">
+              <option value="featured">Sort by: Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="shop-results-count" class="shop-results-count" style="margin-bottom: 24px; font-size: 0.84rem; color: var(--text-muted);">
+          Showing 20 luxury products
+        </div>
+
+        <!-- Full Products Grid -->
+        <div class="full-shop-grid" id="full-shop-grid">
+          <!-- Rendered via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         WHY CHOOSE MIGRIGA SECTION (4 COLUMNS)
+         ======================================================================== -->
+    <section class="why-migriga-section" id="why-migriga">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow-text">OUR PROMISE</span>
+          <h2 class="section-title">WHY CHOOSE MIGRIGA?</h2>
+          <p class="section-subtitle">We believe true luxury begins with unwavering integrity and pure performance.</p>
+        </div>
+
+        <div class="why-grid">
+          <!-- 1. PREMIUM QUALITY -->
+          <div class="why-card">
+            <div class="why-icon-bubble">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <h3>PREMIUM QUALITY</h3>
+            <p>Carefully selected beauty essentials crafted from rare botanicals and clinical actives.</p>
+          </div>
+
+          <!-- 2. SAFE & EFFECTIVE -->
+          <div class="why-card">
+            <div class="why-icon-bubble">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+            </div>
+            <h3>SAFE & EFFECTIVE</h3>
+            <p>Thoughtfully formulated for your beauty routine, rigorously allergy- and dermatologist-tested.</p>
+          </div>
+
+          <!-- 3. CRUELTY FREE -->
+          <div class="why-card">
+            <div class="why-icon-bubble">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h3>CRUELTY FREE</h3>
+            <p>Beauty that cares for you and the planet. 100% vegan, ethically sourced, and never tested on animals.</p>
+          </div>
+
+          <!-- 4. TRUSTED BY THOUSANDS -->
+          <div class="why-card">
+            <div class="why-icon-bubble">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3>TRUSTED BY THOUSANDS</h3>
+            <p>Loved by beauty enthusiasts everywhere, backed by over 25,000 verified 5-star customer reviews.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CUSTOMER TESTIMONIALS SECTION (SOFT BLUSH CAROUSEL)
+         ======================================================================== -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow-text">REAL REVIEWS</span>
+          <h2 class="section-title">OUR HAPPY CUSTOMERS</h2>
+          <p class="section-subtitle">Real experiences shared by verified beauty lovers.</p>
+        </div>
+
+        <div class="testimonial-carousel-container">
+          <button class="slider-arrow-btn slider-prev" id="testimonial-prev-btn" aria-label="Previous testimonial">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          <div class="testimonial-card-frame">
+            <div class="testimonial-card-inner" id="testimonial-card-inner">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </div>
+
+          <button class="slider-arrow-btn slider-next" id="testimonial-next-btn" aria-label="Next testimonial">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <div class="slider-dots-container" id="testimonial-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         INSTAGRAM SECTION (6-IMAGE GALLERY)
+         ======================================================================== -->
+    <section class="instagram-section" id="instagram">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 24px;">
+          <span class="eyebrow-text">BEAUTY DIARY</span>
+          <h2 class="section-title">FOLLOW US ON INSTAGRAM</h2>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-handle">@MIGRIGA.BEAUTY</a>
+        </div>
+      </div>
+
+      <!-- 6-Image Instagram Feed (Lipstick, Foundation, Skincare, Perfume, Flat lay, Model) -->
+      <div class="instagram-gallery-grid" id="instagram-gallery-grid">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         NEWSLETTER SECTION (FULL WIDTH BLUSH/PINK)
+         ======================================================================== -->
+    <section class="newsletter-section" id="newsletter">
+      <div class="container">
+        <div class="newsletter-content">
+          <span class="eyebrow-text" style="color: var(--color-rose-gold-dark);">JOIN THE CIRCLE</span>
+          <h2 class="newsletter-title">STAY IN THE GLOW</h2>
+          <p class="newsletter-text">Get exclusive offers, beauty tips and new product updates delivered to your inbox.</p>
+          
+          <form class="newsletter-form-group" id="newsletter-form">
+            <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Enter your email address" required />
+            <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
+          </form>
+
+          <span class="newsletter-note">Enjoy 15% off your very first order when you subscribe today.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       PREMIUM DARK CHARCOAL/BLACK FOOTER
+       ======================================================================== -->
+  <footer class="main-footer" id="footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Left Brand Column -->
+        <div class="footer-brand-col">
+          <a href="#hero" class="footer-logo">MIGRIGA</a>
+          <p class="footer-brand-desc">
+            Premium beauty crafted to celebrate every version of you. Elevating personal beauty through thoughtful formulations and timeless elegance.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="4" x2="12" y2="20"></line><circle cx="12" cy="12" r="8"></circle></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 1: SHOP -->
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">SHOP</h4>
+          <ul class="footer-links-list">
+            <li><a href="#shop">All Products</a></li>
+            <li><a href="#shop" onclick="currentCatalogCategory='makeup'; renderCatalogProducts();">Makeup</a></li>
+            <li><a href="#shop" onclick="currentCatalogCategory='skincare'; renderCatalogProducts();">Skincare</a></li>
+            <li><a href="#shop" onclick="currentCatalogCategory='haircare'; renderCatalogProducts();">Haircare</a></li>
+            <li><a href="#shop" onclick="currentCatalogCategory='fragrance'; renderCatalogProducts();">Fragrance</a></li>
+            <li><a href="#bestsellers">New Arrivals</a></li>
+            <li><a href="#promo-banner">Offers & Bundles</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: CUSTOMER CARE -->
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">CUSTOMER CARE</h4>
+          <ul class="footer-links-list">
+            <li><a href="#footer" onclick="ToastManager.show('Customer support available 24/7 at support@migriga.com', 'info');">Contact Us</a></li>
+            <li><a href="#footer" onclick="ToastManager.show('Free shipping across India on orders above ₹999.', 'info');">Shipping Policy</a></li>
+            <li><a href="#footer" onclick="ToastManager.show('14-day hassle free returns on authentic items.', 'info');">Returns & Refunds</a></li>
+            <li><a href="#footer">FAQs</a></li>
+            <li><a href="#footer">Terms & Conditions</a></li>
+            <li><a href="#footer">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: ABOUT MIGRIGA -->
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">ABOUT MIGRIGA</h4>
+          <ul class="footer-links-list">
+            <li><a href="#why-migriga">Our Story</a></li>
+            <li><a href="#why-migriga">Ingredients & Ethics</a></li>
+            <li><a href="#testimonials">Beauty Journal</a></li>
+            <li><a href="#footer">Sustainability</a></li>
+            <li><a href="#footer">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: CONTACT -->
+        <div class="footer-links-col footer-contact-col">
+          <h4 class="footer-col-title">CONTACT</h4>
+          <div class="footer-contact-info">
+            <div class="contact-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>support@migriga.com</span>
+            </div>
+            <div class="contact-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+91 12345 67890</span>
+            </div>
+            <div class="contact-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Bandra Kurla Complex, Mumbai, Maharashtra 400051, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Strip -->
+      <div class="footer-bottom-strip">
+        <div class="copyright-text">
+          © 2026 MIGRIGA Beauty. All Rights Reserved.
+        </div>
+        <div class="payment-badges-row">
+          <span class="payment-pill">UPI</span>
+          <span class="payment-pill">VISA</span>
+          <span class="payment-pill">MASTERCARD</span>
+          <span class="payment-pill">RUPAY</span>
+          <span class="payment-pill">NET BANKING</span>
+          <span class="payment-pill">100% SECURE</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MODALS & DRAWERS
+       ======================================================================== -->
+
+  <!-- Global Backdrop -->
+  <div class="global-backdrop" id="global-backdrop"></div>
+
+  <!-- 1. CART DRAWER -->
+  <aside class="luxury-drawer" id="cart-drawer" role="dialog" aria-label="Shopping Bag">
+    <div class="drawer-header">
+      <h3>Shopping Bag</h3>
+      <button class="drawer-close-btn" aria-label="Close cart">&times;</button>
+    </div>
+
+    <!-- Free shipping progress bar -->
+    <div class="free-shipping-progress"></div>
+
+    <div class="drawer-body">
+      <div class="drawer-items-list">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="cart-coupon-section">
+        <!-- Coupon Form rendered via JS -->
+      </div>
+
+      <div class="cart-summary-breakdown">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span class="summary-subtotal">₹0</span>
+        </div>
+        <div class="summary-row summary-discount-row" style="display: none; color: #2E7D32;">
+          <span>Discount Applied</span>
+          <span class="summary-discount">-₹0</span>
+        </div>
+        <div class="summary-row">
+          <span>Estimated Shipping</span>
+          <span class="summary-shipping">FREE</span>
+        </div>
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <span class="summary-total">₹0</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="btn-proceed-checkout">
+        PROCEED TO CHECKOUT
+      </button>
+    </div>
+  </aside>
+
+  <!-- 2. WISHLIST DRAWER -->
+  <aside class="luxury-drawer" id="wishlist-drawer" role="dialog" aria-label="Your Wishlist">
+    <div class="drawer-header">
+      <h3>My Wishlist</h3>
+      <button class="drawer-close-btn" aria-label="Close wishlist">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <div class="drawer-items-list">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </div>
+  </aside>
+
+  <!-- 3. MOBILE MENU DRAWER -->
+  <aside class="luxury-drawer mobile-menu-drawer" id="mobile-menu-drawer" role="dialog" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <span class="brand-logo" style="font-size: 1.4rem;">MIGRIGA</span>
+      <button class="drawer-close-btn" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <nav class="mobile-nav-links">
+        <a href="#hero" onclick="closeAllDrawers();">HOME</a>
+        <a href="#shop" onclick="closeAllDrawers();">SHOP ALL</a>
+        <a href="#categories" onclick="closeAllDrawers(); currentCatalogCategory='skincare'; renderCatalogProducts(); scrollToSection('shop');">SKINCARE</a>
+        <a href="#categories" onclick="closeAllDrawers(); currentCatalogCategory='makeup'; renderCatalogProducts(); scrollToSection('shop');">MAKEUP</a>
+        <a href="#categories" onclick="closeAllDrawers(); currentCatalogCategory='haircare'; renderCatalogProducts(); scrollToSection('shop');">HAIRCARE</a>
+        <a href="#categories" onclick="closeAllDrawers(); currentCatalogCategory='fragrance'; renderCatalogProducts(); scrollToSection('shop');">FRAGRANCE</a>
+        <a href="#bestsellers" onclick="closeAllDrawers();">BESTSELLERS</a>
+        <a href="#promo-banner" onclick="closeAllDrawers();">SPECIAL OFFERS</a>
+        <a href="#why-migriga" onclick="closeAllDrawers();">OUR PHILOSOPHY</a>
+      </nav>
+      <div style="margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border-subtle);">
+        <button class="btn btn-outline btn-block" onclick="closeAllDrawers(); openModal('account-modal');">
+          Sign In / Register
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 4. QUICK VIEW / PRODUCT DETAILS MODAL -->
+  <div class="luxury-modal" id="quickview-modal" role="dialog" aria-label="Product Details">
+    <div class="luxury-modal-content">
+      <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+      <div class="modal-body">
+        <!-- Injected via renderQuickViewModal() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. SEARCH MODAL -->
+  <div class="luxury-modal" id="search-modal" role="dialog" aria-label="Search Products">
+    <div class="luxury-modal-content search-modal-content">
+      <button class="modal-close-btn" aria-label="Close search">&times;</button>
+      <div class="search-input-wrapper">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="main-search-input" class="main-search-input" placeholder="Search serums, lipsticks, perfumes, powders..." autocomplete="off" />
+      </div>
+
+      <div class="search-trending-row">
+        <span class="trending-label">Trending:</span>
+        <span class="trending-tag" data-query="Serum">Radiance Serum</span>
+        <span class="trending-tag" data-query="Lipstick">Velvet Matte</span>
+        <span class="trending-tag" data-query="Rose">Rose Bloom</span>
+        <span class="trending-tag" data-query="Foundation">Silk Touch</span>
+        <span class="trending-tag" data-query="Cream">Luxury Glow</span>
+      </div>
+
+      <div class="search-results-header" id="search-result-count">
+        Type above to explore our luxury catalog
+      </div>
+
+      <div class="search-results-grid" id="search-results-grid"></div>
+    </div>
+  </div>
+
+  <!-- 6. CHECKOUT MODAL -->
+  <div class="luxury-modal" id="checkout-modal" role="dialog" aria-label="Checkout">
+    <div class="luxury-modal-content checkout-modal-content">
+      <button class="modal-close-btn" aria-label="Close checkout">&times;</button>
+      <div class="modal-body">
+        <h2 class="checkout-heading">Luxury Checkout</h2>
+        
+        <form id="checkout-form" class="checkout-grid">
+          <!-- Left: Address & Payment Details -->
+          <div class="checkout-form-fields">
+            <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px;">1. Shipping Address</h4>
+            
+            <div class="form-group-row">
+              <div class="form-field">
+                <label for="co-name">Full Name *</label>
+                <input type="text" id="co-name" placeholder="Aanya Sharma" required value="Aanya Sharma" />
+              </div>
+              <div class="form-field">
+                <label for="co-phone">Phone Number *</label>
+                <input type="tel" id="co-phone" placeholder="+91 98765 43210" required value="+91 98765 43210" />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="co-address">Delivery Address *</label>
+              <input type="text" id="co-address" placeholder="Flat / Villa / Street, Landmark" required value="Penthouse 4B, Emerald Heights, Linking Road" />
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-field">
+                <label for="co-city">City *</label>
+                <input type="text" id="co-city" placeholder="Mumbai" required value="Mumbai" />
+              </div>
+              <div class="form-field">
+                <label for="co-pincode">PIN Code *</label>
+                <input type="text" id="co-pincode" placeholder="400050" required value="400050" />
+              </div>
+            </div>
+
+            <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 24px 0 14px 0;">2. Select Payment Method</h4>
+            <div class="payment-methods-grid">
+              <label class="payment-radio-label">
+                <input type="radio" name="paymentMethod" value="UPI" checked />
+                <span>UPI (GPay / PhonePe / Paytm)</span>
+              </label>
+              <label class="payment-radio-label">
+                <input type="radio" name="paymentMethod" value="Credit/Debit Card" />
+                <span>Credit / Debit Card</span>
+              </label>
+              <label class="payment-radio-label">
+                <input type="radio" name="paymentMethod" value="Net Banking" />
+                <span>Net Banking</span>
+              </label>
+              <label class="payment-radio-label">
+                <input type="radio" name="paymentMethod" value="Cash on Delivery" />
+                <span>Cash on Delivery</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              COMPLETE ORDER
+            </button>
+          </div>
+
+          <!-- Right: Order Summary -->
+          <div class="checkout-order-summary">
+            <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px;">Order Summary</h4>
+            <div class="checkout-order-items">
+              <!-- Rendered via JS -->
+            </div>
+
+            <div class="cart-summary-breakdown" style="margin-top: 14px; border-top: 1px solid var(--border-subtle); padding-top: 14px;">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span class="checkout-subtotal">₹0</span>
+              </div>
+              <div class="summary-row" style="color: #2E7D32;">
+                <span>Discount</span>
+                <span class="checkout-discount">-₹0</span>
+              </div>
+              <div class="summary-row">
+                <span>Shipping</span>
+                <span class="checkout-shipping">FREE</span>
+              </div>
+              <div class="summary-row total-row">
+                <span>Total Amount</span>
+                <span class="checkout-final-total">₹0</span>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. ACCOUNT / AUTH MODAL (Customer & Admin Logins) -->
+  <div class="luxury-modal" id="account-modal" role="dialog" aria-label="Account">
+    <div class="luxury-modal-content account-modal-content">
+      <button class="modal-close-btn" aria-label="Close account">&times;</button>
+      <div id="account-modal-body">
+        <div class="auth-header">
+          <h3>Welcome to MIGRIGA</h3>
+          <p>Sign in to your customer account or administrator management portal.</p>
+        </div>
+
+        <!-- Quick Demo Switcher Buttons -->
+        <div style="background: var(--color-blush-light); padding: 12px; border-radius: var(--radius-md); margin-bottom: 20px; border: 1px solid var(--border-light);">
+          <span style="display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-rose-gold-dark); font-weight: 700; margin-bottom: 8px;">
+            Quick Demo Autofill:
+          </span>
+          <div style="display: flex; gap: 8px;">
+            <button type="button" id="btn-fill-customer" class="btn btn-secondary btn-sm" style="flex: 1; padding: 6px 10px; font-size: 0.72rem;">
+              👤 Customer
+            </button>
+            <button type="button" id="btn-fill-admin" class="btn btn-secondary btn-sm" style="flex: 1; padding: 6px 10px; font-size: 0.72rem; border-color: #C5A059; color: #8E5840;">
+              👑 Store Admin
+            </button>
+          </div>
+        </div>
+
+        <form id="account-auth-form">
+          <div class="form-field">
+            <label for="auth-email">Email Address</label>
+            <input type="email" id="auth-email" placeholder="customer@migriga.com or admin@migriga.com" value="customer@migriga.com" required />
+          </div>
+          <div class="form-field">
+            <label for="auth-pass">Password</label>
+            <input type="password" id="auth-pass" placeholder="••••••••" value="customer123" required />
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" style="margin-top: 14px;">
+            SIGN IN
+          </button>
+        </form>
+
+        <div style="margin-top: 20px; text-align: center; border-top: 1px solid var(--border-subtle); padding-top: 16px;">
+          <a href="/admin.html" style="font-size: 0.78rem; font-weight: 600; color: var(--color-rose-gold-dark); text-decoration: underline;">
+            Looking for Admin Portal? Launch Admin Dashboard ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. NEWSLETTER COUPON SUCCESS MODAL -->
+  <div class="luxury-modal" id="coupon-success-modal" role="dialog" aria-label="Newsletter Welcome">
+    <div class="luxury-modal-content" style="max-width: 480px; text-align: center; padding: 40px 30px;">
+      <button class="modal-close-btn" aria-label="Close">&times;</button>
+      <div style="font-size: 2.4rem; margin-bottom: 12px;">🎁</div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 8px;">Welcome to MIGRIGA!</h3>
+      <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 24px;">
+        Thank you for subscribing to our private beauty salon. Here is your exclusive 15% discount code for your first purchase:
+      </p>
+      <div class="promo-coupon-pill" style="justify-content: center; font-size: 1.1rem; padding: 12px 24px; margin-bottom: 24px;">
+        Code: <strong>WELCOME15</strong>
+        <button class="copy-coupon-btn" data-coupon="WELCOME15" style="margin-left: 10px;">Copy Code</button>
+      </div>
+      <button class="btn btn-primary btn-block" onclick="closeAllModals(); store.applyCoupon('WELCOME15'); openDrawer('cart-drawer');">
+        APPLY TO BAG & SHOP
+      </button>
+    </div>
+  </div>
+
+  <!-- Luxury Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

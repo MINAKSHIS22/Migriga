@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIGRIGA | Unified Portal Sign In</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+  
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+
+  <style>
+    .login-page-body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: radial-gradient(circle at 50% 30%, #FBF4EE 0%, #F5E8E0 60%, #ECE0D6 100%);
+      font-family: var(--font-sans);
+      color: var(--text-dark);
+    }
+
+    .login-top-bar {
+      padding: 24px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .login-brand {
+      font-family: var(--font-brand);
+      font-size: 1.85rem;
+      letter-spacing: 0.22em;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+
+    .login-center-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+    }
+
+    .unified-login-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(176, 125, 98, 0.16);
+      width: 100%;
+      max-width: 480px;
+      padding: 44px 38px;
+      position: relative;
+    }
+
+    .login-card-header {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .login-card-header h2 {
+      font-family: var(--font-serif);
+      font-size: 2.1rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .login-card-header p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Auth Switcher Tabs */
+    .auth-tab-row {
+      display: flex;
+      background: var(--color-cream);
+      padding: 4px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 24px;
+    }
+
+    .auth-tab-btn {
+      flex: 1;
+      padding: 9px;
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: var(--radius-pill);
+      color: var(--text-muted);
+      transition: all var(--transition-fast);
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+
+    .auth-tab-btn.active {
+      background: #FFFFFF;
+      color: var(--text-dark);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Quick Demo Helper Box */
+    .quick-demo-box {
+      background: var(--color-blush-light);
+      border: 1px dashed var(--color-rose-gold);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-bottom: 22px;
+    }
+
+    .quick-demo-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-rose-gold-dark);
+      margin-bottom: 8px;
+    }
+
+    .quick-demo-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .btn-quick-fill {
+      padding: 7px 10px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      border-radius: var(--radius-pill);
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      color: var(--text-charcoal);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-quick-fill:hover {
+      background: var(--color-rose-gold);
+      color: #FFFFFF;
+      border-color: var(--color-rose-gold);
+    }
+
+    .btn-quick-fill.admin-style {
+      border-color: #C5A059;
+      color: #8E5840;
+    }
+
+    .btn-quick-fill.admin-style:hover {
+      background: #C5A059;
+      color: #FFFFFF;
+    }
+
+    /* Status Banner / Feedback */
+    .login-feedback-banner {
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      margin-bottom: 18px;
+      display: none;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .login-feedback-banner.success {
+      display: flex;
+      background: #E8F5E9;
+      color: #2E7D32;
+      border: 1px solid #A5D6A7;
+    }
+
+    .login-feedback-banner.error {
+      display: flex;
+      background: #FFEBEE;
+      color: #C62828;
+      border: 1px solid #EF9A9A;
+    }
+
+    .login-footer-strip {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .login-footer-strip a {
+      color: var(--color-rose-gold-dark);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="login-page-body">
+
+  <!-- Top Navigation -->
+  <header class="login-top-bar">
+    <a href="/welcome.html" class="login-brand">
+      MIGRIGA
+    </a>
+
+    <div style="display: flex; gap: 14px; align-items: center;">
+      <a href="/welcome.html" class="btn btn-sm btn-outline">
+        ← Get Started
+      </a>
+      <a href="/index.html" class="btn btn-sm btn-secondary">
+        Storefront ↗
+      </a>
+    </div>
+  </header>
+
+  <!-- Centered Login Card -->
+  <main class="login-center-container">
+    <div class="unified-login-card">
+      <div class="login-card-header">
+        <span class="eyebrow-text" style="margin-bottom: 8px;">ONE UNIFIED PORTAL</span>
+        <h2>Sign In to MIGRIGA</h2>
+        <p>Enter your credentials to be automatically redirected to your designated destination.</p>
+      </div>
+
+      <!-- Auth Tabs: Sign In vs Register -->
+      <div class="auth-tab-row">
+        <button class="auth-tab-btn active" id="tab-btn-signin" onclick="switchAuthTab('signin')">Sign In</button>
+        <button class="auth-tab-btn" id="tab-btn-register" onclick="switchAuthTab('register')">Create Account</button>
+      </div>
+
+      <!-- Quick 1-Click Autofill Demo Box -->
+      <div class="quick-demo-box" id="quick-demo-box">
+        <div class="quick-demo-title">
+          <span>⚡ One-Click Demo Credentials:</span>
+          <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: normal;">Auto-fills & auto-redirects</span>
+        </div>
+        <div class="quick-demo-buttons">
+          <button type="button" class="btn-quick-fill" onclick="fillAndSubmit('customer@migriga.com', 'customer123')">
+            👤 Customer Login
+          </button>
+          <button type="button" class="btn-quick-fill admin-style" onclick="fillAndSubmit('admin@migriga.com', 'admin123')">
+            👑 Admin Portal Login
+          </button>
+        </div>
+      </div>
+
+      <!-- Feedback Alert -->
+      <div id="login-feedback" class="login-feedback-banner">
+        <span id="feedback-icon">✓</span>
+        <span id="feedback-msg">Verifying credentials...</span>
+      </div>
+
+      <!-- 1. SIGN IN FORM -->
+      <form id="unified-login-form">
+        <div class="form-field">
+          <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" placeholder="customer@migriga.com or admin@migriga.com" required value="customer@migriga.com" />
+        </div>
+
+        <div class="form-field">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <label for="login-password">Password</label>
+            <span style="font-size: 0.72rem; color: var(--text-light);">(Demo: customer123 or admin123)</span>
+          </div>
+          <input type="password" id="login-password" placeholder="••••••••" required value="customer123" />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="btn-login-submit" style="margin-top: 10px; height: 48px;">
+          SIGN IN & REDIRECT
+        </button>
+      </form>
+
+      <!-- 2. CREATE ACCOUNT FORM (Hidden by default) -->
+      <form id="unified-register-form" style="display: none;">
+        <div class="form-field">
+          <label for="reg-name">Full Name</label>
+          <input type="text" id="reg-name" placeholder="Pooja Sen" required />
+        </div>
+
+        <div class="form-field">
+          <label for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" placeholder="pooja@example.com" required />
+        </div>
+
+        <div class="form-field">
+          <label for="reg-phone">Phone Number (Optional)</label>
+          <input type="tel" id="reg-phone" placeholder="+91 98765 43210" />
+        </div>
+
+        <div class="form-field">
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" placeholder="Choose a secure password" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top: 10px; height: 48px;">
+          CREATE CUSTOMER ACCOUNT
+        </button>
+      </form>
+
+      <div class="login-footer-strip">
+        <p>Role-based routing: <strong>Admin</strong> redirects to <a href="/admin.html">Admin Portal</a>, <strong>Customer</strong> redirects to <a href="/index.html">Storefront</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function switchAuthTab(mode) {
+      const isSignIn = mode === 'signin';
+      document.getElementById('tab-btn-signin').classList.toggle('active', isSignIn);
+      document.getElementById('tab-btn-register').classList.toggle('active', !isSignIn);
+      document.getElementById('unified-login-form').style.display = isSignIn ? 'block' : 'none';
+      document.getElementById('unified-register-form').style.display = isSignIn ? 'none' : 'block';
+      document.getElementById('quick-demo-box').style.display = isSignIn ? 'block' : 'none';
+      hideFeedback();
+    }
+
+    function showFeedback(msg, isSuccess = true) {
+      const banner = document.getElementById('login-feedback');
+      banner.className = `login-feedback-banner ${isSuccess ? 'success' : 'error'}`;
+      document.getElementById('feedback-icon').textContent = isSuccess ? '✓' : '⚠';
+      document.getElementById('feedback-msg').innerHTML = msg;
+    }
+
+    function hideFeedback() {
+      document.getElementById('login-feedback').style.display = 'none';
+    }
+
+    async function executeLogin(email, password) {
+      showFeedback('Verifying credentials with SQLite backend...', true);
+      const btn = document.getElementById('btn-login-submit');
+      if (btn) btn.disabled = true;
+
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+
+        if (!res.ok) {
+          throw new Error(data.detail || 'Invalid email or password.');
+        }
+
+        // Store session tokens
+        localStorage.setItem('migriga_token', data.token);
+        localStorage.setItem('migriga_user', JSON.stringify(data.user));
+
+        if (data.user.role === 'admin') {
+          localStorage.setItem('migriga_admin_token', data.token);
+          showFeedback(`👑 <strong>Admin Authenticated!</strong> Redirecting to Admin Portal...`, true);
+          setTimeout(() => {
+            window.location.href = '/admin.html';
+          }, 800);
+        } else {
+          showFeedback(`👤 <strong>Welcome ${data.user.full_name}!</strong> Redirecting to Storefront...`, true);
+          setTimeout(() => {
+            window.location.href = '/index.html';
+          }, 800);
+        }
+      } catch (err) {
+        showFeedback(err.message, false);
+        if (btn) btn.disabled = false;
+      }
+    }
+
+    function fillAndSubmit(email, password) {
+      document.getElementById('login-email').value = email;
+      document.getElementById('login-password').value = password;
+      executeLogin(email, password);
+    }
+
+    document.getElementById('unified-login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+      executeLogin(email, password);
+    });
+
+    document.getElementById('unified-register-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fullName = document.getElementById('reg-name').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
+      const phone = document.getElementById('reg-phone').value.trim();
+      const password = document.getElementById('reg-password').value;
+
+      showFeedback('Creating your customer account...', true);
+
+      try {
+        const res = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ full_name: fullName, email, password, phone })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || 'Registration failed.');
+
+        localStorage.setItem('migriga_token', data.token);
+        localStorage.setItem('migriga_user', JSON.stringify(data.user));
+
+        showFeedback(`🎉 Account created! Welcome, ${data.user.full_name}. Redirecting to Storefront...`, true);
+        setTimeout(() => {
+          window.location.href = '/index.html';
+        }, 1000);
+      } catch (err) {
+        showFeedback(err.message, false);
+      }
+    });
+  </script>
+
+</body>
+</html>
