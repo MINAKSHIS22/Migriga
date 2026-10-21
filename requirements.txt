@@ -1,0 +1,10 @@
+# Migriga (storefront + admin + Migriga Analytics). Versions verified with Python 3.14.
+fastapi>=0.110
+uvicorn>=0.27
+pydantic>=2.5
+pandas>=2.1
+numpy>=1.26
+scikit-learn>=1.4
+# tests
+pytest>=8.0
+httpx>=0.27
