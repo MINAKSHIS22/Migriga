@@ -120,6 +120,11 @@ def init_db():
     )
     """)
 
+    # 8. High-Performance Query Indexes
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_orders_created ON orders(created_at DESC)")
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_order_items_order_id ON order_items(order_id)")
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_users_role ON users(role)")
+
     conn.commit()
 
     # --- Seed Default Admin & Customer Accounts ---
@@ -128,7 +133,7 @@ def init_db():
     # --- Seed Coupons ---
     seed_coupons(cursor)
 
-    # --- Seed 20 Products ---
+    # --- Seed Products ---
     seed_products(cursor)
 
     # --- Seed Sample Order ---
@@ -172,10 +177,8 @@ def seed_coupons(cursor):
         """, (code, pct, desc))
 
 def seed_products(cursor):
-    cursor.execute("SELECT COUNT(*) as count FROM products")
-    if cursor.fetchone()['count'] == 0:
-        # Load from products list
-        products_list = [
+    # Load all 40 curated catalog products
+    products_list = [
             {
                 "id": "mig-001",
                 "name": "Migriga Glow Radiance Serum",
@@ -1150,47 +1153,45 @@ def seed_products(cursor):
             }
         ]
 
-        for p in products_list:
-            cursor.execute("""
-            INSERT OR REPLACE INTO products (
-                id, name, tagline, category, category_name, price, original_price,
-                rating, review_count, is_bestseller, is_new, stock, image, secondary_image,
-                description, ingredients, how_to_use, shades_json, sizes_json, benefits_json, badge
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, (
-                p["id"], p["name"], p["tagline"], p["category"], p["category_name"],
-                p["price"], p["original_price"], p["rating"], p["review_count"],
-                p["is_bestseller"], p["is_new"], p["stock"], p["image"], p["secondary_image"],
-                p["description"], p["ingredients"], p["how_to_use"],
-                json.dumps(p["shades"]) if p["shades"] else None,
-                json.dumps(p["sizes"]) if p["sizes"] else None,
-                json.dumps(p["benefits"]) if p["benefits"] else None,
-                p["badge"]
-            ))
-        print("Seeded 40 Products into SQLite database.")
+    for p in products_list:
+        cursor.execute("""
+        INSERT OR REPLACE INTO products (
+            id, name, tagline, category, category_name, price, original_price,
+            rating, review_count, is_bestseller, is_new, stock, image, secondary_image,
+            description, ingredients, how_to_use, shades_json, sizes_json, benefits_json, badge
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            p["id"], p["name"], p["tagline"], p["category"], p["category_name"],
+            p["price"], p["original_price"], p["rating"], p["review_count"],
+            p["is_bestseller"], p["is_new"], p["stock"], p["image"], p["secondary_image"],
+            p["description"], p["ingredients"], p["how_to_use"],
+            json.dumps(p["shades"]) if p["shades"] else None,
+            json.dumps(p["sizes"]) if p["sizes"] else None,
+            json.dumps(p["benefits"]) if p["benefits"] else None,
+            p["badge"]
+        ))
+    print("Seeded 40 Products into SQLite database.")
 
 def seed_sample_order(cursor):
-    cursor.execute("SELECT id FROM orders WHERE id = 'MIG-89412'")
-    if not cursor.fetchone():
-        cursor.execute("""
-        INSERT INTO orders (
-            id, user_id, customer_name, customer_email, customer_phone,
-            address, city, pincode, payment_method, status,
-            subtotal, discount, shipping, total, created_at
-        ) VALUES (
-            'MIG-89412', 2, 'Aanya Sharma', 'customer@migriga.com', '+91 98765 43210',
-            'Penthouse 4B, Emerald Heights, Linking Road', 'Mumbai', '400050',
-            'UPI', 'Delivered', 899, 0, 0, 899, '2026-09-28 14:20:00'
-        )
-        """)
-        cursor.execute("""
-        INSERT INTO order_items (
-            order_id, product_id, product_name, qty, price, shade, size, image
-        ) VALUES (
-            'MIG-89412', 'mig-001', 'Migriga Glow Radiance Serum', 1, 899, NULL, '30ml', 'assets/images/prod-serum.jpg'
-        )
-        """)
-        print("Seeded sample delivered order #MIG-89412.")
+    cursor.execute("""
+    INSERT OR IGNORE INTO orders (
+        id, user_id, customer_name, customer_email, customer_phone,
+        address, city, pincode, payment_method, status,
+        subtotal, discount, shipping, total, created_at
+    ) VALUES (
+        'MIG-89412', 2, 'Aanya Sharma', 'customer@migriga.com', '+91 98765 43210',
+        'Penthouse 4B, Emerald Heights, Linking Road', 'Mumbai', '400050',
+        'UPI', 'Delivered', 899, 0, 0, 899, '2026-09-28 14:20:00'
+    )
+    """)
+    cursor.execute("""
+    INSERT OR REPLACE INTO order_items (
+        order_id, product_id, product_name, qty, price, shade, size, image
+    ) VALUES (
+        'MIG-89412', 'mig-001', 'Migriga Glow Radiance Serum', 1, 899, NULL, '30ml', 'assets/images/prod-serum.jpg'
+    )
+    """)
+    print("Seeded sample delivered order #MIG-89412.")
 
 if __name__ == "__main__":
     init_db()

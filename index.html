@@ -341,6 +341,26 @@
     </section>
 
     <!-- ========================================================================
+         AI RECOMMENDER SECTION: FREQUENTLY BOUGHT TOGETHER & SMART PAIRINGS
+         ======================================================================== -->
+    <section class="recommendations-section" id="recommendations" style="padding: 72px 0; background: linear-gradient(180deg, #0E0D0D 0%, #151312 100%); border-top: 1px solid rgba(197, 160, 89, 0.15); border-bottom: 1px solid rgba(197, 160, 89, 0.15);">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <span class="eyebrow-text" style="color: #C5A059; letter-spacing: 0.16em; font-weight: 700; font-size: 0.72rem; text-transform: uppercase;">⚡ AI BEAUTY ROUTINE RECOMMENDER</span>
+          <h2 class="section-title" style="font-family: var(--font-serif); font-size: 2.2rem; margin-top: 8px; color: #FFFFFF;">Frequently Bought Together</h2>
+          <p class="section-subtitle" style="max-width: 680px; margin: 10px auto 0; color: #A8A199; font-size: 0.95rem;">
+            Discover curated beauty rituals and synergistic routine pairings calculated from the Amazon All Beauty dataset.
+          </p>
+        </div>
+
+        <!-- Dynamic Recommendations Grid -->
+        <div class="recommendations-grid" id="recommendations-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px;">
+          <!-- Loaded dynamically via /api/recommendations/trending & product APIs -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
          PROMOTIONAL BANNER SECTION
          ======================================================================== -->
     <section class="promo-banner-section" id="promo-banner">

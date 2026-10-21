@@ -8,9 +8,11 @@ import os
 import json
 import sqlite3
 import random
+import math
 
 from backend.database import get_db, init_db
 from backend.auth import hash_password, verify_password, generate_token
+from backend.recommendation_engine import engine
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -235,6 +237,62 @@ def get_product_detail(product_id: str):
     p["sizes"] = json.loads(p["sizes_json"]) if p.get("sizes_json") else None
     p["benefits"] = json.loads(p["benefits_json"]) if p.get("benefits_json") else []
     return {"product": p}
+ 
+# --- Recommendation Engine Endpoints ---
+@app.get("/api/recommendations/product/{product_id}")
+def get_product_recommendations(product_id: str, limit: int = 4):
+    """Returns top hybrid recommendations (Frequently Bought Together + Content Match) for a product."""
+    recs = engine.get_recommendations_for_product(product_id, limit=limit)
+    return {
+        "success": True,
+        "product_id": product_id,
+        "recommendations": recs,
+        "model_status": engine.metadata.get("status", "ready")
+    }
+
+@app.get("/api/recommendations/cart")
+def get_cart_recommendations(items: Optional[str] = Query(None), limit: int = 4):
+    """Smart cross-sell recommendations tailored to current cart items (comma-separated IDs)."""
+    cart_ids = [i.strip() for i in items.split(",") if i.strip()] if items else []
+    recs = engine.get_cart_recommendations(cart_ids, limit=limit)
+    return {
+        "success": True,
+        "recommendations": recs,
+        "model_status": engine.metadata.get("status", "ready")
+    }
+
+@app.get("/api/recommendations/trending")
+def get_trending_recommendations(limit: int = 8):
+    """Returns trending and popular community favorites based on model rankings."""
+    trending = engine.get_trending_products(limit=limit)
+    return {
+        "success": True,
+        "trending": trending,
+        "model_status": engine.metadata.get("status", "ready")
+    }
+
+@app.get("/api/recommendations/status")
+def get_recommendation_status():
+    """Returns current model status, metadata, dataset coverage, and metrics."""
+    return {
+        "success": True,
+        "metadata": engine.metadata
+    }
+
+@app.post("/api/recommendations/train")
+def trigger_model_training(admin: Optional[dict] = Depends(require_admin)):
+    """Triggers ML recommendation model retraining on available datasets."""
+    try:
+        from backend.train_recommendation import main as run_trainer
+        run_trainer()
+        engine.load_cache()
+        return {
+            "success": True,
+            "message": "Model trained and cache reloaded successfully.",
+            "metadata": engine.metadata
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Training failed: {str(e)}")
 
 @app.post("/api/coupons/apply")
 def apply_coupon(req: CouponApplyRequest):
@@ -381,6 +439,20 @@ def get_admin_stats(admin: dict = Depends(require_admin)):
     cursor.execute("SELECT * FROM orders ORDER BY created_at DESC LIMIT 5")
     recent_orders = [dict(r) for r in cursor.fetchall()]
 
+    cursor.execute("SELECT COUNT(*) as count FROM product_recommendations")
+    recs_count = cursor.fetchone()["count"]
+
+    beauty_count = 0
+    pjson_path = os.path.join(BASE_DIR, "products.json")
+    if os.path.exists(pjson_path):
+        try:
+            with open(pjson_path, "r", encoding="utf-8") as f:
+                beauty_count = len(json.load(f))
+        except Exception:
+            beauty_count = 15000
+    else:
+        beauty_count = 15000
+
     conn.close()
 
     return {
@@ -389,7 +461,42 @@ def get_admin_stats(admin: dict = Depends(require_admin)):
         "total_customers": customer_count,
         "total_products": total_products,
         "low_stock_count": low_stock_count,
-        "recent_orders": recent_orders
+        "recent_orders": recent_orders,
+        "beauty_dataset_count": beauty_count,
+        "recommendations_count": recs_count,
+        "dataset_source": "convert_beauty_dataset.py (Amazon All Beauty Dataset)",
+        "model_metadata": engine.metadata
+    }
+
+@app.get("/api/admin/beauty-dataset")
+def get_admin_beauty_dataset(admin: dict = Depends(require_admin), page: int = 1, page_size: int = 25, search: Optional[str] = None, category: Optional[str] = None):
+    pjson_path = os.path.join(BASE_DIR, "products.json")
+    if not os.path.exists(pjson_path):
+        return {"products": [], "total": 0, "page": page, "page_size": page_size, "total_pages": 0}
+    try:
+        with open(pjson_path, "r", encoding="utf-8") as f:
+            products = json.load(f)
+    except Exception as e:
+        return {"products": [], "total": 0, "page": page, "page_size": page_size, "total_pages": 0, "error": str(e)}
+
+    if category and category.lower() != "all":
+        products = [p for p in products if p.get("category", "").lower() == category.lower()]
+
+    if search:
+        s = search.lower().strip()
+        products = [p for p in products if s in p.get("name", "").lower() or s in p.get("brand", "").lower() or s in p.get("id", "").lower()]
+
+    total = len(products)
+    start = (page - 1) * page_size
+    end = start + page_size
+    sliced = products[start:end]
+
+    return {
+        "products": sliced,
+        "total": total,
+        "page": page,
+        "page_size": page_size,
+        "total_pages": math.ceil(total / page_size) if page_size else 1
     }
 
 @app.get("/api/admin/orders")

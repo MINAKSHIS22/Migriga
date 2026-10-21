@@ -1,0 +1,1761 @@
+{
+  "metadata": {
+    "status": "trained",
+    "model_type": "Beauty Dataset ML Recommender (TF-IDF Similarity + Cross-Routine Synergy + Bayesian Popularity)",
+    "trained_at": "2026-10-21T09:17:31.517929",
+    "dataset_source": "convert_beauty_dataset.py (Amazon All Beauty Dataset)",
+    "total_products_indexed": 40,
+    "beauty_dataset_records": 15000,
+    "coverage_percent": 100.0,
+    "metrics": {
+      "total_catalog_products": 40,
+      "recommendations_per_product": 8,
+      "total_links_generated": 320,
+      "dataset_source_file": "full-00000-of-00001.parquet"
+    }
+  },
+  "recommendations": {
+    "mig-001": [
+      {
+        "id": "mig-021",
+        "score": 0.6686,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.6633,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.6528,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-008",
+        "score": 0.6212,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-034",
+        "score": 0.6187,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-015",
+        "score": 0.5899,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.5509,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.547,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-002": [
+      {
+        "id": "mig-031",
+        "score": 0.6531,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-017",
+        "score": 0.6458,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-001",
+        "score": 0.6378,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.6326,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-032",
+        "score": 0.6305,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-021",
+        "score": 0.6267,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-014",
+        "score": 0.5527,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-020",
+        "score": 0.5459,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-003": [
+      {
+        "id": "mig-012",
+        "score": 0.6566,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.4806,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.4755,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.4755,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.4755,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-039",
+        "score": 0.4596,
+        "reason": "Formula & Ingredient Synergy"
+      },
+      {
+        "id": "mig-027",
+        "score": 0.4178,
+        "reason": "Formula & Ingredient Synergy"
+      },
+      {
+        "id": "mig-028",
+        "score": 0.4037,
+        "reason": "Frequently Paired Routine"
+      }
+    ],
+    "mig-004": [
+      {
+        "id": "mig-022",
+        "score": 0.6503,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-007",
+        "score": 0.6223,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-005",
+        "score": 0.597,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-009",
+        "score": 0.5899,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.3923,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-029",
+        "score": 0.3921,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-018",
+        "score": 0.3881,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-024",
+        "score": 0.3834,
+        "reason": "Frequently Paired Routine"
+      }
+    ],
+    "mig-005": [
+      {
+        "id": "mig-009",
+        "score": 0.6621,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-024",
+        "score": 0.3924,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-022",
+        "score": 0.3889,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.3711,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-038",
+        "score": 0.3679,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-023",
+        "score": 0.3635,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-018",
+        "score": 0.3628,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-029",
+        "score": 0.3591,
+        "reason": "Frequently Paired Routine"
+      }
+    ],
+    "mig-006": [
+      {
+        "id": "mig-019",
+        "score": 0.6645,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.6476,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-021",
+        "score": 0.6081,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-008",
+        "score": 0.5965,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-034",
+        "score": 0.5876,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-015",
+        "score": 0.5844,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.5453,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.5446,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-007": [
+      {
+        "id": "mig-009",
+        "score": 0.6481,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-029",
+        "score": 0.4731,
+        "reason": "Formula & Ingredient Synergy"
+      },
+      {
+        "id": "mig-022",
+        "score": 0.3948,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-004",
+        "score": 0.3823,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.3788,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-024",
+        "score": 0.3682,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-038",
+        "score": 0.3635,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-018",
+        "score": 0.3573,
+        "reason": "Frequently Paired Routine"
+      }
+    ],
+    "mig-008": [
+      {
+        "id": "mig-019",
+        "score": 0.6476,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.6439,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-001",
+        "score": 0.6412,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-017",
+        "score": 0.6333,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-032",
+        "score": 0.6323,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-031",
+        "score": 0.6231,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.6165,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-020",
+        "score": 0.5366,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-009": [
+      {
+        "id": "mig-005",
+        "score": 0.6621,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-022",
+        "score": 0.6593,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-007",
+        "score": 0.6481,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-029",
+        "score": 0.3827,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-024",
+        "score": 0.3806,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-018",
+        "score": 0.3738,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.3665,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-038",
+        "score": 0.3658,
+        "reason": "Frequently Paired Routine"
+      }
+    ],
+    "mig-010": [
+      {
+        "id": "mig-035",
+        "score": 0.6625,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.5537,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.5489,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-012",
+        "score": 0.5464,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.5458,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.5433,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-021",
+        "score": 0.5085,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-008",
+        "score": 0.4905,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-011": [
+      {
+        "id": "mig-010",
+        "score": 0.63,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-035",
+        "score": 0.6118,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-020",
+        "score": 0.6092,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.5479,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.5319,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.5283,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-031",
+        "score": 0.5283,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.5246,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-012": [
+      {
+        "id": "mig-010",
+        "score": 0.5314,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-020",
+        "score": 0.529,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-031",
+        "score": 0.5273,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-017",
+        "score": 0.5272,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-032",
+        "score": 0.527,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.5256,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-001",
+        "score": 0.5255,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-021",
+        "score": 0.513,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-013": [
+      {
+        "id": "mig-012",
+        "score": 0.6075,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-020",
+        "score": 0.5568,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-001",
+        "score": 0.5566,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-032",
+        "score": 0.5562,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-010",
+        "score": 0.5517,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.5491,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-017",
+        "score": 0.5454,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-031",
+        "score": 0.5422,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-014": [
+      {
+        "id": "mig-015",
+        "score": 0.6476,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-034",
+        "score": 0.6312,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-031",
+        "score": 0.608,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-032",
+        "score": 0.6005,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-017",
+        "score": 0.5928,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-001",
+        "score": 0.5879,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.5839,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.557,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-015": [
+      {
+        "id": "mig-031",
+        "score": 0.6641,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-032",
+        "score": 0.6628,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-001",
+        "score": 0.6549,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.6494,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-017",
+        "score": 0.6458,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.6098,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.6028,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-014",
+        "score": 0.5976,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-016": [
+      {
+        "id": "mig-038",
+        "score": 0.6272,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-017",
+        "score": 0.5396,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-001",
+        "score": 0.532,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.5303,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-032",
+        "score": 0.5286,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-010",
+        "score": 0.5283,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-031",
+        "score": 0.5256,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-020",
+        "score": 0.5255,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-017": [
+      {
+        "id": "mig-002",
+        "score": 0.6608,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.6521,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-021",
+        "score": 0.6253,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-008",
+        "score": 0.6133,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-034",
+        "score": 0.5902,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-015",
+        "score": 0.5808,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.5546,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.5429,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-018": [
+      {
+        "id": "mig-004",
+        "score": 0.6281,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-009",
+        "score": 0.5988,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-022",
+        "score": 0.5882,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-005",
+        "score": 0.5878,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-007",
+        "score": 0.5823,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.4279,
+        "reason": "Formula & Ingredient Synergy"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.3795,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-023",
+        "score": 0.3791,
+        "reason": "Frequently Paired Routine"
+      }
+    ],
+    "mig-019": [
+      {
+        "id": "mig-006",
+        "score": 0.6495,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-001",
+        "score": 0.6483,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-017",
+        "score": 0.6371,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-031",
+        "score": 0.6367,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-032",
+        "score": 0.6352,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-021",
+        "score": 0.6123,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-014",
+        "score": 0.557,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-010",
+        "score": 0.5308,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-020": [
+      {
+        "id": "mig-035",
+        "score": 0.5818,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.5609,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-012",
+        "score": 0.544,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.5405,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.5405,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.5405,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-021",
+        "score": 0.5187,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-008",
+        "score": 0.5166,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-021": [
+      {
+        "id": "mig-001",
+        "score": 0.6686,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-031",
+        "score": 0.6312,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.6267,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-017",
+        "score": 0.6253,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-032",
+        "score": 0.6172,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-014",
+        "score": 0.616,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.6123,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.6081,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-022": [
+      {
+        "id": "mig-009",
+        "score": 0.6593,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-024",
+        "score": 0.4154,
+        "reason": "Formula & Ingredient Synergy"
+      },
+      {
+        "id": "mig-004",
+        "score": 0.4103,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.4002,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-007",
+        "score": 0.3948,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-005",
+        "score": 0.3889,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-029",
+        "score": 0.378,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.3728,
+        "reason": "Frequently Paired Routine"
+      }
+    ],
+    "mig-023": [
+      {
+        "id": "mig-004",
+        "score": 0.6213,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-005",
+        "score": 0.5885,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-009",
+        "score": 0.5831,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-022",
+        "score": 0.5829,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-007",
+        "score": 0.5818,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.4023,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-018",
+        "score": 0.3791,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.3761,
+        "reason": "Frequently Paired Routine"
+      }
+    ],
+    "mig-024": [
+      {
+        "id": "mig-022",
+        "score": 0.4154,
+        "reason": "Formula & Ingredient Synergy"
+      },
+      {
+        "id": "mig-005",
+        "score": 0.3924,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-004",
+        "score": 0.3834,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-029",
+        "score": 0.3814,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-009",
+        "score": 0.3806,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.3785,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-018",
+        "score": 0.3781,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.3688,
+        "reason": "Frequently Paired Routine"
+      }
+    ],
+    "mig-025": [
+      {
+        "id": "mig-020",
+        "score": 0.3778,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-011",
+        "score": 0.3732,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-010",
+        "score": 0.3722,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-036",
+        "score": 0.3701,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-035",
+        "score": 0.3675,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-037",
+        "score": 0.3658,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-026",
+        "score": 0.3606,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-014",
+        "score": 0.1921,
+        "reason": "Complementary Glow Match"
+      }
+    ],
+    "mig-026": [
+      {
+        "id": "mig-010",
+        "score": 0.6659,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-020",
+        "score": 0.5993,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.5337,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-031",
+        "score": 0.5148,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.5103,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.51,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-012",
+        "score": 0.5081,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-001",
+        "score": 0.5065,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-027": [
+      {
+        "id": "mig-012",
+        "score": 0.6687,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.482,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.4755,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.4755,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.4754,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-003",
+        "score": 0.4178,
+        "reason": "Formula & Ingredient Synergy"
+      },
+      {
+        "id": "mig-039",
+        "score": 0.4032,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-028",
+        "score": 0.3635,
+        "reason": "Frequently Paired Routine"
+      }
+    ],
+    "mig-028": [
+      {
+        "id": "mig-012",
+        "score": 0.5816,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.4844,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.4806,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.4754,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.4754,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-003",
+        "score": 0.4037,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-013",
+        "score": 0.3927,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-039",
+        "score": 0.3708,
+        "reason": "Frequently Paired Routine"
+      }
+    ],
+    "mig-029": [
+      {
+        "id": "mig-007",
+        "score": 0.4731,
+        "reason": "Formula & Ingredient Synergy"
+      },
+      {
+        "id": "mig-004",
+        "score": 0.3921,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-009",
+        "score": 0.3827,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-024",
+        "score": 0.3814,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-022",
+        "score": 0.378,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-023",
+        "score": 0.3676,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-038",
+        "score": 0.3665,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-018",
+        "score": 0.3657,
+        "reason": "Frequently Paired Routine"
+      }
+    ],
+    "mig-030": [
+      {
+        "id": "mig-038",
+        "score": 0.6092,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-001",
+        "score": 0.5359,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-031",
+        "score": 0.5357,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-032",
+        "score": 0.535,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-010",
+        "score": 0.5339,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.5296,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-017",
+        "score": 0.5279,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-020",
+        "score": 0.5255,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-031": [
+      {
+        "id": "mig-002",
+        "score": 0.6681,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.6517,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-021",
+        "score": 0.6312,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-008",
+        "score": 0.6031,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-015",
+        "score": 0.5991,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-034",
+        "score": 0.5814,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.5507,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-012",
+        "score": 0.5423,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-032": [
+      {
+        "id": "mig-019",
+        "score": 0.6502,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.6455,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-021",
+        "score": 0.6172,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-008",
+        "score": 0.6123,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-015",
+        "score": 0.5978,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-034",
+        "score": 0.5973,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.55,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.5436,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-033": [
+      {
+        "id": "mig-002",
+        "score": 0.413,
+        "reason": "Formula & Ingredient Synergy"
+      },
+      {
+        "id": "mig-001",
+        "score": 0.3878,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-021",
+        "score": 0.3856,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.3748,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-040",
+        "score": 0.3744,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-015",
+        "score": 0.3716,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-031",
+        "score": 0.3649,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-032",
+        "score": 0.3629,
+        "reason": "Frequently Paired Routine"
+      }
+    ],
+    "mig-034": [
+      {
+        "id": "mig-001",
+        "score": 0.6837,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-032",
+        "score": 0.6623,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-017",
+        "score": 0.6552,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.6526,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-031",
+        "score": 0.6464,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.6109,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.6108,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-014",
+        "score": 0.5812,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-035": [
+      {
+        "id": "mig-010",
+        "score": 0.7275,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-020",
+        "score": 0.6468,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-031",
+        "score": 0.5544,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-017",
+        "score": 0.5524,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-001",
+        "score": 0.5442,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-032",
+        "score": 0.5419,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.5405,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.5081,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-036": [
+      {
+        "id": "mig-026",
+        "score": 0.4077,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-011",
+        "score": 0.4019,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-010",
+        "score": 0.3957,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-025",
+        "score": 0.3701,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-037",
+        "score": 0.3646,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-035",
+        "score": 0.3631,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-020",
+        "score": 0.3563,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.199,
+        "reason": "Complementary Glow Match"
+      }
+    ],
+    "mig-037": [
+      {
+        "id": "mig-020",
+        "score": 0.4383,
+        "reason": "Formula & Ingredient Synergy"
+      },
+      {
+        "id": "mig-011",
+        "score": 0.3836,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-010",
+        "score": 0.3754,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-026",
+        "score": 0.3702,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-025",
+        "score": 0.3658,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-036",
+        "score": 0.3646,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-035",
+        "score": 0.3561,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.1877,
+        "reason": "Complementary Glow Match"
+      }
+    ],
+    "mig-038": [
+      {
+        "id": "mig-016",
+        "score": 0.6372,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.6192,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.5106,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-012",
+        "score": 0.508,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.5059,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-001",
+        "score": 0.503,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-010",
+        "score": 0.5015,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.5014,
+        "reason": "Complete Your Beauty Routine"
+      }
+    ],
+    "mig-039": [
+      {
+        "id": "mig-012",
+        "score": 0.6514,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.482,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-016",
+        "score": 0.4755,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.4755,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-030",
+        "score": 0.4754,
+        "reason": "Complete Your Beauty Routine"
+      },
+      {
+        "id": "mig-003",
+        "score": 0.4596,
+        "reason": "Formula & Ingredient Synergy"
+      },
+      {
+        "id": "mig-027",
+        "score": 0.4032,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-013",
+        "score": 0.3717,
+        "reason": "Frequently Paired Routine"
+      }
+    ],
+    "mig-040": [
+      {
+        "id": "mig-034",
+        "score": 0.4115,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-002",
+        "score": 0.4052,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-001",
+        "score": 0.3824,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-006",
+        "score": 0.3796,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-033",
+        "score": 0.3744,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-031",
+        "score": 0.3659,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-014",
+        "score": 0.3649,
+        "reason": "Frequently Paired Routine"
+      },
+      {
+        "id": "mig-019",
+        "score": 0.3627,
+        "reason": "Frequently Paired Routine"
+      }
+    ]
+  },
+  "trending": [
+    {
+      "id": "mig-001",
+      "popularity_rank": 1,
+      "reason": "MIGRIGA Icon Bestseller"
+    },
+    {
+      "id": "mig-002",
+      "popularity_rank": 2,
+      "reason": "MIGRIGA Icon Bestseller"
+    },
+    {
+      "id": "mig-003",
+      "popularity_rank": 3,
+      "reason": "MIGRIGA Icon Bestseller"
+    },
+    {
+      "id": "mig-004",
+      "popularity_rank": 4,
+      "reason": "MIGRIGA Icon Bestseller"
+    },
+    {
+      "id": "mig-005",
+      "popularity_rank": 5,
+      "reason": "High Customer Synergy"
+    },
+    {
+      "id": "mig-006",
+      "popularity_rank": 6,
+      "reason": "High Customer Synergy"
+    },
+    {
+      "id": "mig-007",
+      "popularity_rank": 7,
+      "reason": "High Customer Synergy"
+    },
+    {
+      "id": "mig-008",
+      "popularity_rank": 8,
+      "reason": "High Customer Synergy"
+    },
+    {
+      "id": "mig-009",
+      "popularity_rank": 9,
+      "reason": "High Customer Synergy"
+    },
+    {
+      "id": "mig-010",
+      "popularity_rank": 10,
+      "reason": "High Customer Synergy"
+    },
+    {
+      "id": "mig-011",
+      "popularity_rank": 11,
+      "reason": "High Customer Synergy"
+    },
+    {
+      "id": "mig-012",
+      "popularity_rank": 12,
+      "reason": "High Customer Synergy"
+    }
+  ]
+}

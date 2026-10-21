@@ -116,6 +116,11 @@ function renderProductCard(product) {
 
       <div class="product-info">
         <span class="product-category-label">${product.categoryName}</span>
+        ${product.recommendation_reason ? `
+          <div class="product-rec-reason" style="font-size: 0.72rem; color: #C5A059; font-weight: 600; letter-spacing: 0.06em; margin: 2px 0 4px; display: flex; align-items: center; gap: 4px;">
+            <span>⚡</span> ${product.recommendation_reason}
+          </div>
+        ` : ''}
         <h3 class="product-title">
           <a href="#quickview" data-quickview-id="${product.id}">${product.name}</a>
         </h3>
