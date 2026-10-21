@@ -13,6 +13,8 @@ import math
 from backend.database import get_db, init_db
 from backend.auth import hash_password, verify_password, generate_token
 from backend.recommendation_engine import engine
+from backend.deps import get_current_user, require_admin
+from backend import analytics_api
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -22,30 +24,13 @@ app = FastAPI(title="MIGRIGA Haute Beauté API", version="2.0.0")
 @app.on_event("startup")
 def on_startup():
     init_db()
+    analytics_api.warm_cache()
 
-# --- Helper: Authentication Dependency ---
-def get_current_user(authorization: Optional[str] = Header(None)):
-    if not authorization:
-        return None
-    token = authorization.replace("Bearer ", "").strip()
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("""
-        SELECT u.id, u.email, u.full_name, u.phone, u.role
-        FROM sessions s
-        JOIN users u ON s.user_id = u.id
-        WHERE s.token = ?
-    """, (token,))
-    row = cursor.fetchone()
-    conn.close()
-    if not row:
-        return None
-    return dict(row)
+# Migriga Analytics API (/api/analytics/*): warehouse, ETL, OLAP, Apriori, RFM/K-Means
+app.include_router(analytics_api.router)
+analytics_api.register_error_handlers(app)
 
-def require_admin(user: Optional[dict] = Depends(get_current_user)):
-    if not user or user.get("role") != "admin":
-        raise HTTPException(status_code=403, detail="Admin privileges required.")
-    return user
+# --- Authentication dependencies live in backend/deps.py (shared with the analytics API) ---
 
 # --- Pydantic Schemas ---
 class LoginRequest(BaseModel):
@@ -597,6 +582,12 @@ def serve_storefront():
 def serve_admin():
     """Serves the MIGRIGA Store Admin Portal."""
     return FileResponse(os.path.join(BASE_DIR, "admin.html"))
+
+@app.get("/analytics")
+@app.get("/analytics.html")
+def serve_analytics():
+    """Serves Migriga Analytics (data warehouse, OLAP, data mining & DWM Lab)."""
+    return FileResponse(os.path.join(BASE_DIR, "analytics.html"))
 
 # Mount static asset folders
 app.mount("/css", StaticFiles(directory=os.path.join(BASE_DIR, "css")), name="css")

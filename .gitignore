@@ -8,3 +8,11 @@ venv/
 .venv/
 .env
 .DS_Store
+
+# Migriga Analytics - generated artefacts (rebuild with: python -m etl.run_etl)
+data/warehouse/*.db
+data/warehouse/*.db-wal
+data/warehouse/*.db-shm
+data/warehouse/*.etl.lock
+data/processed/
+.pytest_cache/
