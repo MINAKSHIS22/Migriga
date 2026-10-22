@@ -3,36 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MIGRIGA | Haute Beauté — Get Started</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>MIGRIGA | British Heritage Living &amp; Retail — Get Started</title>
+  <meta name="description" content="Welcome to MIGRIGA British Heritage Living. Discover 4,082 authentic retail merchandise items mined from 525,000+ UK retail orders. Fine afternoon teaware, candlelit hanging heart lanterns, and vintage keepsakes." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇬🇧</text></svg>">
   
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/style.css?v=retail-20261022" />
+  <link rel="stylesheet" href="css/components.css?v=retail-20261022" />
+  <link rel="stylesheet" href="css/responsive.css?v=retail-20261022" />
 
   <style>
-    /* Full Page Luxury Welcome Presentation */
+    /* Full Page British Heritage Living Welcome Presentation */
     .welcome-wrapper {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background: radial-gradient(circle at 80% 20%, #FAF0E8 0%, #F5E8E0 45%, #F0DFD5 100%);
+      background: radial-gradient(circle at 80% 20%, #FAF5EE 0%, #F5ECE0 45%, #EFE3D5 100%);
+      font-family: var(--font-sans);
+      color: var(--text-dark);
       position: relative;
       overflow-x: hidden;
     }
 
+    /* Top Navigation Header */
     .welcome-header {
       padding: 24px 36px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: relative;
-      z-index: 10;
+      z-index: 20;
+      border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+      background: rgba(250, 245, 238, 0.85);
+      backdrop-filter: blur(10px);
     }
 
     .welcome-brand-logo {
       font-family: var(--font-brand);
-      font-size: 2rem;
+      font-size: 2.1rem;
       letter-spacing: 0.22em;
       color: var(--text-dark);
       text-decoration: none;
@@ -43,20 +53,64 @@
 
     .welcome-brand-sub {
       font-family: var(--font-sans);
-      font-size: 0.62rem;
+      font-size: 0.65rem;
       letter-spacing: 0.32em;
-      color: var(--color-rose-gold);
+      color: #8E5840;
       text-transform: uppercase;
-      margin-top: 4px;
+      font-weight: 700;
+      margin-top: 5px;
     }
 
+    .welcome-nav-pills {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .welcome-nav-pills a {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 9px 18px;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+
+    .pill-ghost {
+      color: var(--text-dark);
+      border: 1px solid var(--border-medium);
+      background: #FFFFFF;
+    }
+
+    .pill-ghost:hover {
+      background: var(--text-dark);
+      color: #FFFFFF;
+      border-color: var(--text-dark);
+    }
+
+    .pill-gold {
+      background: #C5A059;
+      color: #FFFFFF;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(197, 160, 89, 0.35);
+    }
+
+    .pill-gold:hover {
+      background: #8E5840;
+      transform: translateY(-2px);
+    }
+
+    /* Main Showcase Section */
     .welcome-main {
       flex: 1;
       display: flex;
-      align-items: center;
-      padding: 40px 0 60px 0;
+      flex-direction: column;
+      justify-content: center;
+      padding: 50px 0 60px 0;
       position: relative;
-      z-index: 5;
+      z-index: 10;
     }
 
     .welcome-grid {
@@ -64,96 +118,102 @@
       grid-template-columns: 1.15fr 1fr;
       align-items: center;
       gap: 60px;
+      margin-bottom: 60px;
     }
 
     .welcome-content {
-      max-width: 580px;
+      max-width: 600px;
     }
 
     .welcome-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       font-size: 0.8rem;
       font-weight: 700;
-      letter-spacing: 0.24em;
+      letter-spacing: 0.26em;
       text-transform: uppercase;
-      color: var(--color-rose-gold-dark);
+      color: #8E5840;
       margin-bottom: 16px;
     }
 
     .welcome-eyebrow::before {
       content: '';
-      width: 28px;
-      height: 1.5px;
-      background: var(--color-rose-gold);
+      width: 32px;
+      height: 2px;
+      background: #C5A059;
     }
 
     .welcome-heading {
       font-family: var(--font-serif);
-      font-size: 4rem;
+      font-size: 3.6rem;
       font-weight: 500;
-      line-height: 1.1;
+      line-height: 1.12;
       color: var(--text-dark);
       letter-spacing: -0.02em;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .welcome-heading em {
       font-style: italic;
-      color: var(--color-rose-gold);
+      color: #8E5840;
       font-weight: 400;
     }
 
     .welcome-desc {
-      font-size: 1.12rem;
+      font-size: 1.08rem;
       color: var(--text-charcoal);
-      line-height: 1.75;
+      line-height: 1.8;
       margin-bottom: 36px;
     }
 
     .welcome-actions-row {
       display: flex;
       align-items: center;
-      gap: 18px;
-      margin-bottom: 48px;
+      gap: 16px;
+      margin-bottom: 40px;
       flex-wrap: wrap;
     }
 
-    .btn-get-started {
-      padding: 16px 42px;
+    .btn-get-started-cta {
+      padding: 16px 38px;
       font-size: 0.88rem;
       letter-spacing: 0.18em;
       font-weight: 700;
       background-color: var(--text-dark);
       color: #FFFFFF;
       border-radius: var(--radius-pill);
-      box-shadow: 0 8px 24px rgba(26, 24, 23, 0.2);
+      box-shadow: 0 10px 26px rgba(26, 24, 23, 0.25);
       transition: all var(--transition-fast);
       display: inline-flex;
       align-items: center;
       gap: 12px;
+      text-decoration: none;
     }
 
-    .btn-get-started:hover {
-      background-color: var(--color-rose-gold);
+    .btn-get-started-cta:hover {
+      background-color: #8E5840;
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(176, 125, 98, 0.35);
+      box-shadow: 0 14px 34px rgba(142, 88, 64, 0.4);
+      color: #FFFFFF;
     }
 
-    .btn-explore-guest {
+    .btn-explore-store {
       padding: 15px 32px;
-      font-size: 0.84rem;
+      font-size: 0.86rem;
       letter-spacing: 0.14em;
       font-weight: 600;
       color: var(--text-dark);
       border: 1.5px solid var(--text-dark);
       border-radius: var(--radius-pill);
       transition: all var(--transition-fast);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.6);
     }
 
-    .btn-explore-guest:hover {
-      background-color: rgba(26, 24, 23, 0.08);
+    .btn-explore-store:hover {
+      background-color: var(--text-dark);
+      color: #FFFFFF;
     }
 
     /* 3 Value Pillars */
@@ -161,26 +221,29 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
-      border-top: 1px solid rgba(176, 125, 98, 0.25);
+      border-top: 1px solid rgba(197, 160, 89, 0.3);
       padding-top: 28px;
     }
 
     .pillar-item h4 {
       font-size: 0.82rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-dark);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .pillar-item p {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
-    /* Right Side Editorial Media Visual */
+    /* Right Media Showcase */
     .welcome-media-frame {
       position: relative;
     }
@@ -188,14 +251,15 @@
     .welcome-hero-img-wrap {
       border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 25px 60px rgba(176, 125, 98, 0.3);
+      box-shadow: 0 25px 60px rgba(142, 88, 64, 0.22);
       position: relative;
-      background: var(--color-blush-light);
+      background: #FFFFFF;
+      border: 3px solid rgba(255, 255, 255, 0.8);
     }
 
     .welcome-hero-img-wrap img {
       width: 100%;
-      height: 580px;
+      height: 520px;
       object-fit: cover;
       display: block;
       transition: transform var(--transition-slow);
@@ -205,50 +269,134 @@
       transform: scale(1.03);
     }
 
-    /* Floating Card */
+    /* Floating Feature Badge */
     .welcome-card-float {
       position: absolute;
-      bottom: -20px;
+      bottom: -22px;
       left: -24px;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(10px);
-      padding: 16px 22px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      padding: 16px 24px;
       border-radius: var(--radius-lg);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(197, 160, 89, 0.3);
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
     }
 
     .welcome-float-icon {
-      width: 42px;
-      height: 42px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      background: var(--color-blush-light);
+      background: #FAF0E6;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--color-rose-gold);
+      font-size: 1.4rem;
     }
 
     .welcome-float-info strong {
       display: block;
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       color: var(--text-dark);
+      font-weight: 700;
     }
 
     .welcome-float-info span {
-      font-size: 0.74rem;
+      font-size: 0.76rem;
       color: var(--text-muted);
     }
 
-    .welcome-footer {
-      padding: 20px 36px;
-      text-align: center;
-      font-size: 0.78rem;
+    /* 4-Category Retail Showcase Strip */
+    .welcome-categories-bar {
+      background: #FFFFFF;
+      border: 1px solid rgba(197, 160, 89, 0.25);
+      border-radius: 24px;
+      padding: 32px 36px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+      margin-top: 20px;
+    }
+
+    .categories-bar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 22px;
+    }
+
+    .categories-bar-header h3 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--text-dark);
+    }
+
+    .categories-bar-header a {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #8E5840;
+      text-decoration: none;
+    }
+
+    .categories-bar-header a:hover {
+      text-decoration: underline;
+    }
+
+    .welcome-cat-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .welcome-cat-card {
+      display: block;
+      text-decoration: none;
+      background: #FAF6F0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      transition: all var(--transition-fast);
+    }
+
+    .welcome-cat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      border-color: #C5A059;
+    }
+
+    .welcome-cat-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .welcome-cat-card-body {
+      padding: 14px 16px;
+    }
+
+    .welcome-cat-card-body h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .welcome-cat-card-body p {
+      font-size: 0.74rem;
       color: var(--text-muted);
-      border-top: 1px solid rgba(176, 125, 98, 0.15);
+      line-height: 1.4;
+    }
+
+    .welcome-footer-strip {
+      padding: 24px 36px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(197, 160, 89, 0.2);
+      background: rgba(250, 245, 238, 0.9);
       position: relative;
       z-index: 10;
     }
@@ -266,16 +414,13 @@
         justify-content: center;
       }
       .welcome-heading {
-        font-size: 3rem;
+        font-size: 2.8rem;
       }
       .welcome-actions-row {
         justify-content: center;
       }
-      .welcome-pillars {
-        text-align: left;
-      }
-      .welcome-hero-img-wrap img {
-        height: 420px;
+      .welcome-cat-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
       .welcome-card-float {
         left: 20px;
@@ -284,21 +429,12 @@
     }
 
     @media (max-width: 640px) {
-      .welcome-heading {
-        font-size: 2.3rem;
+      .welcome-cat-cards-grid {
+        grid-template-columns: 1fr;
       }
       .welcome-pillars {
         grid-template-columns: 1fr;
-        gap: 14px;
-      }
-      .welcome-actions-row {
-        flex-direction: column;
-        width: 100%;
-      }
-      .btn-get-started, .btn-explore-guest {
-        width: 100%;
-        text-align: center;
-        justify-content: center;
+        gap: 16px;
       }
     }
   </style>
@@ -309,15 +445,18 @@
   <header class="welcome-header">
     <a href="/welcome.html" class="welcome-brand-logo">
       <span>MIGRIGA</span>
-      <span class="welcome-brand-sub">HAUTE BEAUTÉ</span>
+      <span class="welcome-brand-sub">BRITISH HERITAGE LIVING</span>
     </a>
 
-    <div style="display: flex; gap: 14px; align-items: center;">
-      <a href="/login.html" class="btn btn-sm btn-outline" style="border-radius: 9999px;">
-        SIGN IN
+    <div class="welcome-nav-pills">
+      <a href="/login.html" class="pill-ghost">
+        Sign In / Register 👤
       </a>
-      <a href="/login.html" class="btn btn-sm btn-primary" style="border-radius: 9999px;">
-        GET STARTED
+      <a href="/index.html" target="_blank" rel="noopener noreferrer" class="pill-gold">
+        Explore Storefront (£ GBP) ↗
+      </a>
+      <a href="/admin.html" target="_blank" rel="noopener noreferrer" class="pill-ghost" style="color: #8E5840; border-color: #C5A059;">
+        Admin Portal 👑
       </a>
     </div>
   </header>
@@ -328,41 +467,44 @@
       <div class="welcome-grid">
         <!-- Left Content -->
         <div class="welcome-content">
-          <span class="welcome-eyebrow">WELCOME TO MIGRIGA</span>
+          <span class="welcome-eyebrow">WELCOME TO MIGRIGA RETAIL</span>
           <h1 class="welcome-heading">
-            Where Elegance <br />Meets <em>Pure Radiance</em>
+            Where Heritage <br />Meets <em>Cozy Living</em>
           </h1>
           <p class="welcome-desc">
-            Discover our collection of 100% proprietary luxury beauty creations. From botanical glass-skin elixirs and cashmere velvet pigments to French-crafted sillage, MIGRIGA celebrates every version of you.
+            Discover our curated collection of 4,082 authentic British retail merchandise items mined from 525,461 historical UK sales orders. Fine English afternoon teaware, Regency 3-tier cakestands, hanging heart candlelit lanterns, and nostalgic vintage keepsakes.
           </p>
 
-          <!-- CTAs: Get Started -> Login Page -->
+          <!-- CTAs -->
           <div class="welcome-actions-row">
-            <a href="/login.html" class="btn-get-started">
-              GET STARTED
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <a href="/index.html" class="btn-get-started-cta">
+              GET STARTED &amp; SHOP
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </a>
-            <a href="/index.html" class="btn-explore-guest">
-              EXPLORE AS GUEST
+            <a href="/login.html" class="btn-explore-store">
+              PORTAL SIGN IN
+            </a>
+            <a href="/analytics.html" class="btn-explore-store" style="border-color: #C5A059; color: #8E5840;">
+              DATA LAB 📊
             </a>
           </div>
 
           <!-- 3 Value Pillars -->
           <div class="welcome-pillars">
             <div class="pillar-item">
-              <h4>100% MIGRIGA</h4>
-              <p>Exclusively authentic proprietary formulations. No external brands.</p>
+              <h4>🇬🇧 100% AUTHENTIC</h4>
+              <p>Mined from 525,461 verified UK retail sales transaction rows.</p>
             </div>
             <div class="pillar-item">
-              <h4>CLEAN BEAUTY</h4>
-              <p>Dermatologically tested, cruelty-free, and vegan active botanicals.</p>
+              <h4>☕ AFTERNOON TEA</h4>
+              <p>Fine Regency porcelain, cake tier stands, and ceramic teapots.</p>
             </div>
             <div class="pillar-item">
-              <h4>HAUTE LUXURY</h4>
-              <p>Featherlight cashmere textures and all-day dewy radiance.</p>
+              <h4>🕯️ COUNTRY CHARM</h4>
+              <p>Hanging heart filigree lanterns, wicker accents, and Union Jack decor.</p>
             </div>
           </div>
         </div>
@@ -370,29 +512,76 @@
         <!-- Right Visual Presentation -->
         <div class="welcome-media-frame">
           <div class="welcome-hero-img-wrap">
-            <img src="assets/images/hero-model.jpg" alt="MIGRIGA Haute Beauté Model with Glowing Skin" />
+            <img src="assets/images/hero-retail.jpg?v=2" alt="MIGRIGA British Heritage Living Boutique" />
           </div>
 
           <!-- Floating Badge -->
           <div class="welcome-card-float">
             <div class="welcome-float-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-              </svg>
+              ☕
             </div>
             <div class="welcome-float-info">
-              <strong>Award-Winning Rituals</strong>
-              <span>Rated 4.9/5 by 25,000+ Beauty Lovers</span>
+              <strong>Regency Cakestand &amp; Teaware</strong>
+              <span>525,000+ Verified Transactions Across Britain &amp; Europe</span>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- 4-Category Retail Showcase Strip -->
+      <section class="welcome-categories-bar">
+        <div class="categories-bar-header">
+          <div>
+            <h3>Explore 4 Authentic Retail Collections</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Priced in British Pounds (£ GBP) • Mined from the historical UK Online Retail warehouse</p>
+          </div>
+          <a href="/index.html#shop">Browse All 40 Core Products →</a>
+        </div>
+
+        <div class="welcome-cat-cards-grid">
+          <!-- 1. Kitchen & Dining -->
+          <a href="/index.html#shop" class="welcome-cat-card">
+            <img src="assets/images/cat-kitchen.jpg" alt="Kitchen and Dining" loading="lazy" />
+            <div class="welcome-cat-card-body">
+              <h4>Kitchen &amp; Dining</h4>
+              <p>Tiered cakestands, teapots, fine porcelain tea sets, and vintage tins.</p>
+            </div>
+          </a>
+
+          <!-- 2. Home & Living -->
+          <a href="/index.html#shop" class="welcome-cat-card">
+            <img src="assets/images/cat-homeware.jpg" alt="Home and Living" loading="lazy" />
+            <div class="welcome-cat-card-body">
+              <h4>Home &amp; Living</h4>
+              <p>Hanging heart lanterns, wicker crafts, wall signs, and Union Jack door mats.</p>
+            </div>
+          </a>
+
+          <!-- 3. Vintage & Accessories -->
+          <a href="/index.html#shop" class="welcome-cat-card">
+            <img src="assets/images/cat-vintage.jpg" alt="Vintage and Accessories" loading="lazy" />
+            <div class="welcome-cat-card-body">
+              <h4>Vintage &amp; Retro</h4>
+              <p>Red Retrospot storage bags, Union Jack bunting, and parasols.</p>
+            </div>
+          </a>
+
+          <!-- 4. Gifts & Keepsakes -->
+          <a href="/index.html#shop" class="welcome-cat-card">
+            <img src="assets/images/cat-gifts.jpg" alt="Gifts and Keepsakes" loading="lazy" />
+            <div class="welcome-cat-card-body">
+              <h4>Gifts &amp; Keepsakes</h4>
+              <p>Hand-painted bird ornaments, Paper chain kits, and trinket boxes.</p>
+            </div>
+          </a>
+        </div>
+      </section>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="welcome-footer">
-    © 2026 MIGRIGA Beauty. All Rights Reserved. • Mumbai • Paris • New York
+  <footer class="welcome-footer-strip">
+    © 2026 MIGRIGA British Heritage Living &amp; Retail. All Rights Reserved. • London • Bath • Edinburgh • Mined from UK Online Retail Warehouse (525,461 Transactions)
   </footer>
 
 </body>

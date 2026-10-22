@@ -1,4 +1,4 @@
-# MIGRIGA Luxury Beauty - FastAPI Full-Stack Backend
+# MIGRIGA British Heritage Living - FastAPI Full-Stack Backend
 from fastapi import FastAPI, HTTPException, Header, Depends, Query, Request
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
@@ -18,7 +18,17 @@ from backend import analytics_api
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-app = FastAPI(title="MIGRIGA Haute Beauté API", version="2.0.0")
+app = FastAPI(title="MIGRIGA British Heritage Living API", version="2.0.0")
+
+@app.middleware("http")
+async def add_no_cache_headers(request: Request, call_next):
+    response = await call_next(request)
+    path = request.url.path
+    if path.endswith((".html", ".js", ".json")) or path in ("/", "/welcome", "/store", "/admin", "/login", "/analytics"):
+        response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, max-age=0"
+        response.headers["Pragma"] = "no-cache"
+        response.headers["Expires"] = "0"
+    return response
 
 # Initialize database schema on startup
 @app.on_event("startup")
@@ -289,7 +299,7 @@ def apply_coupon(req: CouponApplyRequest):
     conn.close()
 
     if not coupon:
-        raise HTTPException(status_code=400, detail="Invalid coupon code. Try GLOW20, GLOW30 or WELCOME15.")
+        raise HTTPException(status_code=400, detail="Invalid coupon code. Try RETAIL20, HERITAGE30 or WELCOME15.")
 
     return {
         "success": True,
@@ -427,16 +437,16 @@ def get_admin_stats(admin: dict = Depends(require_admin)):
     cursor.execute("SELECT COUNT(*) as count FROM product_recommendations")
     recs_count = cursor.fetchone()["count"]
 
-    beauty_count = 0
+    retail_count = 0
     pjson_path = os.path.join(BASE_DIR, "products.json")
     if os.path.exists(pjson_path):
         try:
             with open(pjson_path, "r", encoding="utf-8") as f:
-                beauty_count = len(json.load(f))
+                retail_count = len(json.load(f))
         except Exception:
-            beauty_count = 15000
+            retail_count = 4082
     else:
-        beauty_count = 15000
+        retail_count = 4082
 
     conn.close()
 
@@ -447,14 +457,16 @@ def get_admin_stats(admin: dict = Depends(require_admin)):
         "total_products": total_products,
         "low_stock_count": low_stock_count,
         "recent_orders": recent_orders,
-        "beauty_dataset_count": beauty_count,
+        "retail_dataset_count": retail_count,
+        "beauty_dataset_count": retail_count,
         "recommendations_count": recs_count,
-        "dataset_source": "convert_beauty_dataset.py (Amazon All Beauty Dataset)",
+        "dataset_source": "UK Online Retail Dataset (online_retail_09_10.csv / migriga_warehouse.db)",
         "model_metadata": engine.metadata
     }
 
+@app.get("/api/admin/retail-dataset")
 @app.get("/api/admin/beauty-dataset")
-def get_admin_beauty_dataset(admin: dict = Depends(require_admin), page: int = 1, page_size: int = 25, search: Optional[str] = None, category: Optional[str] = None):
+def get_admin_retail_dataset(admin: dict = Depends(require_admin), page: int = 1, page_size: int = 25, search: Optional[str] = None, category: Optional[str] = None):
     pjson_path = os.path.join(BASE_DIR, "products.json")
     if not os.path.exists(pjson_path):
         return {"products": [], "total": 0, "page": page, "page_size": page_size, "total_pages": 0}
@@ -465,11 +477,19 @@ def get_admin_beauty_dataset(admin: dict = Depends(require_admin), page: int = 1
         return {"products": [], "total": 0, "page": page, "page_size": page_size, "total_pages": 0, "error": str(e)}
 
     if category and category.lower() != "all":
-        products = [p for p in products if p.get("category", "").lower() == category.lower()]
+        cat_lower = category.lower()
+        products = [p for p in products if p.get("category", "").lower() == cat_lower or p.get("category_name", "").lower() == cat_lower]
 
     if search:
         s = search.lower().strip()
-        products = [p for p in products if s in p.get("name", "").lower() or s in p.get("brand", "").lower() or s in p.get("id", "").lower()]
+        products = [
+            p for p in products
+            if s in p.get("name", "").lower()
+            or s in str(p.get("stock_code", "")).lower()
+            or s in str(p.get("id", "")).lower()
+            or s in p.get("category_name", "").lower()
+            or s in p.get("raw_description", "").lower()
+        ]
 
     total = len(products)
     start = (page - 1) * page_size
@@ -483,6 +503,7 @@ def get_admin_beauty_dataset(admin: dict = Depends(require_admin), page: int = 1
         "page_size": page_size,
         "total_pages": math.ceil(total / page_size) if page_size else 1
     }
+
 
 @app.get("/api/admin/orders")
 def get_admin_orders(admin: dict = Depends(require_admin), status: Optional[str] = None):
@@ -558,36 +579,42 @@ def get_admin_customers(admin: dict = Depends(require_admin)):
 # ==============================================================================
 # STATIC & HTML ROUTES (Get Started -> Login -> Storefront / Admin)
 # ==============================================================================
+HTML_NO_CACHE_HEADERS = {
+    "Cache-Control": "no-cache, no-store, must-revalidate, max-age=0",
+    "Pragma": "no-cache",
+    "Expires": "0"
+}
+
 @app.get("/")
 @app.get("/welcome")
 @app.get("/welcome.html")
 def serve_welcome():
     """Serves the primary Get Started page."""
-    return FileResponse(os.path.join(BASE_DIR, "welcome.html"))
+    return FileResponse(os.path.join(BASE_DIR, "welcome.html"), headers=HTML_NO_CACHE_HEADERS)
 
 @app.get("/login")
 @app.get("/login.html")
 def serve_login():
     """Serves the single unified Login page."""
-    return FileResponse(os.path.join(BASE_DIR, "login.html"))
+    return FileResponse(os.path.join(BASE_DIR, "login.html"), headers=HTML_NO_CACHE_HEADERS)
 
 @app.get("/store")
 @app.get("/index.html")
 def serve_storefront():
     """Serves the MIGRIGA Customer Storefront."""
-    return FileResponse(os.path.join(BASE_DIR, "index.html"))
+    return FileResponse(os.path.join(BASE_DIR, "index.html"), headers=HTML_NO_CACHE_HEADERS)
 
 @app.get("/admin")
 @app.get("/admin.html")
 def serve_admin():
     """Serves the MIGRIGA Store Admin Portal."""
-    return FileResponse(os.path.join(BASE_DIR, "admin.html"))
+    return FileResponse(os.path.join(BASE_DIR, "admin.html"), headers=HTML_NO_CACHE_HEADERS)
 
 @app.get("/analytics")
 @app.get("/analytics.html")
 def serve_analytics():
     """Serves Migriga Analytics (data warehouse, OLAP, data mining & DWM Lab)."""
-    return FileResponse(os.path.join(BASE_DIR, "analytics.html"))
+    return FileResponse(os.path.join(BASE_DIR, "analytics.html"), headers=HTML_NO_CACHE_HEADERS)
 
 # Mount static asset folders
 app.mount("/css", StaticFiles(directory=os.path.join(BASE_DIR, "css")), name="css")

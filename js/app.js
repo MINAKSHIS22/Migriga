@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Initialize Bestsellers Grid (5 key products as requested)
   initBestsellersGrid();
 
-  // 1b. Initialize AI Recommendations Section (Trained on convert_beauty_dataset.py)
+  // 1b. Initialize AI Recommendations Section (Trained on UK Online Retail Market Basket dataset)
   initRecommendationsSection();
 
   // 2. Initialize Full Shop Catalog with filters and sorting
@@ -81,13 +81,7 @@ function initBestsellersGrid() {
   const container = document.getElementById('bestsellers-grid');
   if (!container) return;
 
-  const bestsellers = [
-    PRODUCTS_DATA.find(p => p.id === 'mig-001'),
-    PRODUCTS_DATA.find(p => p.id === 'mig-002'),
-    PRODUCTS_DATA.find(p => p.id === 'mig-003'),
-    PRODUCTS_DATA.find(p => p.id === 'mig-004'),
-    PRODUCTS_DATA.find(p => p.id === 'mig-005'),
-  ].filter(Boolean);
+  const bestsellers = PRODUCTS_DATA.filter(p => p.isBestseller).slice(0, 8);
 
   container.innerHTML = bestsellers.map(p => renderProductCard(p)).join('');
 
@@ -113,7 +107,7 @@ function initBestsellersGrid() {
   });
 }
  
-// 1b. AI Recommendations Section (Frequently Bought Together)
+// 1b. AI Recommendations Section (Frequently Bought Together in UK Retail)
 async function initRecommendationsSection() {
   const container = document.getElementById('recommendations-grid');
   if (!container) return;
@@ -125,9 +119,9 @@ async function initRecommendationsSection() {
     const list = data.trending || [];
     if (list.length > 0) {
       container.innerHTML = list.map(p => {
-        p.categoryName = p.category_name || (p.category ? p.category.charAt(0).toUpperCase() + p.category.slice(1) : 'Beauty');
-        p.originalPrice = p.original_price || Math.round(p.price * 1.25);
-        p.reviewCount = p.review_count || 340;
+        p.categoryName = p.category_name || (p.category ? p.category.charAt(0).toUpperCase() + p.category.slice(1) : 'Heritage Retail');
+        p.originalPrice = p.original_price || Number((p.price * 1.35).toFixed(2));
+        p.reviewCount = p.review_count || 1200;
         return renderProductCard(p);
       }).join('');
       return;
@@ -138,7 +132,7 @@ async function initRecommendationsSection() {
 
   // Fallback to top paired items from PRODUCTS_DATA
   const fallbackList = PRODUCTS_DATA.slice(2, 6).map(p => {
-    return { ...p, recommendation_reason: 'Frequently Bought Together' };
+    return { ...p, recommendation_reason: 'Frequently Bought Together in UK Retail' };
   });
   container.innerHTML = fallbackList.map(p => renderProductCard(p)).join('');
 }
@@ -189,12 +183,12 @@ function renderCatalogProducts() {
     list = list.filter(p => p.category === currentCatalogCategory);
   }
 
-  if (currentPriceRange === 'under-800') {
-    list = list.filter(p => p.price < 800);
-  } else if (currentPriceRange === '800-1200') {
-    list = list.filter(p => p.price >= 800 && p.price <= 1200);
-  } else if (currentPriceRange === 'over-1200') {
-    list = list.filter(p => p.price > 1200);
+  if (currentPriceRange === 'under-5') {
+    list = list.filter(p => p.price < 5.0);
+  } else if (currentPriceRange === '5-15') {
+    list = list.filter(p => p.price >= 5.0 && p.price <= 15.0);
+  } else if (currentPriceRange === 'over-15') {
+    list = list.filter(p => p.price > 15.0);
   }
 
   if (currentCatalogSort === 'price-low') {
@@ -208,7 +202,7 @@ function renderCatalogProducts() {
   }
 
   if (countEl) {
-    countEl.textContent = `Showing all ${list.length} luxury products`;
+    countEl.textContent = `Showing all ${list.length} British heritage items`;
   }
 
   container.innerHTML = list.map(p => renderProductCard(p)).join('');
@@ -673,6 +667,8 @@ function updateUserAccountUI(user) {
       adminNavBtn = document.createElement('a');
       adminNavBtn.id = 'header-admin-portal-btn';
       adminNavBtn.href = '/admin.html';
+      adminNavBtn.target = '_blank';
+      adminNavBtn.rel = 'noopener noreferrer';
       adminNavBtn.className = 'btn btn-sm btn-primary';
       adminNavBtn.style.cssText = 'background: #C5A059; color: #141312; font-weight: 700; border-radius: 9999px; padding: 6px 14px;';
       adminNavBtn.innerHTML = '👑 Admin Portal';
@@ -705,7 +701,7 @@ function updateUserAccountUI(user) {
             <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 14px;">
               Manage customer orders, track inventory, view subscribers, and monitor store analytics.
             </p>
-            <a href="/admin.html" class="btn btn-primary btn-block" style="background: #C5A059; color: #141312; font-weight: 700;">
+            <a href="/admin.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" style="background: #C5A059; color: #141312; font-weight: 700;">
               LAUNCH ADMIN PORTAL 👑
             </a>
           </div>

@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MIGRIGA | Admin Portal & Store Management</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>MIGRIGA | Admin Portal & Retail Store Management</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>">
 
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  
-  <link rel="stylesheet" href="css/admin.css" />
+  <link rel="stylesheet" href="css/style.css?v=retail-20261022" />
+  <link rel="stylesheet" href="css/components.css?v=retail-20261022" />
+  <link rel="stylesheet" href="css/admin.css?v=retail-20261022" />
 </head>
 <body class="admin-body">
 
@@ -17,12 +19,12 @@
   <header class="admin-navbar">
     <div class="admin-brand">
       <h1>MIGRIGA</h1>
-      <span class="admin-badge-pill">Store Administration</span>
+      <span class="admin-badge-pill">Retail Store Administration</span>
     </div>
 
     <div class="admin-nav-actions">
-      <a href="/analytics" class="btn-admin-viewstore">Migriga Analytics ↗</a>
-      <a href="/" class="btn-admin-viewstore">Storefront ↗</a>
+      <a href="/analytics" target="_blank" rel="noopener noreferrer" class="btn-admin-viewstore">Migriga Analytics ↗</a>
+      <a href="/index.html" target="_blank" rel="noopener noreferrer" class="btn-admin-viewstore">Storefront ↗</a>
       
       <div class="admin-user-pill" id="admin-user-pill">
         <div class="admin-user-avatar">👑</div>
@@ -38,11 +40,11 @@
     <!-- Tabs Navigation -->
     <nav class="admin-tabs-nav">
       <button class="admin-tab-btn active" data-tab="overview">📊 Overview & Analytics</button>
-      <button class="admin-tab-btn" data-tab="beautydataset">🌸 Beauty Dataset (15,000)</button>
-      <button class="admin-tab-btn" data-tab="inventory">💄 Store Catalog (<span id="tab-inventory-count">40</span>)</button>
+      <button class="admin-tab-btn" data-tab="retaildataset">🇬🇧 Retail Dataset (<span id="tab-retail-count">4,082</span>)</button>
+      <button class="admin-tab-btn" data-tab="inventory">🏺 Store Catalog (<span id="tab-inventory-count">40</span>)</button>
       <button class="admin-tab-btn" data-tab="orders">📦 Orders (<span id="tab-orders-count">1</span>)</button>
       <button class="admin-tab-btn" data-tab="customers">👥 Customers & Subscribers</button>
-      <button class="admin-tab-btn" data-tab="aimodel">🤖 AI Model & Training</button>
+      <button class="admin-tab-btn" data-tab="aimodel">🤖 AI Market Basket Model</button>
     </nav>
 
     <!-- TAB 1: OVERVIEW -->
@@ -52,13 +54,13 @@
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
           <div>
             <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: #C5A059; font-weight: 700;">⚡ PRIMARY MACHINE LEARNING DATASET</div>
-            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: #FFFFFF; margin: 4px 0;">Amazon All Beauty Dataset (convert_beauty_dataset.py)</h3>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: #FFFFFF; margin: 4px 0;">UK Online Retail Dataset (convert_retail_dataset.py / migriga_warehouse.db)</h3>
             <p style="font-size: 0.84rem; color: #C4BBB3; margin: 0;">
-              <strong>15,000</strong> unique beauty products processed from <code>full-00000-of-00001.parquet</code> • <strong>320</strong> routine synergy recommendation links trained and active.
+              <strong>4,082</strong> unique retail products mined from <strong>525,461</strong> transactions • <strong>320</strong> Market Basket Co-Occurrence &amp; Content Synergy links trained and active.
             </p>
           </div>
           <div style="display: flex; gap: 10px;">
-            <button class="btn btn-primary" onclick="switchTab('beautydataset')" style="padding: 9px 18px; font-size: 0.8rem;">Browse 15,000 Items →</button>
+            <button class="btn btn-primary" onclick="switchTab('retaildataset')" style="padding: 9px 18px; font-size: 0.8rem;">Browse 4,082 Items →</button>
             <button class="action-btn-sm" onclick="switchTab('aimodel')" style="padding: 9px 16px;">View AI Model ↗</button>
           </div>
         </div>
@@ -71,7 +73,7 @@
             <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: #B07D62; font-weight: 700;">📈 MIGRIGA ANALYTICS · DATA WAREHOUSE &amp; DATA MINING</div>
             <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: #FFFFFF; margin: 4px 0;">Star-schema warehouse, OLAP, Apriori &amp; RFM segmentation</h3>
             <p style="font-size: 0.84rem; color: #C4BBB3; margin: 0;">
-              Built from historical online-retail transactions (Online Retail II, UCI). These are not Migriga sales.
+              Built from 525,461 historical UK retail transactions (Online Retail II, UCI). Fully unified with the storefront model.
             </p>
           </div>
           <a class="btn btn-primary" href="/analytics" style="padding: 9px 18px; font-size: 0.8rem;">Open Analytics →</a>
@@ -80,29 +82,29 @@
 
       <div class="admin-kpi-grid">
         <div class="kpi-card">
-          <span class="kpi-label">Beauty Dataset Items</span>
-          <span class="kpi-value gold" id="kpi-dataset-count">15,000</span>
-          <span class="kpi-sub">convert_beauty_dataset.py</span>
+          <span class="kpi-label">Retail Dataset Items</span>
+          <span class="kpi-value gold" id="kpi-dataset-count">4,082</span>
+          <span class="kpi-sub">convert_retail_dataset.py</span>
         </div>
         <div class="kpi-card">
           <span class="kpi-label">Store Catalog Items</span>
           <span class="kpi-value" id="kpi-products-count">40</span>
-          <span class="kpi-sub">Curated MIGRIGA Haute Beauté</span>
+          <span class="kpi-sub">British Heritage Living</span>
         </div>
         <div class="kpi-card">
-          <span class="kpi-label">AI Recommendation Links</span>
+          <span class="kpi-label">AI Market Basket Links</span>
           <span class="kpi-value" id="kpi-recs-count" style="color: #81C784;">320</span>
-          <span class="kpi-sub">Routine & Content Synergy</span>
+          <span class="kpi-sub">Co-Occurrence &amp; Content</span>
         </div>
         <div class="kpi-card">
           <span class="kpi-label">Gross Revenue</span>
-          <span class="kpi-value" id="kpi-revenue">₹899</span>
+          <span class="kpi-value" id="kpi-revenue">£17.45</span>
           <span class="kpi-sub">Customer orders</span>
         </div>
         <div class="kpi-card">
           <span class="kpi-label">Total Orders</span>
           <span class="kpi-value" id="kpi-orders">1</span>
-          <span class="kpi-sub">Confirmed & delivered</span>
+          <span class="kpi-sub">Confirmed &amp; delivered</span>
         </div>
         <div class="kpi-card">
           <span class="kpi-label">Low Stock Alerts</span>
@@ -136,28 +138,28 @@
       </div>
     </section>
 
-    <!-- TAB: BEAUTY DATASET EXPLORER (15,000 PRODUCTS) -->
-    <section class="admin-tab-pane" id="pane-beautydataset" style="display: none;">
+    <!-- TAB: RETAIL DATASET EXPLORER (4,082 PRODUCTS) -->
+    <section class="admin-tab-pane" id="pane-retaildataset" style="display: none;">
       <div class="admin-card">
         <div class="admin-card-header" style="justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
           <div>
-            <h3 class="admin-card-title">Amazon All Beauty Dataset (convert_beauty_dataset.py)</h3>
+            <h3 class="admin-card-title">UK Online Retail Dataset (convert_retail_dataset.py)</h3>
             <p style="font-size: 0.8rem; color: #9C948F; margin-top: 4px;">
-              Extracted from <code>full-00000-of-00001.parquet</code> • <span id="ds-total-count">15,000</span> verified beauty products
+              Extracted from <code>migriga_warehouse.db</code> • <span id="ds-total-count">4,082</span> merchandise products from 525,461 real transactions
             </p>
           </div>
           <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-            <input type="text" id="ds-search-input" placeholder="Search by name, brand, ASIN..." 
+            <input type="text" id="ds-search-input" placeholder="Search title, stock code, category..." 
                    class="admin-select" style="width: 250px; padding: 6px 12px; font-size: 0.82rem;" 
-                   onkeyup="if(event.key==='Enter') searchBeautyDataset()" />
-            <select id="ds-category-filter" class="admin-select" style="padding: 6px 12px; font-size: 0.82rem;" onchange="searchBeautyDataset()">
-              <option value="all">All Categories</option>
-              <option value="Skincare">Skincare</option>
-              <option value="Makeup">Makeup</option>
-              <option value="Haircare">Haircare</option>
-              <option value="Fragrance">Fragrance</option>
+                   onkeyup="if(event.key==='Enter') searchRetailDataset()" />
+            <select id="ds-category-filter" class="admin-select" style="padding: 6px 12px; font-size: 0.82rem;" onchange="searchRetailDataset()">
+              <option value="all">All Retail Categories</option>
+              <option value="kitchen">Kitchen &amp; Dining</option>
+              <option value="homeware">Home &amp; Living</option>
+              <option value="vintage">Vintage &amp; Accessories</option>
+              <option value="gifts">Gifts &amp; Keepsakes</option>
             </select>
-            <button class="action-btn-sm" onclick="searchBeautyDataset()">Search 🔍</button>
+            <button class="action-btn-sm" onclick="searchRetailDataset()">Search 🔍</button>
           </div>
         </div>
 
@@ -166,26 +168,27 @@
             <thead>
               <tr>
                 <th style="width: 50px;">Image</th>
-                <th style="width: 120px;">ASIN</th>
+                <th style="width: 100px;">Stock Code</th>
                 <th>Product Title</th>
-                <th>Brand</th>
                 <th>Category</th>
-                <th>Price</th>
+                <th>Price (£)</th>
+                <th>Units Sold</th>
+                <th>Invoices</th>
                 <th>Rating</th>
               </tr>
             </thead>
-            <tbody id="admin-beautydataset-table-body">
-              <tr><td colspan="7" style="text-align: center; color: #9C948F; padding: 30px;">Loading beauty dataset items...</td></tr>
+            <tbody id="admin-retaildataset-table-body">
+              <tr><td colspan="8" style="text-align: center; color: #9C948F; padding: 30px;">Loading retail dataset items...</td></tr>
             </tbody>
           </table>
         </div>
 
         <!-- Pagination Controls -->
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; padding: 0 4px;">
-          <span style="font-size: 0.82rem; color: #9C948F;" id="ds-page-info">Showing page 1 of 600</span>
+          <span style="font-size: 0.82rem; color: #9C948F;" id="ds-page-info">Showing page 1 of 164</span>
           <div style="display: flex; gap: 8px;">
-            <button class="action-btn-sm" id="ds-prev-btn" onclick="changeBeautyPage(-1)" disabled>← Previous</button>
-            <button class="action-btn-sm" id="ds-next-btn" onclick="changeBeautyPage(1)">Next →</button>
+            <button class="action-btn-sm" id="ds-prev-btn" onclick="changeRetailPage(-1)" disabled>← Previous</button>
+            <button class="action-btn-sm" id="ds-next-btn" onclick="changeRetailPage(1)">Next →</button>
           </div>
         </div>
       </div>
@@ -235,7 +238,7 @@
     <section class="admin-tab-pane" id="pane-inventory" style="display: none;">
       <div class="admin-card">
         <div class="admin-card-header">
-          <h3 class="admin-card-title">Product Stock & Catalog Management</h3>
+          <h3 class="admin-card-title">Product Stock &amp; Catalog Management</h3>
           <button class="action-btn-sm" onclick="fetchProducts()">Refresh Stock ↻</button>
         </div>
         <div class="admin-table-wrap">
@@ -305,25 +308,25 @@
         </div>
       </div>
     </section>
- 
-    <!-- TAB 5: AI MODEL & REAL DATASET TRAINING -->
+
+    <!-- TAB 5: AI MODEL & RETAIL DATASET TRAINING -->
     <section class="admin-tab-pane" id="pane-aimodel" style="display: none;">
       <!-- KPI Stats for Machine Learning Model -->
       <div class="admin-kpi-grid">
         <div class="kpi-card">
           <span class="kpi-label">Model Architecture</span>
-          <span class="kpi-value gold" id="ml-model-type" style="font-size: 1.15rem; line-height: 1.3;">Beauty Routine Hybrid</span>
-          <span class="kpi-sub">TF-IDF Similarity + Routine Synergy</span>
+          <span class="kpi-value gold" id="ml-model-type" style="font-size: 1.15rem; line-height: 1.3;">Market Basket Hybrid</span>
+          <span class="kpi-sub">Co-Occurrence + TF-IDF Similarity</span>
         </div>
         <div class="kpi-card">
           <span class="kpi-label">Model Status</span>
-          <span class="kpi-value" id="ml-status-badge" style="color: #81C784; font-size: 1.3rem;">Ready</span>
-          <span class="kpi-sub" id="ml-last-trained">Trained: Live in-memory</span>
+          <span class="kpi-value" id="ml-status-badge" style="color: #81C784; font-size: 1.3rem;">✓ Trained &amp; Active</span>
+          <span class="kpi-sub" id="ml-last-trained">Trained: Warehouse DB</span>
         </div>
         <div class="kpi-card">
-          <span class="kpi-label">Beauty Dataset Items</span>
-          <span class="kpi-value" id="ml-transactions-count">15,000</span>
-          <span class="kpi-sub" id="ml-dataset-source">Dataset: convert_beauty_dataset.py</span>
+          <span class="kpi-label">Mined Transactions</span>
+          <span class="kpi-value" id="ml-transactions-count">525,461</span>
+          <span class="kpi-sub" id="ml-dataset-source">Source: migriga_warehouse.db</span>
         </div>
         <div class="kpi-card">
           <span class="kpi-label">Catalog Rec Coverage</span>
@@ -336,9 +339,9 @@
       <div class="admin-card" style="margin-bottom: 28px;">
         <div class="admin-card-header" style="justify-content: space-between; align-items: center;">
           <div>
-            <h3 class="admin-card-title">Beauty Dataset Training Pipeline</h3>
+            <h3 class="admin-card-title">Retail Dataset Training Pipeline</h3>
             <p style="font-size: 0.8rem; color: #9C948F; margin-top: 4px;">
-              Train Beauty Routine Synergy and TF-IDF semantic similarity exclusively on <code>convert_beauty_dataset.py</code> (Amazon All Beauty Dataset).
+              Train Market Basket Co-Occurrence and TF-IDF content similarity directly on <code>fact_sales</code> (525,461 UK retail transactions in <code>migriga_warehouse.db</code>).
             </p>
           </div>
           <button class="btn btn-primary" id="btn-trigger-training" onclick="triggerModelTraining()" style="padding: 10px 24px; font-size: 0.82rem;">
@@ -348,7 +351,7 @@
 
         <!-- Training Status Console -->
         <div id="ml-train-console" style="background: #0E0D0D; border: 1px solid #282422; border-radius: 8px; padding: 14px 18px; font-family: monospace; font-size: 0.82rem; color: #A5D6A7; min-height: 70px; max-height: 160px; overflow-y: auto;">
-          > Ready. Model engine initialized. Click "Train Model Now" or run 'py convert_beauty_dataset.py' to retrain exclusively on the beauty dataset.
+          > Ready. Model engine initialized with 525,461 sales lines. Click "Train Model Now" or run 'py convert_retail_dataset.py --train' to retrain on retail transactions.
         </div>
       </div>
 
@@ -358,18 +361,18 @@
           <h3 class="admin-card-title">Live Recommendation Inference Playground</h3>
         </div>
         <p style="font-size: 0.82rem; color: #9C948F; margin-bottom: 16px;">
-          Select any product to inspect real-time AI recommendations, synergy match percentages, and association reasons:
+          Select any retail merchandise item to inspect real-time AI recommendations, co-occurrence shared invoices, and association reasons:
         </p>
 
         <div style="display: flex; gap: 14px; margin-bottom: 20px; align-items: center;">
-          <select class="admin-select" id="ml-test-product-select" onchange="runTestInference()" style="max-width: 420px; padding: 10px 14px; font-size: 0.85rem;">
+          <select class="admin-select" id="ml-test-product-select" onchange="runTestInference()" style="max-width: 480px; padding: 10px 14px; font-size: 0.85rem;">
             <!-- Populated via JS -->
           </select>
           <button class="action-btn-sm" onclick="runTestInference()" style="padding: 10px 18px;">Refresh Inference</button>
         </div>
 
         <!-- Inference Results Container -->
-        <div id="ml-test-results-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px;">
+        <div id="ml-test-results-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px;">
           <!-- Populated via JS -->
         </div>
       </div>
@@ -427,7 +430,6 @@
 
     function checkAdminAuth() {
       if (!adminToken) {
-        // Auto-login as default administrator for seamless instant access
         fetch('/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -471,7 +473,6 @@
         document.getElementById('admin-login-overlay').style.display = 'none';
         loadDashboardData();
       } catch (e) {
-        // Retry auto-login
         localStorage.removeItem('migriga_admin_token');
         adminToken = null;
         checkAdminAuth();
@@ -527,13 +528,16 @@
     }
 
     function switchTab(tabId) {
+      // Map old beautydataset to retaildataset if needed
+      if (tabId === 'beautydataset') tabId = 'retaildataset';
+
       document.querySelectorAll('.admin-tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
       document.querySelectorAll('.admin-tab-pane').forEach(p => p.style.display = 'none');
       const targetPane = document.getElementById(`pane-${tabId}`);
       if (targetPane) targetPane.style.display = 'block';
 
       if (tabId === 'orders') fetchOrders();
-      if (tabId === 'beautydataset') fetchBeautyDataset(1);
+      if (tabId === 'retaildataset') fetchRetailDataset(1);
       if (tabId === 'inventory') fetchProducts();
       if (tabId === 'customers') fetchCustomers();
       if (tabId === 'aimodel') fetchAIModelStatus();
@@ -552,12 +556,16 @@
           headers: { 'Authorization': `Bearer ${adminToken}` }
         });
         const data = await res.json();
-        document.getElementById('kpi-revenue').textContent = '₹' + Number(data.revenue).toLocaleString('en-IN');
+        document.getElementById('kpi-revenue').textContent = '£' + Number(data.revenue).toFixed(2);
         document.getElementById('kpi-orders').textContent = data.total_orders;
         document.getElementById('kpi-lowstock').textContent = data.low_stock_count;
 
+        const retailCount = data.retail_dataset_count || data.beauty_dataset_count || 4082;
         if (document.getElementById('kpi-dataset-count')) {
-          document.getElementById('kpi-dataset-count').textContent = Number(data.beauty_dataset_count || 15000).toLocaleString();
+          document.getElementById('kpi-dataset-count').textContent = Number(retailCount).toLocaleString();
+        }
+        if (document.getElementById('tab-retail-count')) {
+          document.getElementById('tab-retail-count').textContent = Number(retailCount).toLocaleString();
         }
         if (document.getElementById('kpi-products-count')) {
           document.getElementById('kpi-products-count').textContent = data.total_products || 40;
@@ -577,26 +585,26 @@
             <td>${o.customer_name}<br><small style="color: #6E6864;">${o.customer_phone}</small></td>
             <td>${o.city}</td>
             <td>${o.payment_method}</td>
-            <td><strong>₹${Number(o.total).toLocaleString('en-IN')}</strong></td>
+            <td><strong>£${Number(o.total).toFixed(2)}</strong></td>
             <td><span class="status-badge status-${o.status.toLowerCase()}">${o.status}</span></td>
           </tr>
         `).join('');
       } catch (e) {}
     }
 
-    // --- BEAUTY DATASET EXPLORER FUNCTIONS ---
-    let currentBeautyPage = 1;
-    let totalBeautyPages = 600;
+    // --- RETAIL DATASET EXPLORER FUNCTIONS ---
+    let currentRetailPage = 1;
+    let totalRetailPages = 164;
 
-    async function fetchBeautyDataset(page = 1) {
-      currentBeautyPage = page;
+    async function fetchRetailDataset(page = 1) {
+      currentRetailPage = page;
       const search = document.getElementById('ds-search-input') ? document.getElementById('ds-search-input').value.trim() : '';
       const category = document.getElementById('ds-category-filter') ? document.getElementById('ds-category-filter').value : 'all';
-      const tbody = document.getElementById('admin-beautydataset-table-body');
-      tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: #9C948F; padding: 24px;">Loading page ${page}...</td></tr>`;
+      const tbody = document.getElementById('admin-retaildataset-table-body');
+      tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: #9C948F; padding: 24px;">Loading page ${page}...</td></tr>`;
 
       try {
-        let url = `/api/admin/beauty-dataset?page=${page}&page_size=25`;
+        let url = `/api/admin/retail-dataset?page=${page}&page_size=25`;
         if (search) url += `&search=${encodeURIComponent(search)}`;
         if (category && category !== 'all') url += `&category=${encodeURIComponent(category)}`;
 
@@ -605,53 +613,53 @@
         });
         const data = await res.json();
         const products = data.products || [];
-        totalBeautyPages = data.total_pages || 1;
+        totalRetailPages = data.total_pages || 1;
 
         document.getElementById('ds-total-count').textContent = Number(data.total || 0).toLocaleString();
-        document.getElementById('ds-page-info').textContent = `Showing page ${page} of ${totalBeautyPages} (${Number(data.total).toLocaleString()} products)`;
+        document.getElementById('ds-page-info').textContent = `Showing page ${page} of ${totalRetailPages} (${Number(data.total).toLocaleString()} merchandise items)`;
         document.getElementById('ds-prev-btn').disabled = (page <= 1);
-        document.getElementById('ds-next-btn').disabled = (page >= totalBeautyPages);
+        document.getElementById('ds-next-btn').disabled = (page >= totalRetailPages);
 
         if (products.length === 0) {
-          tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: #9C948F; padding: 30px;">No matching products found in dataset.</td></tr>`;
+          tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: #9C948F; padding: 30px;">No matching products found in retail dataset.</td></tr>`;
           return;
         }
 
         tbody.innerHTML = products.map(p => `
           <tr>
             <td>
-              ${p.image ? `<img src="${p.image}" alt="" style="width: 36px; height: 36px; object-fit: cover; border-radius: 4px; background: #282422;" onerror="this.style.display='none'"/>` : `<div style="width:36px;height:36px;background:#282422;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:12px;">🌸</div>`}
+              <img src="${p.image || 'assets/images/cat-kitchen.jpg'}" alt="" style="width: 36px; height: 36px; object-fit: cover; border-radius: 4px; background: #282422;" onerror="this.src='assets/images/hero-retail.jpg'"/>
             </td>
-            <td><code style="font-size: 0.74rem; color: #C5A059;">${p.id}</code></td>
+            <td><code style="font-size: 0.76rem; color: #C5A059; font-weight: 700;">${p.stock_code || p.id}</code></td>
             <td style="max-width: 340px;">
               <strong style="color: #fff; font-size: 0.82rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;" title="${p.name}">
                 ${p.name}
               </strong>
             </td>
-            <td style="font-size: 0.78rem; color: #C4BBB3;">${p.brand || 'MIGRIGA'}</td>
-            <td><span class="status-badge" style="background: rgba(197, 160, 89, 0.15); color: #C5A059; font-size: 0.7rem;">${p.category || 'Beauty'}</span></td>
-            <td><strong>${p.price !== null && p.price !== undefined ? `$${p.price}` : '—'}</strong></td>
+            <td><span class="status-badge" style="background: rgba(197, 160, 89, 0.15); color: #C5A059; font-size: 0.7rem;">${p.category_name || p.category}</span></td>
+            <td><strong>£${Number(p.price || 0).toFixed(2)}</strong></td>
+            <td style="font-size: 0.8rem; color: #81C784;">${Number(p.units_sold || 0).toLocaleString()}</td>
+            <td style="font-size: 0.8rem; color: #C4BBB3;">${Number(p.invoices_count || 0).toLocaleString()}</td>
             <td>
               <span style="font-size: 0.78rem; color: #FFB74D;">
-                ★ ${p.rating ? p.rating.toFixed(1) : '—'} 
-                <span style="color: #7A726C; font-size: 0.72rem;">(${p.ratingCount || 0})</span>
+                ★ ${p.rating ? Number(p.rating).toFixed(1) : '4.8'}
               </span>
             </td>
           </tr>
         `).join('');
       } catch (e) {
-        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: #FF8A80; padding: 24px;">Error loading dataset: ${e.message}</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: #FF8A80; padding: 24px;">Error loading retail dataset: ${e.message}</td></tr>`;
       }
     }
 
-    function searchBeautyDataset() {
-      fetchBeautyDataset(1);
+    function searchRetailDataset() {
+      fetchRetailDataset(1);
     }
 
-    function changeBeautyPage(delta) {
-      const targetPage = currentBeautyPage + delta;
-      if (targetPage >= 1 && targetPage <= totalBeautyPages) {
-        fetchBeautyDataset(targetPage);
+    function changeRetailPage(delta) {
+      const targetPage = currentRetailPage + delta;
+      if (targetPage >= 1 && targetPage <= totalRetailPages) {
+        fetchRetailDataset(targetPage);
       }
     }
 
@@ -691,7 +699,7 @@
           <td>
             ${(o.items || []).map(i => `<div>${i.product_name} <strong>(x${i.qty})</strong></div>`).join('')}
           </td>
-          <td><strong>₹${Number(o.total).toLocaleString('en-IN')}</strong></td>
+          <td><strong>£${Number(o.total).toFixed(2)}</strong></td>
           <td>
             <span class="status-badge status-${o.status.toLowerCase()}">${o.status}</span>
           </td>
@@ -748,15 +756,15 @@
           <div style="display: flex; flex-direction: column; gap: 8px;">
             ${(order.items || []).map(i => `
               <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #282422; padding-bottom: 6px;">
-                <span>${i.product_name} ${i.shade ? `(${i.shade})` : ''} ${i.size ? `• ${i.size}` : ''}</span>
-                <span><strong>x${i.qty}</strong> • ₹${Number(i.price * i.qty).toLocaleString('en-IN')}</span>
+                <span>${i.product_name} ${i.size ? `• ${i.size}` : ''}</span>
+                <span><strong>x${i.qty}</strong> • £${Number(i.price * i.qty).toFixed(2)}</span>
               </div>
             `).join('')}
           </div>
 
           <div style="display: flex; justify-content: space-between; font-size: 1.1rem; font-weight: 700; color: #C5A059; border-top: 1px dashed #3A3532; padding-top: 10px;">
             <span>Order Total:</span>
-            <span>₹${Number(order.total).toLocaleString('en-IN')}</span>
+            <span>£${Number(order.total).toFixed(2)}</span>
           </div>
         </div>
       `;
@@ -779,7 +787,7 @@
             <td><code>${p.id}</code></td>
             <td><strong>${p.name}</strong></td>
             <td>${p.category_name}</td>
-            <td>₹${p.price}</td>
+            <td>£${Number(p.price).toFixed(2)}</td>
             <td>
               <span style="font-weight: 700; ${p.stock <= 30 ? 'color: #FFB74D;' : 'color: #81C784;'}">
                 ${p.stock} units
@@ -854,12 +862,12 @@
         const data = await res.json();
         const meta = data.metadata || {};
 
-        document.getElementById('ml-model-type').textContent = meta.model_type ? 'Beauty Routine Hybrid' : 'Initializing';
-        document.getElementById('ml-status-badge').textContent = meta.status === 'trained' ? '✓ Trained & Active' : 'Active (Fallback)';
+        document.getElementById('ml-model-type').textContent = meta.model_type ? 'Market Basket Hybrid' : 'Initializing';
+        document.getElementById('ml-status-badge').textContent = meta.status === 'trained' ? '✓ Trained & Active' : 'Active';
         document.getElementById('ml-status-badge').style.color = meta.status === 'trained' ? '#81C784' : '#FFB74D';
-        document.getElementById('ml-last-trained').textContent = meta.trained_at ? `Trained: ${new Date(meta.trained_at).toLocaleTimeString()}` : 'In-Memory Engine';
-        document.getElementById('ml-transactions-count').textContent = Number(meta.beauty_dataset_records || 15000).toLocaleString();
-        document.getElementById('ml-dataset-source').textContent = `Source: ${meta.dataset_source || 'convert_beauty_dataset.py'}`;
+        document.getElementById('ml-last-trained').textContent = meta.trained_at ? `Trained: ${new Date(meta.trained_at).toLocaleTimeString()}` : 'Warehouse Mined';
+        document.getElementById('ml-transactions-count').textContent = Number(meta.total_transactions_analyzed || 525461).toLocaleString();
+        document.getElementById('ml-dataset-source').textContent = `Source: migriga_warehouse.db (525k transactions)`;
         document.getElementById('ml-coverage-pct').textContent = `${meta.coverage_percent || 100}%`;
         document.getElementById('ml-indexed-products').textContent = `${meta.total_products_indexed || 40} Products Indexed`;
 
@@ -874,7 +882,7 @@
       const consoleBox = document.getElementById('ml-train-console');
       btn.disabled = true;
       btn.textContent = '⏳ Training In Progress...';
-      consoleBox.innerHTML += `<br>> [${new Date().toLocaleTimeString()}] Triggering model training on convert_beauty_dataset.py...`;
+      consoleBox.innerHTML += `<br>> [${new Date().toLocaleTimeString()}] Triggering model training on UK Retail warehouse transactions (fact_sales)...`;
       consoleBox.scrollTop = consoleBox.scrollHeight;
 
       try {
@@ -885,7 +893,7 @@
         const data = await res.json();
         if (!res.ok) throw new Error(data.detail || 'Training failed');
 
-        consoleBox.innerHTML += `<br><span style="color: #69F0AE;">> [SUCCESS] Model trained successfully! Indexed ${data.metadata?.total_products_indexed || 40} products across ${data.metadata?.beauty_dataset_records || 15000} items from convert_beauty_dataset.py.</span>`;
+        consoleBox.innerHTML += `<br><span style="color: #69F0AE;">> [SUCCESS] Model trained successfully! Mined ${Number(data.metadata?.total_transactions_analyzed || 525461).toLocaleString()} transactions across ${data.metadata?.retail_dataset_records || 4082} merchandise products.</span>`;
         consoleBox.scrollTop = consoleBox.scrollHeight;
         fetchAIModelStatus();
       } catch (err) {
@@ -908,7 +916,7 @@
         catalogProductsCache = data.products || [];
 
         select.innerHTML = catalogProductsCache.map(p => `
-          <option value="${p.id}">[${p.category_name}] ${p.name} (₹${p.price})</option>
+          <option value="${p.id}">[${p.category_name}] ${p.name} (£${Number(p.price).toFixed(2)})</option>
         `).join('');
 
         runTestInference();
@@ -921,7 +929,7 @@
       const grid = document.getElementById('ml-test-results-grid');
       if (!productId) return;
 
-      grid.innerHTML = '<div style="color: #9C948F; grid-column: 1/-1;">Computing model recommendations...</div>';
+      grid.innerHTML = '<div style="color: #9C948F; grid-column: 1/-1;">Computing market basket associations...</div>';
 
       try {
         const res = await fetch(`/api/recommendations/product/${productId}?limit=4`);
@@ -939,10 +947,10 @@
               <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(197, 160, 89, 0.2); color: #C5A059; padding: 2px 8px; border-radius: 12px;">
                 ★ ${Math.round((r.recommendation_score || 0.85) * 100)}% Match
               </span>
-              <span style="font-size: 0.75rem; color: #81C784;">${r.recommendation_reason || 'Pairs Together'}</span>
+              <span style="font-size: 0.75rem; color: #81C784;">${r.recommendation_reason || 'Frequently Bought Together'}</span>
             </div>
             <div style="font-size: 0.92rem; font-weight: 600; color: #fff; margin-top: 4px;">${r.name}</div>
-            <div style="font-size: 0.78rem; color: #A8A199;">Category: ${r.category_name} • ₹${r.price}</div>
+            <div style="font-size: 0.78rem; color: #A8A199;">Category: ${r.category_name} • £${Number(r.price).toFixed(2)}</div>
           </div>
         `).join('');
       } catch (e) {

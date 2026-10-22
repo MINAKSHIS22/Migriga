@@ -7,8 +7,24 @@ class MigrigaStore {
     this.currentUser = this.loadFromStorage('migriga_user', null);
     this.token = localStorage.getItem('migriga_token') || null;
     this.orderHistory = [];
-    this.freeShippingThreshold = 999;
+    this.freeShippingThreshold = 35; // £35 UK Free Delivery Threshold
     this.subscribers = [];
+
+    // Automatically purge legacy cosmetic items from localStorage
+    if (Array.isArray(this.cart)) {
+      const initialLen = this.cart.length;
+      this.cart = this.cart.filter(item => item && item.id && item.id.startsWith('ret-'));
+      if (this.cart.length !== initialLen) {
+        this.saveToStorage('migriga_cart', this.cart);
+      }
+    }
+    if (Array.isArray(this.wishlist)) {
+      const initialWishLen = this.wishlist.length;
+      this.wishlist = this.wishlist.filter(id => typeof id === 'string' && id.startsWith('ret-'));
+      if (this.wishlist.length !== initialWishLen) {
+        this.saveToStorage('migriga_wishlist', this.wishlist);
+      }
+    }
 
     // Fetch initial order history from backend if logged in
     if (this.currentUser) {

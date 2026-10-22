@@ -1,1761 +1,2414 @@
 {
   "metadata": {
     "status": "trained",
-    "model_type": "Beauty Dataset ML Recommender (TF-IDF Similarity + Cross-Routine Synergy + Bayesian Popularity)",
-    "trained_at": "2026-10-21T09:17:31.517929",
-    "dataset_source": "convert_beauty_dataset.py (Amazon All Beauty Dataset)",
+    "model_type": "Hybrid Market Basket Co-Occurrence + TF-IDF Content Similarity",
+    "trained_at": "2026-10-22T12:58:20.746655",
+    "dataset_source": "UK Online Retail Dataset (online_retail_09_10.csv / migriga_warehouse.db)",
+    "total_transactions_analyzed": 525461,
     "total_products_indexed": 40,
-    "beauty_dataset_records": 15000,
+    "retail_dataset_records": 4082,
     "coverage_percent": 100.0,
     "metrics": {
       "total_catalog_products": 40,
       "recommendations_per_product": 8,
       "total_links_generated": 320,
-      "dataset_source_file": "full-00000-of-00001.parquet"
+      "warehouse_database": "migriga_warehouse.db"
     }
   },
   "recommendations": {
-    "mig-001": [
+    "ret-22423": [
       {
-        "id": "mig-021",
-        "score": 0.6686,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.9884,
+        "reason": "Frequently Bought Together (157 Shared Invoices)",
+        "shared_invoices": 157
       },
       {
-        "id": "mig-019",
-        "score": 0.6633,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.9824,
+        "reason": "Frequently Bought Together (315 Shared Invoices)",
+        "shared_invoices": 315
       },
       {
-        "id": "mig-002",
-        "score": 0.6528,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.9822,
+        "reason": "Frequently Bought Together (194 Shared Invoices)",
+        "shared_invoices": 194
       },
       {
-        "id": "mig-008",
-        "score": 0.6212,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.9808,
+        "reason": "Frequently Bought Together (245 Shared Invoices)",
+        "shared_invoices": 245
       },
       {
-        "id": "mig-034",
-        "score": 0.6187,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21843",
+        "stock_code": "21843",
+        "score": 0.9675,
+        "reason": "Frequently Bought Together (298 Shared Invoices)",
+        "shared_invoices": 298
       },
       {
-        "id": "mig-015",
-        "score": 0.5899,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22090",
+        "stock_code": "22090",
+        "score": 0.9665,
+        "reason": "Frequently Bought Together (203 Shared Invoices)",
+        "shared_invoices": 203
       },
       {
-        "id": "mig-030",
-        "score": 0.5509,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22114",
+        "stock_code": "22114",
+        "score": 0.9664,
+        "reason": "Frequently Bought Together (190 Shared Invoices)",
+        "shared_invoices": 190
       },
       {
-        "id": "mig-016",
-        "score": 0.547,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20685",
+        "stock_code": "20685",
+        "score": 0.9661,
+        "reason": "Frequently Bought Together (158 Shared Invoices)",
+        "shared_invoices": 158
       }
     ],
-    "mig-002": [
+    "ret-85123a": [
       {
-        "id": "mig-031",
-        "score": 0.6531,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21733",
+        "stock_code": "21733",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (771 Shared Invoices)",
+        "shared_invoices": 771
       },
       {
-        "id": "mig-017",
-        "score": 0.6458,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22189",
+        "stock_code": "22189",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (386 Shared Invoices)",
+        "shared_invoices": 386
       },
       {
-        "id": "mig-001",
-        "score": 0.6378,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-48138",
+        "stock_code": "48138",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (287 Shared Invoices)",
+        "shared_invoices": 287
       },
       {
-        "id": "mig-006",
-        "score": 0.6326,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22197",
+        "stock_code": "22197",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (247 Shared Invoices)",
+        "shared_invoices": 247
       },
       {
-        "id": "mig-032",
-        "score": 0.6305,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-48194",
+        "stock_code": "48194",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (224 Shared Invoices)",
+        "shared_invoices": 224
       },
       {
-        "id": "mig-021",
-        "score": 0.6267,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-79321",
+        "stock_code": "79321",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (115 Shared Invoices)",
+        "shared_invoices": 115
       },
       {
-        "id": "mig-014",
-        "score": 0.5527,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21623",
+        "stock_code": "21623",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (91 Shared Invoices)",
+        "shared_invoices": 91
       },
       {
-        "id": "mig-020",
-        "score": 0.5459,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21137",
+        "stock_code": "21137",
+        "score": 0.9038,
+        "reason": "Frequently Bought Together (41 Shared Invoices)",
+        "shared_invoices": 41
       }
     ],
-    "mig-003": [
+    "ret-85099b": [
       {
-        "id": "mig-012",
-        "score": 0.6566,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22386",
+        "stock_code": "22386",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (629 Shared Invoices)",
+        "shared_invoices": 629
       },
       {
-        "id": "mig-016",
-        "score": 0.4806,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20725",
+        "stock_code": "20725",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (548 Shared Invoices)",
+        "shared_invoices": 548
       },
       {
-        "id": "mig-002",
-        "score": 0.4755,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20914",
+        "stock_code": "20914",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (294 Shared Invoices)",
+        "shared_invoices": 294
       },
       {
-        "id": "mig-019",
-        "score": 0.4755,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20685",
+        "stock_code": "20685",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (266 Shared Invoices)",
+        "shared_invoices": 266
       },
       {
-        "id": "mig-030",
-        "score": 0.4755,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (237 Shared Invoices)",
+        "shared_invoices": 237
       },
       {
-        "id": "mig-039",
-        "score": 0.4596,
-        "reason": "Formula & Ingredient Synergy"
+        "id": "ret-21843",
+        "stock_code": "21843",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (193 Shared Invoices)",
+        "shared_invoices": 193
       },
       {
-        "id": "mig-027",
-        "score": 0.4178,
-        "reason": "Formula & Ingredient Synergy"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (171 Shared Invoices)",
+        "shared_invoices": 171
       },
       {
-        "id": "mig-028",
-        "score": 0.4037,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (165 Shared Invoices)",
+        "shared_invoices": 165
       }
     ],
-    "mig-004": [
+    "ret-84879": [
       {
-        "id": "mig-022",
-        "score": 0.6503,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21754",
+        "stock_code": "21754",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (246 Shared Invoices)",
+        "shared_invoices": 246
       },
       {
-        "id": "mig-007",
-        "score": 0.6223,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21232",
+        "stock_code": "21232",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (154 Shared Invoices)",
+        "shared_invoices": 154
       },
       {
-        "id": "mig-005",
-        "score": 0.597,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22086",
+        "stock_code": "22086",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (108 Shared Invoices)",
+        "shared_invoices": 108
       },
       {
-        "id": "mig-009",
-        "score": 0.5899,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-82484",
+        "stock_code": "82484",
+        "score": 0.985,
+        "reason": "Frequently Bought Together (84 Shared Invoices)",
+        "shared_invoices": 84
       },
       {
-        "id": "mig-030",
-        "score": 0.3923,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.7303,
+        "reason": "Frequently Bought Together (133 Shared Invoices)",
+        "shared_invoices": 133
       },
       {
-        "id": "mig-029",
-        "score": 0.3921,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22197",
+        "stock_code": "22197",
+        "score": 0.7253,
+        "reason": "Frequently Bought Together (85 Shared Invoices)",
+        "shared_invoices": 85
       },
       {
-        "id": "mig-018",
-        "score": 0.3881,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-48194",
+        "stock_code": "48194",
+        "score": 0.7246,
+        "reason": "Frequently Bought Together (79 Shared Invoices)",
+        "shared_invoices": 79
       },
       {
-        "id": "mig-024",
-        "score": 0.3834,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-85123a",
+        "stock_code": "85123A",
+        "score": 0.7235,
+        "reason": "Frequently Bought Together (441 Shared Invoices)",
+        "shared_invoices": 441
       }
     ],
-    "mig-005": [
+    "ret-22086": [
       {
-        "id": "mig-009",
-        "score": 0.6621,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21232",
+        "stock_code": "21232",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (132 Shared Invoices)",
+        "shared_invoices": 132
       },
       {
-        "id": "mig-024",
-        "score": 0.3924,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-21754",
+        "stock_code": "21754",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (122 Shared Invoices)",
+        "shared_invoices": 122
       },
       {
-        "id": "mig-022",
-        "score": 0.3889,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-84879",
+        "stock_code": "84879",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (108 Shared Invoices)",
+        "shared_invoices": 108
       },
       {
-        "id": "mig-016",
-        "score": 0.3711,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-82484",
+        "stock_code": "82484",
+        "score": 0.9087,
+        "reason": "Frequently Bought Together (42 Shared Invoices)",
+        "shared_invoices": 42
       },
       {
-        "id": "mig-038",
-        "score": 0.3679,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22910",
+        "stock_code": "22910",
+        "score": 0.8172,
+        "reason": "Frequently Bought Together (341 Shared Invoices)",
+        "shared_invoices": 341
       },
       {
-        "id": "mig-023",
-        "score": 0.3635,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22083",
+        "stock_code": "22083",
+        "score": 0.7934,
+        "reason": "Frequently Bought Together (242 Shared Invoices)",
+        "shared_invoices": 242
       },
       {
-        "id": "mig-018",
-        "score": 0.3628,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22090",
+        "stock_code": "22090",
+        "score": 0.7426,
+        "reason": "Frequently Bought Together (92 Shared Invoices)",
+        "shared_invoices": 92
       },
       {
-        "id": "mig-029",
-        "score": 0.3591,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.7322,
+        "reason": "Frequently Bought Together (135 Shared Invoices)",
+        "shared_invoices": 135
       }
     ],
-    "mig-006": [
+    "ret-47566": [
       {
-        "id": "mig-019",
-        "score": 0.6645,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (237 Shared Invoices)",
+        "shared_invoices": 237
       },
       {
-        "id": "mig-002",
-        "score": 0.6476,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22090",
+        "stock_code": "22090",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (201 Shared Invoices)",
+        "shared_invoices": 201
       },
       {
-        "id": "mig-021",
-        "score": 0.6081,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (171 Shared Invoices)",
+        "shared_invoices": 171
       },
       {
-        "id": "mig-008",
-        "score": 0.5965,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (98 Shared Invoices)",
+        "shared_invoices": 98
       },
       {
-        "id": "mig-034",
-        "score": 0.5876,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21843",
+        "stock_code": "21843",
+        "score": 0.9875,
+        "reason": "Frequently Bought Together (99 Shared Invoices)",
+        "shared_invoices": 99
       },
       {
-        "id": "mig-015",
-        "score": 0.5844,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22114",
+        "stock_code": "22114",
+        "score": 0.9864,
+        "reason": "Frequently Bought Together (95 Shared Invoices)",
+        "shared_invoices": 95
       },
       {
-        "id": "mig-016",
-        "score": 0.5453,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20685",
+        "stock_code": "20685",
+        "score": 0.986,
+        "reason": "Frequently Bought Together (106 Shared Invoices)",
+        "shared_invoices": 106
       },
       {
-        "id": "mig-030",
-        "score": 0.5446,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22112",
+        "stock_code": "22112",
+        "score": 0.9858,
+        "reason": "Frequently Bought Together (68 Shared Invoices)",
+        "shared_invoices": 68
       }
     ],
-    "mig-007": [
+    "ret-84347": [
       {
-        "id": "mig-009",
-        "score": 0.6481,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.9626,
+        "reason": "Frequently Bought Together (74 Shared Invoices)",
+        "shared_invoices": 74
       },
       {
-        "id": "mig-029",
-        "score": 0.4731,
-        "reason": "Formula & Ingredient Synergy"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.9623,
+        "reason": "Frequently Bought Together (59 Shared Invoices)",
+        "shared_invoices": 59
       },
       {
-        "id": "mig-022",
-        "score": 0.3948,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22114",
+        "stock_code": "22114",
+        "score": 0.9483,
+        "reason": "Frequently Bought Together (70 Shared Invoices)",
+        "shared_invoices": 70
       },
       {
-        "id": "mig-004",
-        "score": 0.3823,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-20685",
+        "stock_code": "20685",
+        "score": 0.9481,
+        "reason": "Frequently Bought Together (50 Shared Invoices)",
+        "shared_invoices": 50
       },
       {
-        "id": "mig-016",
-        "score": 0.3788,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22112",
+        "stock_code": "22112",
+        "score": 0.9479,
+        "reason": "Frequently Bought Together (69 Shared Invoices)",
+        "shared_invoices": 69
       },
       {
-        "id": "mig-024",
-        "score": 0.3682,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-20725",
+        "stock_code": "20725",
+        "score": 0.9478,
+        "reason": "Frequently Bought Together (69 Shared Invoices)",
+        "shared_invoices": 69
       },
       {
-        "id": "mig-038",
-        "score": 0.3635,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-21212",
+        "stock_code": "21212",
+        "score": 0.9447,
+        "reason": "Frequently Bought Together (96 Shared Invoices)",
+        "shared_invoices": 96
       },
       {
-        "id": "mig-018",
-        "score": 0.3573,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22423",
+        "stock_code": "22423",
+        "score": 0.9439,
+        "reason": "Frequently Bought Together (91 Shared Invoices)",
+        "shared_invoices": 91
       }
     ],
-    "mig-008": [
+    "ret-21843": [
       {
-        "id": "mig-019",
-        "score": 0.6476,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21212",
+        "stock_code": "21212",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (332 Shared Invoices)",
+        "shared_invoices": 332
       },
       {
-        "id": "mig-002",
-        "score": 0.6439,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (193 Shared Invoices)",
+        "shared_invoices": 193
       },
       {
-        "id": "mig-001",
-        "score": 0.6412,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20725",
+        "stock_code": "20725",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (156 Shared Invoices)",
+        "shared_invoices": 156
       },
       {
-        "id": "mig-017",
-        "score": 0.6333,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20685",
+        "stock_code": "20685",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (140 Shared Invoices)",
+        "shared_invoices": 140
       },
       {
-        "id": "mig-032",
-        "score": 0.6323,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (86 Shared Invoices)",
+        "shared_invoices": 86
       },
       {
-        "id": "mig-031",
-        "score": 0.6231,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.9889,
+        "reason": "Frequently Bought Together (114 Shared Invoices)",
+        "shared_invoices": 114
       },
       {
-        "id": "mig-006",
-        "score": 0.6165,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.9875,
+        "reason": "Frequently Bought Together (99 Shared Invoices)",
+        "shared_invoices": 99
       },
       {
-        "id": "mig-020",
-        "score": 0.5366,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20914",
+        "stock_code": "20914",
+        "score": 0.9849,
+        "reason": "Frequently Bought Together (216 Shared Invoices)",
+        "shared_invoices": 216
       }
     ],
-    "mig-009": [
+    "ret-48138": [
       {
-        "id": "mig-005",
-        "score": 0.6621,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85123a",
+        "stock_code": "85123A",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (287 Shared Invoices)",
+        "shared_invoices": 287
       },
       {
-        "id": "mig-022",
-        "score": 0.6593,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-48194",
+        "stock_code": "48194",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (212 Shared Invoices)",
+        "shared_invoices": 212
       },
       {
-        "id": "mig-007",
-        "score": 0.6481,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21733",
+        "stock_code": "21733",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (79 Shared Invoices)",
+        "shared_invoices": 79
       },
       {
-        "id": "mig-029",
-        "score": 0.3827,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22197",
+        "stock_code": "22197",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (77 Shared Invoices)",
+        "shared_invoices": 77
       },
       {
-        "id": "mig-024",
-        "score": 0.3806,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22189",
+        "stock_code": "22189",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (69 Shared Invoices)",
+        "shared_invoices": 69
       },
       {
-        "id": "mig-018",
-        "score": 0.3738,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-21623",
+        "stock_code": "21623",
+        "score": 0.9727,
+        "reason": "Frequently Bought Together (45 Shared Invoices)",
+        "shared_invoices": 45
       },
       {
-        "id": "mig-016",
-        "score": 0.3665,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-79321",
+        "stock_code": "79321",
+        "score": 0.8243,
+        "reason": "Frequently Bought Together (33 Shared Invoices)",
+        "shared_invoices": 33
       },
       {
-        "id": "mig-038",
-        "score": 0.3658,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-20685",
+        "stock_code": "20685",
+        "score": 0.7855,
+        "reason": "Frequently Bought Together (279 Shared Invoices)",
+        "shared_invoices": 279
       }
     ],
-    "mig-010": [
+    "ret-20685": [
       {
-        "id": "mig-035",
-        "score": 0.6625,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (266 Shared Invoices)",
+        "shared_invoices": 266
       },
       {
-        "id": "mig-002",
-        "score": 0.5537,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21212",
+        "stock_code": "21212",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (258 Shared Invoices)",
+        "shared_invoices": 258
       },
       {
-        "id": "mig-030",
-        "score": 0.5489,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20725",
+        "stock_code": "20725",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (186 Shared Invoices)",
+        "shared_invoices": 186
       },
       {
-        "id": "mig-012",
-        "score": 0.5464,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21843",
+        "stock_code": "21843",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (140 Shared Invoices)",
+        "shared_invoices": 140
       },
       {
-        "id": "mig-019",
-        "score": 0.5458,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (113 Shared Invoices)",
+        "shared_invoices": 113
       },
       {
-        "id": "mig-016",
-        "score": 0.5433,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22083",
+        "stock_code": "22083",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (107 Shared Invoices)",
+        "shared_invoices": 107
       },
       {
-        "id": "mig-021",
-        "score": 0.5085,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (91 Shared Invoices)",
+        "shared_invoices": 91
       },
       {
-        "id": "mig-008",
-        "score": 0.4905,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.986,
+        "reason": "Frequently Bought Together (106 Shared Invoices)",
+        "shared_invoices": 106
       }
     ],
-    "mig-011": [
+    "ret-15056n": [
       {
-        "id": "mig-010",
-        "score": 0.63,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-15056bl",
+        "stock_code": "15056BL",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (288 Shared Invoices)",
+        "shared_invoices": 288
       },
       {
-        "id": "mig-035",
-        "score": 0.6118,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099c",
+        "stock_code": "85099C",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (73 Shared Invoices)",
+        "shared_invoices": 73
       },
       {
-        "id": "mig-020",
-        "score": 0.6092,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099f",
+        "stock_code": "85099F",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (66 Shared Invoices)",
+        "shared_invoices": 66
       },
       {
-        "id": "mig-002",
-        "score": 0.5479,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21931",
+        "stock_code": "21931",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (65 Shared Invoices)",
+        "shared_invoices": 65
       },
       {
-        "id": "mig-006",
-        "score": 0.5319,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22411",
+        "stock_code": "22411",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (64 Shared Invoices)",
+        "shared_invoices": 64
       },
       {
-        "id": "mig-019",
-        "score": 0.5283,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21929",
+        "stock_code": "21929",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (55 Shared Invoices)",
+        "shared_invoices": 55
       },
       {
-        "id": "mig-031",
-        "score": 0.5283,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.74,
+        "reason": "Frequently Bought Together (54 Shared Invoices)",
+        "shared_invoices": 54
       },
       {
-        "id": "mig-016",
-        "score": 0.5246,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-48138",
+        "stock_code": "48138",
+        "score": 0.7348,
+        "reason": "Frequently Bought Together (67 Shared Invoices)",
+        "shared_invoices": 67
       }
     ],
-    "mig-012": [
+    "ret-85099f": [
       {
-        "id": "mig-010",
-        "score": 0.5314,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21931",
+        "stock_code": "21931",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (453 Shared Invoices)",
+        "shared_invoices": 453
       },
       {
-        "id": "mig-020",
-        "score": 0.529,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099c",
+        "stock_code": "85099C",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (379 Shared Invoices)",
+        "shared_invoices": 379
       },
       {
-        "id": "mig-031",
-        "score": 0.5273,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22411",
+        "stock_code": "22411",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (339 Shared Invoices)",
+        "shared_invoices": 339
       },
       {
-        "id": "mig-017",
-        "score": 0.5272,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21929",
+        "stock_code": "21929",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (323 Shared Invoices)",
+        "shared_invoices": 323
       },
       {
-        "id": "mig-032",
-        "score": 0.527,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-15056n",
+        "stock_code": "15056N",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (66 Shared Invoices)",
+        "shared_invoices": 66
       },
       {
-        "id": "mig-006",
-        "score": 0.5256,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22910",
+        "stock_code": "22910",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (62 Shared Invoices)",
+        "shared_invoices": 62
       },
       {
-        "id": "mig-001",
-        "score": 0.5255,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-15056bl",
+        "stock_code": "15056BL",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (50 Shared Invoices)",
+        "shared_invoices": 50
       },
       {
-        "id": "mig-021",
-        "score": 0.513,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.7748,
+        "reason": "Frequently Bought Together (668 Shared Invoices)",
+        "shared_invoices": 668
       }
     ],
-    "mig-013": [
+    "ret-20725": [
       {
-        "id": "mig-012",
-        "score": 0.6075,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (548 Shared Invoices)",
+        "shared_invoices": 548
       },
       {
-        "id": "mig-020",
-        "score": 0.5568,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22386",
+        "stock_code": "22386",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (306 Shared Invoices)",
+        "shared_invoices": 306
       },
       {
-        "id": "mig-001",
-        "score": 0.5566,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20914",
+        "stock_code": "20914",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (284 Shared Invoices)",
+        "shared_invoices": 284
       },
       {
-        "id": "mig-032",
-        "score": 0.5562,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20685",
+        "stock_code": "20685",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (186 Shared Invoices)",
+        "shared_invoices": 186
       },
       {
-        "id": "mig-010",
-        "score": 0.5517,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21843",
+        "stock_code": "21843",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (156 Shared Invoices)",
+        "shared_invoices": 156
       },
       {
-        "id": "mig-006",
-        "score": 0.5491,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (116 Shared Invoices)",
+        "shared_invoices": 116
       },
       {
-        "id": "mig-017",
-        "score": 0.5454,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.987,
+        "reason": "Frequently Bought Together (174 Shared Invoices)",
+        "shared_invoices": 174
       },
       {
-        "id": "mig-031",
-        "score": 0.5422,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.9857,
+        "reason": "Frequently Bought Together (187 Shared Invoices)",
+        "shared_invoices": 187
       }
     ],
-    "mig-014": [
+    "ret-21621": [
       {
-        "id": "mig-015",
-        "score": 0.6476,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (171 Shared Invoices)",
+        "shared_invoices": 171
       },
       {
-        "id": "mig-034",
-        "score": 0.6312,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (165 Shared Invoices)",
+        "shared_invoices": 165
       },
       {
-        "id": "mig-031",
-        "score": 0.608,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22090",
+        "stock_code": "22090",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (134 Shared Invoices)",
+        "shared_invoices": 134
       },
       {
-        "id": "mig-032",
-        "score": 0.6005,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20725",
+        "stock_code": "20725",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (116 Shared Invoices)",
+        "shared_invoices": 116
       },
       {
-        "id": "mig-017",
-        "score": 0.5928,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22386",
+        "stock_code": "22386",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (96 Shared Invoices)",
+        "shared_invoices": 96
       },
       {
-        "id": "mig-001",
-        "score": 0.5879,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20685",
+        "stock_code": "20685",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (91 Shared Invoices)",
+        "shared_invoices": 91
       },
       {
-        "id": "mig-006",
-        "score": 0.5839,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21843",
+        "stock_code": "21843",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (86 Shared Invoices)",
+        "shared_invoices": 86
       },
       {
-        "id": "mig-019",
-        "score": 0.557,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (72 Shared Invoices)",
+        "shared_invoices": 72
       }
     ],
-    "mig-015": [
+    "ret-20914": [
       {
-        "id": "mig-031",
-        "score": 0.6641,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (294 Shared Invoices)",
+        "shared_invoices": 294
       },
       {
-        "id": "mig-032",
-        "score": 0.6628,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20725",
+        "stock_code": "20725",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (284 Shared Invoices)",
+        "shared_invoices": 284
       },
       {
-        "id": "mig-001",
-        "score": 0.6549,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.9855,
+        "reason": "Frequently Bought Together (80 Shared Invoices)",
+        "shared_invoices": 80
       },
       {
-        "id": "mig-006",
-        "score": 0.6494,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21843",
+        "stock_code": "21843",
+        "score": 0.9849,
+        "reason": "Frequently Bought Together (216 Shared Invoices)",
+        "shared_invoices": 216
       },
       {
-        "id": "mig-017",
-        "score": 0.6458,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20685",
+        "stock_code": "20685",
+        "score": 0.9834,
+        "reason": "Frequently Bought Together (143 Shared Invoices)",
+        "shared_invoices": 143
       },
       {
-        "id": "mig-019",
-        "score": 0.6098,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.9793,
+        "reason": "Frequently Bought Together (153 Shared Invoices)",
+        "shared_invoices": 153
       },
       {
-        "id": "mig-002",
-        "score": 0.6028,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.9781,
+        "reason": "Frequently Bought Together (120 Shared Invoices)",
+        "shared_invoices": 120
       },
       {
-        "id": "mig-014",
-        "score": 0.5976,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22090",
+        "stock_code": "22090",
+        "score": 0.964,
+        "reason": "Frequently Bought Together (138 Shared Invoices)",
+        "shared_invoices": 138
       }
     ],
-    "mig-016": [
+    "ret-22386": [
       {
-        "id": "mig-038",
-        "score": 0.6272,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (629 Shared Invoices)",
+        "shared_invoices": 629
       },
       {
-        "id": "mig-017",
-        "score": 0.5396,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-20725",
+        "stock_code": "20725",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (306 Shared Invoices)",
+        "shared_invoices": 306
       },
       {
-        "id": "mig-001",
-        "score": 0.532,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22090",
+        "stock_code": "22090",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (113 Shared Invoices)",
+        "shared_invoices": 113
       },
       {
-        "id": "mig-006",
-        "score": 0.5303,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (96 Shared Invoices)",
+        "shared_invoices": 96
       },
       {
-        "id": "mig-032",
-        "score": 0.5286,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.9859,
+        "reason": "Frequently Bought Together (82 Shared Invoices)",
+        "shared_invoices": 82
       },
       {
-        "id": "mig-010",
-        "score": 0.5283,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.9845,
+        "reason": "Frequently Bought Together (138 Shared Invoices)",
+        "shared_invoices": 138
       },
       {
-        "id": "mig-031",
-        "score": 0.5256,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21843",
+        "stock_code": "21843",
+        "score": 0.9709,
+        "reason": "Frequently Bought Together (96 Shared Invoices)",
+        "shared_invoices": 96
       },
       {
-        "id": "mig-020",
-        "score": 0.5255,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22114",
+        "stock_code": "22114",
+        "score": 0.9698,
+        "reason": "Frequently Bought Together (90 Shared Invoices)",
+        "shared_invoices": 90
       }
     ],
-    "mig-017": [
+    "ret-21232": [
       {
-        "id": "mig-002",
-        "score": 0.6608,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21754",
+        "stock_code": "21754",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (219 Shared Invoices)",
+        "shared_invoices": 219
       },
       {
-        "id": "mig-019",
+        "id": "ret-84879",
+        "stock_code": "84879",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (154 Shared Invoices)",
+        "shared_invoices": 154
+      },
+      {
+        "id": "ret-22086",
+        "stock_code": "22086",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (132 Shared Invoices)",
+        "shared_invoices": 132
+      },
+      {
+        "id": "ret-82484",
+        "stock_code": "82484",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (81 Shared Invoices)",
+        "shared_invoices": 81
+      },
+      {
+        "id": "ret-85099f",
+        "stock_code": "85099F",
+        "score": 0.7508,
+        "reason": "Frequently Bought Together (219 Shared Invoices)",
+        "shared_invoices": 219
+      },
+      {
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.7438,
+        "reason": "Frequently Bought Together (186 Shared Invoices)",
+        "shared_invoices": 186
+      },
+      {
+        "id": "ret-22197",
+        "stock_code": "22197",
+        "score": 0.726,
+        "reason": "Frequently Bought Together (241 Shared Invoices)",
+        "shared_invoices": 241
+      },
+      {
+        "id": "ret-48194",
+        "stock_code": "48194",
+        "score": 0.7254,
+        "reason": "Frequently Bought Together (140 Shared Invoices)",
+        "shared_invoices": 140
+      }
+    ],
+    "ret-15056bl": [
+      {
+        "id": "ret-15056n",
+        "stock_code": "15056N",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (288 Shared Invoices)",
+        "shared_invoices": 288
+      },
+      {
+        "id": "ret-85099c",
+        "stock_code": "85099C",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (60 Shared Invoices)",
+        "shared_invoices": 60
+      },
+      {
+        "id": "ret-85099f",
+        "stock_code": "85099F",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (50 Shared Invoices)",
+        "shared_invoices": 50
+      },
+      {
+        "id": "ret-21931",
+        "stock_code": "21931",
+        "score": 0.97,
+        "reason": "Frequently Bought Together (46 Shared Invoices)",
+        "shared_invoices": 46
+      },
+      {
+        "id": "ret-21929",
+        "stock_code": "21929",
+        "score": 0.8957,
+        "reason": "Frequently Bought Together (40 Shared Invoices)",
+        "shared_invoices": 40
+      },
+      {
+        "id": "ret-22411",
+        "stock_code": "22411",
+        "score": 0.8932,
+        "reason": "Frequently Bought Together (40 Shared Invoices)",
+        "shared_invoices": 40
+      },
+      {
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.7298,
+        "reason": "Frequently Bought Together (90 Shared Invoices)",
+        "shared_invoices": 90
+      },
+      {
+        "id": "ret-22910",
+        "stock_code": "22910",
+        "score": 0.7268,
+        "reason": "Frequently Bought Together (25 Shared Invoices)",
+        "shared_invoices": 25
+      }
+    ],
+    "ret-85099c": [
+      {
+        "id": "ret-85099f",
+        "stock_code": "85099F",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (379 Shared Invoices)",
+        "shared_invoices": 379
+      },
+      {
+        "id": "ret-21931",
+        "stock_code": "21931",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (374 Shared Invoices)",
+        "shared_invoices": 374
+      },
+      {
+        "id": "ret-22411",
+        "stock_code": "22411",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (307 Shared Invoices)",
+        "shared_invoices": 307
+      },
+      {
+        "id": "ret-21929",
+        "stock_code": "21929",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (253 Shared Invoices)",
+        "shared_invoices": 253
+      },
+      {
+        "id": "ret-15056n",
+        "stock_code": "15056N",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (73 Shared Invoices)",
+        "shared_invoices": 73
+      },
+      {
+        "id": "ret-22910",
+        "stock_code": "22910",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (65 Shared Invoices)",
+        "shared_invoices": 65
+      },
+      {
+        "id": "ret-15056bl",
+        "stock_code": "15056BL",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (60 Shared Invoices)",
+        "shared_invoices": 60
+      },
+      {
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.7696,
+        "reason": "Frequently Bought Together (542 Shared Invoices)",
+        "shared_invoices": 542
+      }
+    ],
+    "ret-21212": [
+      {
+        "id": "ret-21843",
+        "stock_code": "21843",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (332 Shared Invoices)",
+        "shared_invoices": 332
+      },
+      {
+        "id": "ret-22090",
+        "stock_code": "22090",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (315 Shared Invoices)",
+        "shared_invoices": 315
+      },
+      {
+        "id": "ret-22083",
+        "stock_code": "22083",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (273 Shared Invoices)",
+        "shared_invoices": 273
+      },
+      {
+        "id": "ret-20685",
+        "stock_code": "20685",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (258 Shared Invoices)",
+        "shared_invoices": 258
+      },
+      {
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (240 Shared Invoices)",
+        "shared_invoices": 240
+      },
+      {
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.9894,
+        "reason": "Frequently Bought Together (145 Shared Invoices)",
+        "shared_invoices": 145
+      },
+      {
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.9834,
+        "reason": "Frequently Bought Together (452 Shared Invoices)",
+        "shared_invoices": 452
+      },
+      {
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.9818,
+        "reason": "Frequently Bought Together (259 Shared Invoices)",
+        "shared_invoices": 259
+      }
+    ],
+    "ret-21931": [
+      {
+        "id": "ret-85099f",
+        "stock_code": "85099F",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (453 Shared Invoices)",
+        "shared_invoices": 453
+      },
+      {
+        "id": "ret-22411",
+        "stock_code": "22411",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (384 Shared Invoices)",
+        "shared_invoices": 384
+      },
+      {
+        "id": "ret-85099c",
+        "stock_code": "85099C",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (374 Shared Invoices)",
+        "shared_invoices": 374
+      },
+      {
+        "id": "ret-21929",
+        "stock_code": "21929",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (297 Shared Invoices)",
+        "shared_invoices": 297
+      },
+      {
+        "id": "ret-22910",
+        "stock_code": "22910",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (94 Shared Invoices)",
+        "shared_invoices": 94
+      },
+      {
+        "id": "ret-15056n",
+        "stock_code": "15056N",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (65 Shared Invoices)",
+        "shared_invoices": 65
+      },
+      {
+        "id": "ret-15056bl",
+        "stock_code": "15056BL",
+        "score": 0.97,
+        "reason": "Frequently Bought Together (46 Shared Invoices)",
+        "shared_invoices": 46
+      },
+      {
+        "id": "ret-84078a",
+        "stock_code": "84078A",
+        "score": 0.8496,
+        "reason": "Frequently Bought Together (34 Shared Invoices)",
+        "shared_invoices": 34
+      }
+    ],
+    "ret-79321": [
+      {
+        "id": "ret-85123a",
+        "stock_code": "85123A",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (115 Shared Invoices)",
+        "shared_invoices": 115
+      },
+      {
+        "id": "ret-22197",
+        "stock_code": "22197",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (63 Shared Invoices)",
+        "shared_invoices": 63
+      },
+      {
+        "id": "ret-21733",
+        "stock_code": "21733",
+        "score": 0.9403,
+        "reason": "Frequently Bought Together (43 Shared Invoices)",
+        "shared_invoices": 43
+      },
+      {
+        "id": "ret-22189",
+        "stock_code": "22189",
+        "score": 0.8969,
+        "reason": "Frequently Bought Together (40 Shared Invoices)",
+        "shared_invoices": 40
+      },
+      {
+        "id": "ret-48194",
+        "stock_code": "48194",
+        "score": 0.8362,
+        "reason": "Frequently Bought Together (33 Shared Invoices)",
+        "shared_invoices": 33
+      },
+      {
+        "id": "ret-48138",
+        "stock_code": "48138",
+        "score": 0.8243,
+        "reason": "Frequently Bought Together (33 Shared Invoices)",
+        "shared_invoices": 33
+      },
+      {
+        "id": "ret-21754",
+        "stock_code": "21754",
+        "score": 0.7367,
+        "reason": "Frequently Bought Together (52 Shared Invoices)",
+        "shared_invoices": 52
+      },
+      {
+        "id": "ret-22086",
+        "stock_code": "22086",
+        "score": 0.7262,
+        "reason": "Frequently Bought Together (86 Shared Invoices)",
+        "shared_invoices": 86
+      }
+    ],
+    "ret-22189": [
+      {
+        "id": "ret-85123a",
+        "stock_code": "85123A",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (386 Shared Invoices)",
+        "shared_invoices": 386
+      },
+      {
+        "id": "ret-21733",
+        "stock_code": "21733",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (137 Shared Invoices)",
+        "shared_invoices": 137
+      },
+      {
+        "id": "ret-22197",
+        "stock_code": "22197",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (82 Shared Invoices)",
+        "shared_invoices": 82
+      },
+      {
+        "id": "ret-48194",
+        "stock_code": "48194",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (73 Shared Invoices)",
+        "shared_invoices": 73
+      },
+      {
+        "id": "ret-48138",
+        "stock_code": "48138",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (69 Shared Invoices)",
+        "shared_invoices": 69
+      },
+      {
+        "id": "ret-79321",
+        "stock_code": "79321",
+        "score": 0.8969,
+        "reason": "Frequently Bought Together (40 Shared Invoices)",
+        "shared_invoices": 40
+      },
+      {
+        "id": "ret-21623",
+        "stock_code": "21623",
+        "score": 0.7925,
+        "reason": "Frequently Bought Together (30 Shared Invoices)",
+        "shared_invoices": 30
+      },
+      {
+        "id": "ret-21754",
+        "stock_code": "21754",
+        "score": 0.734,
+        "reason": "Frequently Bought Together (168 Shared Invoices)",
+        "shared_invoices": 168
+      }
+    ],
+    "ret-21754": [
+      {
+        "id": "ret-84879",
+        "stock_code": "84879",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (246 Shared Invoices)",
+        "shared_invoices": 246
+      },
+      {
+        "id": "ret-21232",
+        "stock_code": "21232",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (219 Shared Invoices)",
+        "shared_invoices": 219
+      },
+      {
+        "id": "ret-22086",
+        "stock_code": "22086",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (122 Shared Invoices)",
+        "shared_invoices": 122
+      },
+      {
+        "id": "ret-82484",
+        "stock_code": "82484",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (99 Shared Invoices)",
+        "shared_invoices": 99
+      },
+      {
+        "id": "ret-22197",
+        "stock_code": "22197",
+        "score": 0.7377,
+        "reason": "Frequently Bought Together (133 Shared Invoices)",
+        "shared_invoices": 133
+      },
+      {
+        "id": "ret-21623",
+        "stock_code": "21623",
+        "score": 0.7377,
+        "reason": "Frequently Bought Together (53 Shared Invoices)",
+        "shared_invoices": 53
+      },
+      {
+        "id": "ret-48194",
+        "stock_code": "48194",
+        "score": 0.7367,
+        "reason": "Frequently Bought Together (92 Shared Invoices)",
+        "shared_invoices": 92
+      },
+      {
+        "id": "ret-79321",
+        "stock_code": "79321",
+        "score": 0.7367,
+        "reason": "Frequently Bought Together (52 Shared Invoices)",
+        "shared_invoices": 52
+      }
+    ],
+    "ret-22114": [
+      {
+        "id": "ret-22112",
+        "stock_code": "22112",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (479 Shared Invoices)",
+        "shared_invoices": 479
+      },
+      {
+        "id": "ret-22111",
+        "stock_code": "22111",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (314 Shared Invoices)",
+        "shared_invoices": 314
+      },
+      {
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (135 Shared Invoices)",
+        "shared_invoices": 135
+      },
+      {
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (55 Shared Invoices)",
+        "shared_invoices": 55
+      },
+      {
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.988,
+        "reason": "Frequently Bought Together (186 Shared Invoices)",
+        "shared_invoices": 186
+      },
+      {
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.9864,
+        "reason": "Frequently Bought Together (95 Shared Invoices)",
+        "shared_invoices": 95
+      },
+      {
+        "id": "ret-21843",
+        "stock_code": "21843",
+        "score": 0.9726,
+        "reason": "Frequently Bought Together (109 Shared Invoices)",
+        "shared_invoices": 109
+      },
+      {
+        "id": "ret-22090",
+        "stock_code": "22090",
+        "score": 0.9716,
+        "reason": "Frequently Bought Together (84 Shared Invoices)",
+        "shared_invoices": 84
+      }
+    ],
+    "ret-22139": [
+      {
+        "id": "ret-21212",
+        "stock_code": "21212",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (240 Shared Invoices)",
+        "shared_invoices": 240
+      },
+      {
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (171 Shared Invoices)",
+        "shared_invoices": 171
+      },
+      {
+        "id": "ret-22114",
+        "stock_code": "22114",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (135 Shared Invoices)",
+        "shared_invoices": 135
+      },
+      {
+        "id": "ret-22083",
+        "stock_code": "22083",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (115 Shared Invoices)",
+        "shared_invoices": 115
+      },
+      {
+        "id": "ret-20685",
+        "stock_code": "20685",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (113 Shared Invoices)",
+        "shared_invoices": 113
+      },
+      {
+        "id": "ret-22090",
+        "stock_code": "22090",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (108 Shared Invoices)",
+        "shared_invoices": 108
+      },
+      {
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (98 Shared Invoices)",
+        "shared_invoices": 98
+      },
+      {
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (72 Shared Invoices)",
+        "shared_invoices": 72
+      }
+    ],
+    "ret-22411": [
+      {
+        "id": "ret-21931",
+        "stock_code": "21931",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (384 Shared Invoices)",
+        "shared_invoices": 384
+      },
+      {
+        "id": "ret-85099f",
+        "stock_code": "85099F",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (339 Shared Invoices)",
+        "shared_invoices": 339
+      },
+      {
+        "id": "ret-85099c",
+        "stock_code": "85099C",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (307 Shared Invoices)",
+        "shared_invoices": 307
+      },
+      {
+        "id": "ret-21929",
+        "stock_code": "21929",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (279 Shared Invoices)",
+        "shared_invoices": 279
+      },
+      {
+        "id": "ret-22910",
+        "stock_code": "22910",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (80 Shared Invoices)",
+        "shared_invoices": 80
+      },
+      {
+        "id": "ret-15056n",
+        "stock_code": "15056N",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (64 Shared Invoices)",
+        "shared_invoices": 64
+      },
+      {
+        "id": "ret-15056bl",
+        "stock_code": "15056BL",
+        "score": 0.8932,
+        "reason": "Frequently Bought Together (40 Shared Invoices)",
+        "shared_invoices": 40
+      },
+      {
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.7698,
+        "reason": "Frequently Bought Together (495 Shared Invoices)",
+        "shared_invoices": 495
+      }
+    ],
+    "ret-22197": [
+      {
+        "id": "ret-85123a",
+        "stock_code": "85123A",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (247 Shared Invoices)",
+        "shared_invoices": 247
+      },
+      {
+        "id": "ret-21733",
+        "stock_code": "21733",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (101 Shared Invoices)",
+        "shared_invoices": 101
+      },
+      {
+        "id": "ret-22189",
+        "stock_code": "22189",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (82 Shared Invoices)",
+        "shared_invoices": 82
+      },
+      {
+        "id": "ret-48138",
+        "stock_code": "48138",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (77 Shared Invoices)",
+        "shared_invoices": 77
+      },
+      {
+        "id": "ret-48194",
+        "stock_code": "48194",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (69 Shared Invoices)",
+        "shared_invoices": 69
+      },
+      {
+        "id": "ret-79321",
+        "stock_code": "79321",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (63 Shared Invoices)",
+        "shared_invoices": 63
+      },
+      {
+        "id": "ret-21137",
+        "stock_code": "21137",
+        "score": 0.9649,
+        "reason": "Frequently Bought Together (46 Shared Invoices)",
+        "shared_invoices": 46
+      },
+      {
+        "id": "ret-21623",
+        "stock_code": "21623",
+        "score": 0.7494,
+        "reason": "Frequently Bought Together (24 Shared Invoices)",
+        "shared_invoices": 24
+      }
+    ],
+    "ret-21623": [
+      {
+        "id": "ret-85123a",
+        "stock_code": "85123A",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (91 Shared Invoices)",
+        "shared_invoices": 91
+      },
+      {
+        "id": "ret-48138",
+        "stock_code": "48138",
+        "score": 0.9727,
+        "reason": "Frequently Bought Together (45 Shared Invoices)",
+        "shared_invoices": 45
+      },
+      {
+        "id": "ret-22189",
+        "stock_code": "22189",
+        "score": 0.7925,
+        "reason": "Frequently Bought Together (30 Shared Invoices)",
+        "shared_invoices": 30
+      },
+      {
+        "id": "ret-21733",
+        "stock_code": "21733",
+        "score": 0.7702,
+        "reason": "Frequently Bought Together (27 Shared Invoices)",
+        "shared_invoices": 27
+      },
+      {
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.7535,
+        "reason": "Frequently Bought Together (70 Shared Invoices)",
+        "shared_invoices": 70
+      },
+      {
+        "id": "ret-22197",
+        "stock_code": "22197",
+        "score": 0.7494,
+        "reason": "Frequently Bought Together (24 Shared Invoices)",
+        "shared_invoices": 24
+      },
+      {
+        "id": "ret-21754",
+        "stock_code": "21754",
+        "score": 0.7377,
+        "reason": "Frequently Bought Together (53 Shared Invoices)",
+        "shared_invoices": 53
+      },
+      {
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.7229,
+        "reason": "Frequently Bought Together (56 Shared Invoices)",
+        "shared_invoices": 56
+      }
+    ],
+    "ret-22910": [
+      {
+        "id": "ret-21931",
+        "stock_code": "21931",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (94 Shared Invoices)",
+        "shared_invoices": 94
+      },
+      {
+        "id": "ret-22411",
+        "stock_code": "22411",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (80 Shared Invoices)",
+        "shared_invoices": 80
+      },
+      {
+        "id": "ret-85099c",
+        "stock_code": "85099C",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (65 Shared Invoices)",
+        "shared_invoices": 65
+      },
+      {
+        "id": "ret-85099f",
+        "stock_code": "85099F",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (62 Shared Invoices)",
+        "shared_invoices": 62
+      },
+      {
+        "id": "ret-21929",
+        "stock_code": "21929",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (59 Shared Invoices)",
+        "shared_invoices": 59
+      },
+      {
+        "id": "ret-22086",
+        "stock_code": "22086",
+        "score": 0.8172,
+        "reason": "Frequently Bought Together (341 Shared Invoices)",
+        "shared_invoices": 341
+      },
+      {
+        "id": "ret-22083",
+        "stock_code": "22083",
+        "score": 0.7995,
+        "reason": "Frequently Bought Together (135 Shared Invoices)",
+        "shared_invoices": 135
+      },
+      {
+        "id": "ret-22090",
+        "stock_code": "22090",
+        "score": 0.7441,
+        "reason": "Frequently Bought Together (61 Shared Invoices)",
+        "shared_invoices": 61
+      }
+    ],
+    "ret-21137": [
+      {
+        "id": "ret-22197",
+        "stock_code": "22197",
+        "score": 0.9649,
+        "reason": "Frequently Bought Together (46 Shared Invoices)",
+        "shared_invoices": 46
+      },
+      {
+        "id": "ret-85123a",
+        "stock_code": "85123A",
+        "score": 0.9038,
+        "reason": "Frequently Bought Together (41 Shared Invoices)",
+        "shared_invoices": 41
+      },
+      {
+        "id": "ret-48138",
+        "stock_code": "48138",
+        "score": 0.7396,
+        "reason": "Frequently Bought Together (27 Shared Invoices)",
+        "shared_invoices": 27
+      },
+      {
+        "id": "ret-21232",
+        "stock_code": "21232",
+        "score": 0.6901,
+        "reason": "Frequently Bought Together (47 Shared Invoices)",
+        "shared_invoices": 47
+      },
+      {
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.6873,
+        "reason": "Frequently Bought Together (47 Shared Invoices)",
+        "shared_invoices": 47
+      },
+      {
+        "id": "ret-21212",
+        "stock_code": "21212",
         "score": 0.6521,
-        "reason": "Complete Your Beauty Routine"
+        "reason": "Frequently Bought Together (44 Shared Invoices)",
+        "shared_invoices": 44
       },
       {
-        "id": "mig-021",
-        "score": 0.6253,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22189",
+        "stock_code": "22189",
+        "score": 0.6475,
+        "reason": "Frequently Bought Together (19 Shared Invoices)",
+        "shared_invoices": 19
       },
       {
-        "id": "mig-008",
-        "score": 0.6133,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-034",
-        "score": 0.5902,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-015",
-        "score": 0.5808,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-016",
-        "score": 0.5546,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-030",
-        "score": 0.5429,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21733",
+        "stock_code": "21733",
+        "score": 0.613,
+        "reason": "Frequently Bought Together (15 Shared Invoices)",
+        "shared_invoices": 15
       }
     ],
-    "mig-018": [
+    "ret-21733": [
       {
-        "id": "mig-004",
-        "score": 0.6281,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85123a",
+        "stock_code": "85123A",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (771 Shared Invoices)",
+        "shared_invoices": 771
       },
       {
-        "id": "mig-009",
-        "score": 0.5988,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22189",
+        "stock_code": "22189",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (137 Shared Invoices)",
+        "shared_invoices": 137
       },
       {
-        "id": "mig-022",
-        "score": 0.5882,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22197",
+        "stock_code": "22197",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (101 Shared Invoices)",
+        "shared_invoices": 101
       },
       {
-        "id": "mig-005",
-        "score": 0.5878,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-48138",
+        "stock_code": "48138",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (79 Shared Invoices)",
+        "shared_invoices": 79
       },
       {
-        "id": "mig-007",
-        "score": 0.5823,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-48194",
+        "stock_code": "48194",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (60 Shared Invoices)",
+        "shared_invoices": 60
       },
       {
-        "id": "mig-030",
-        "score": 0.4279,
-        "reason": "Formula & Ingredient Synergy"
+        "id": "ret-79321",
+        "stock_code": "79321",
+        "score": 0.9403,
+        "reason": "Frequently Bought Together (43 Shared Invoices)",
+        "shared_invoices": 43
       },
       {
-        "id": "mig-016",
-        "score": 0.3795,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-21623",
+        "stock_code": "21623",
+        "score": 0.7702,
+        "reason": "Frequently Bought Together (27 Shared Invoices)",
+        "shared_invoices": 27
       },
       {
-        "id": "mig-023",
-        "score": 0.3791,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-84347",
+        "stock_code": "84347",
+        "score": 0.7412,
+        "reason": "Frequently Bought Together (60 Shared Invoices)",
+        "shared_invoices": 60
       }
     ],
-    "mig-019": [
+    "ret-22090": [
       {
-        "id": "mig-006",
-        "score": 0.6495,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21212",
+        "stock_code": "21212",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (315 Shared Invoices)",
+        "shared_invoices": 315
       },
       {
-        "id": "mig-001",
-        "score": 0.6483,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22083",
+        "stock_code": "22083",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (277 Shared Invoices)",
+        "shared_invoices": 277
       },
       {
-        "id": "mig-017",
-        "score": 0.6371,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (201 Shared Invoices)",
+        "shared_invoices": 201
       },
       {
-        "id": "mig-031",
-        "score": 0.6367,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (134 Shared Invoices)",
+        "shared_invoices": 134
       },
       {
-        "id": "mig-032",
-        "score": 0.6352,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22386",
+        "stock_code": "22386",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (113 Shared Invoices)",
+        "shared_invoices": 113
       },
       {
-        "id": "mig-021",
-        "score": 0.6123,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (108 Shared Invoices)",
+        "shared_invoices": 108
       },
       {
-        "id": "mig-014",
-        "score": 0.557,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.988,
+        "reason": "Frequently Bought Together (210 Shared Invoices)",
+        "shared_invoices": 210
       },
       {
-        "id": "mig-010",
-        "score": 0.5308,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21843",
+        "stock_code": "21843",
+        "score": 0.9726,
+        "reason": "Frequently Bought Together (127 Shared Invoices)",
+        "shared_invoices": 127
       }
     ],
-    "mig-020": [
+    "ret-22112": [
       {
-        "id": "mig-035",
-        "score": 0.5818,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22114",
+        "stock_code": "22114",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (479 Shared Invoices)",
+        "shared_invoices": 479
       },
       {
-        "id": "mig-002",
-        "score": 0.5609,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22111",
+        "stock_code": "22111",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (338 Shared Invoices)",
+        "shared_invoices": 338
       },
       {
-        "id": "mig-012",
-        "score": 0.544,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.9875,
+        "reason": "Frequently Bought Together (169 Shared Invoices)",
+        "shared_invoices": 169
       },
       {
-        "id": "mig-016",
-        "score": 0.5405,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.9872,
+        "reason": "Frequently Bought Together (105 Shared Invoices)",
+        "shared_invoices": 105
       },
       {
-        "id": "mig-019",
-        "score": 0.5405,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.9858,
+        "reason": "Frequently Bought Together (68 Shared Invoices)",
+        "shared_invoices": 68
       },
       {
-        "id": "mig-030",
-        "score": 0.5405,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21843",
+        "stock_code": "21843",
+        "score": 0.9721,
+        "reason": "Frequently Bought Together (92 Shared Invoices)",
+        "shared_invoices": 92
       },
       {
-        "id": "mig-021",
-        "score": 0.5187,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.9716,
+        "reason": "Frequently Bought Together (48 Shared Invoices)",
+        "shared_invoices": 48
       },
       {
-        "id": "mig-008",
-        "score": 0.5166,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22090",
+        "stock_code": "22090",
+        "score": 0.9711,
+        "reason": "Frequently Bought Together (64 Shared Invoices)",
+        "shared_invoices": 64
       }
     ],
-    "mig-021": [
+    "ret-22111": [
       {
-        "id": "mig-001",
-        "score": 0.6686,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22112",
+        "stock_code": "22112",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (338 Shared Invoices)",
+        "shared_invoices": 338
       },
       {
-        "id": "mig-031",
-        "score": 0.6312,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22114",
+        "stock_code": "22114",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (314 Shared Invoices)",
+        "shared_invoices": 314
       },
       {
-        "id": "mig-002",
-        "score": 0.6267,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.9795,
+        "reason": "Frequently Bought Together (70 Shared Invoices)",
+        "shared_invoices": 70
       },
       {
-        "id": "mig-017",
-        "score": 0.6253,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.9739,
+        "reason": "Frequently Bought Together (204 Shared Invoices)",
+        "shared_invoices": 204
       },
       {
-        "id": "mig-032",
-        "score": 0.6172,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.9736,
+        "reason": "Frequently Bought Together (126 Shared Invoices)",
+        "shared_invoices": 126
       },
       {
-        "id": "mig-014",
-        "score": 0.616,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.9724,
+        "reason": "Frequently Bought Together (87 Shared Invoices)",
+        "shared_invoices": 87
       },
       {
-        "id": "mig-019",
-        "score": 0.6123,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21843",
+        "stock_code": "21843",
+        "score": 0.9596,
+        "reason": "Frequently Bought Together (100 Shared Invoices)",
+        "shared_invoices": 100
       },
       {
-        "id": "mig-006",
-        "score": 0.6081,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22090",
+        "stock_code": "22090",
+        "score": 0.9587,
+        "reason": "Frequently Bought Together (65 Shared Invoices)",
+        "shared_invoices": 65
       }
     ],
-    "mig-022": [
+    "ret-84078a": [
       {
-        "id": "mig-009",
-        "score": 0.6593,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21931",
+        "stock_code": "21931",
+        "score": 0.8496,
+        "reason": "Frequently Bought Together (34 Shared Invoices)",
+        "shared_invoices": 34
       },
       {
-        "id": "mig-024",
-        "score": 0.4154,
-        "reason": "Formula & Ingredient Synergy"
+        "id": "ret-22411",
+        "stock_code": "22411",
+        "score": 0.7665,
+        "reason": "Frequently Bought Together (28 Shared Invoices)",
+        "shared_invoices": 28
       },
       {
-        "id": "mig-004",
-        "score": 0.4103,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-85099c",
+        "stock_code": "85099C",
+        "score": 0.7654,
+        "reason": "Frequently Bought Together (27 Shared Invoices)",
+        "shared_invoices": 27
       },
       {
-        "id": "mig-016",
-        "score": 0.4002,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-85099f",
+        "stock_code": "85099F",
+        "score": 0.7594,
+        "reason": "Frequently Bought Together (26 Shared Invoices)",
+        "shared_invoices": 26
       },
       {
-        "id": "mig-007",
-        "score": 0.3948,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.6748,
+        "reason": "Frequently Bought Together (45 Shared Invoices)",
+        "shared_invoices": 45
       },
       {
-        "id": "mig-005",
-        "score": 0.3889,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-21929",
+        "stock_code": "21929",
+        "score": 0.6592,
+        "reason": "Frequently Bought Together (18 Shared Invoices)",
+        "shared_invoices": 18
       },
       {
-        "id": "mig-029",
-        "score": 0.378,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-85123a",
+        "stock_code": "85123A",
+        "score": 0.6122,
+        "reason": "Frequently Bought Together (39 Shared Invoices)",
+        "shared_invoices": 39
       },
       {
-        "id": "mig-030",
-        "score": 0.3728,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-15056n",
+        "stock_code": "15056N",
+        "score": 0.6119,
+        "reason": "Market Basket Co-Occurrence (13 Orders)",
+        "shared_invoices": 13
       }
     ],
-    "mig-023": [
+    "ret-48194": [
       {
-        "id": "mig-004",
-        "score": 0.6213,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85123a",
+        "stock_code": "85123A",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (224 Shared Invoices)",
+        "shared_invoices": 224
       },
       {
-        "id": "mig-005",
-        "score": 0.5885,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-48138",
+        "stock_code": "48138",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (212 Shared Invoices)",
+        "shared_invoices": 212
       },
       {
-        "id": "mig-009",
-        "score": 0.5831,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22189",
+        "stock_code": "22189",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (73 Shared Invoices)",
+        "shared_invoices": 73
       },
       {
-        "id": "mig-022",
-        "score": 0.5829,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22197",
+        "stock_code": "22197",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (69 Shared Invoices)",
+        "shared_invoices": 69
       },
       {
-        "id": "mig-007",
-        "score": 0.5818,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21733",
+        "stock_code": "21733",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (60 Shared Invoices)",
+        "shared_invoices": 60
       },
       {
-        "id": "mig-030",
-        "score": 0.4023,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-79321",
+        "stock_code": "79321",
+        "score": 0.8362,
+        "reason": "Frequently Bought Together (33 Shared Invoices)",
+        "shared_invoices": 33
       },
       {
-        "id": "mig-018",
-        "score": 0.3791,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-21754",
+        "stock_code": "21754",
+        "score": 0.7367,
+        "reason": "Frequently Bought Together (92 Shared Invoices)",
+        "shared_invoices": 92
       },
       {
-        "id": "mig-016",
-        "score": 0.3761,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22386",
+        "stock_code": "22386",
+        "score": 0.7269,
+        "reason": "Frequently Bought Together (96 Shared Invoices)",
+        "shared_invoices": 96
       }
     ],
-    "mig-024": [
+    "ret-22083": [
       {
-        "id": "mig-022",
-        "score": 0.4154,
-        "reason": "Formula & Ingredient Synergy"
+        "id": "ret-22090",
+        "stock_code": "22090",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (277 Shared Invoices)",
+        "shared_invoices": 277
       },
       {
-        "id": "mig-005",
-        "score": 0.3924,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-21212",
+        "stock_code": "21212",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (273 Shared Invoices)",
+        "shared_invoices": 273
       },
       {
-        "id": "mig-004",
-        "score": 0.3834,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22139",
+        "stock_code": "22139",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (115 Shared Invoices)",
+        "shared_invoices": 115
       },
       {
-        "id": "mig-029",
-        "score": 0.3814,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-20685",
+        "stock_code": "20685",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (107 Shared Invoices)",
+        "shared_invoices": 107
       },
       {
-        "id": "mig-009",
-        "score": 0.3806,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-21621",
+        "stock_code": "21621",
+        "score": 0.9871,
+        "reason": "Frequently Bought Together (92 Shared Invoices)",
+        "shared_invoices": 92
       },
       {
-        "id": "mig-016",
-        "score": 0.3785,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-85099b",
+        "stock_code": "85099B",
+        "score": 0.9812,
+        "reason": "Frequently Bought Together (176 Shared Invoices)",
+        "shared_invoices": 176
       },
       {
-        "id": "mig-018",
-        "score": 0.3781,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-47566",
+        "stock_code": "47566",
+        "score": 0.9796,
+        "reason": "Frequently Bought Together (139 Shared Invoices)",
+        "shared_invoices": 139
       },
       {
-        "id": "mig-030",
-        "score": 0.3688,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-21843",
+        "stock_code": "21843",
+        "score": 0.9663,
+        "reason": "Frequently Bought Together (112 Shared Invoices)",
+        "shared_invoices": 112
       }
     ],
-    "mig-025": [
+    "ret-21929": [
       {
-        "id": "mig-020",
-        "score": 0.3778,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-85099f",
+        "stock_code": "85099F",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (323 Shared Invoices)",
+        "shared_invoices": 323
       },
       {
-        "id": "mig-011",
-        "score": 0.3732,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-21931",
+        "stock_code": "21931",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (297 Shared Invoices)",
+        "shared_invoices": 297
       },
       {
-        "id": "mig-010",
-        "score": 0.3722,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22411",
+        "stock_code": "22411",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (279 Shared Invoices)",
+        "shared_invoices": 279
       },
       {
-        "id": "mig-036",
-        "score": 0.3701,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-85099c",
+        "stock_code": "85099C",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (253 Shared Invoices)",
+        "shared_invoices": 253
       },
       {
-        "id": "mig-035",
-        "score": 0.3675,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-22910",
+        "stock_code": "22910",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (59 Shared Invoices)",
+        "shared_invoices": 59
       },
       {
-        "id": "mig-037",
-        "score": 0.3658,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-15056n",
+        "stock_code": "15056N",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (55 Shared Invoices)",
+        "shared_invoices": 55
       },
       {
-        "id": "mig-026",
-        "score": 0.3606,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-15056bl",
+        "stock_code": "15056BL",
+        "score": 0.8957,
+        "reason": "Frequently Bought Together (40 Shared Invoices)",
+        "shared_invoices": 40
       },
       {
-        "id": "mig-014",
-        "score": 0.1921,
-        "reason": "Complementary Glow Match"
+        "id": "ret-22386",
+        "stock_code": "22386",
+        "score": 0.7912,
+        "reason": "Frequently Bought Together (258 Shared Invoices)",
+        "shared_invoices": 258
       }
     ],
-    "mig-026": [
+    "ret-82484": [
       {
-        "id": "mig-010",
-        "score": 0.6659,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21754",
+        "stock_code": "21754",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (99 Shared Invoices)",
+        "shared_invoices": 99
       },
       {
-        "id": "mig-020",
-        "score": 0.5993,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21232",
+        "stock_code": "21232",
+        "score": 0.99,
+        "reason": "Frequently Bought Together (81 Shared Invoices)",
+        "shared_invoices": 81
       },
       {
-        "id": "mig-002",
-        "score": 0.5337,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-84879",
+        "stock_code": "84879",
+        "score": 0.985,
+        "reason": "Frequently Bought Together (84 Shared Invoices)",
+        "shared_invoices": 84
       },
       {
-        "id": "mig-031",
-        "score": 0.5148,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-22086",
+        "stock_code": "22086",
+        "score": 0.9087,
+        "reason": "Frequently Bought Together (42 Shared Invoices)",
+        "shared_invoices": 42
       },
       {
-        "id": "mig-019",
-        "score": 0.5103,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85123a",
+        "stock_code": "85123A",
+        "score": 0.7398,
+        "reason": "Frequently Bought Together (197 Shared Invoices)",
+        "shared_invoices": 197
       },
       {
-        "id": "mig-006",
-        "score": 0.51,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-85099c",
+        "stock_code": "85099C",
+        "score": 0.7362,
+        "reason": "Frequently Bought Together (49 Shared Invoices)",
+        "shared_invoices": 49
       },
       {
-        "id": "mig-012",
-        "score": 0.5081,
-        "reason": "Complete Your Beauty Routine"
+        "id": "ret-21733",
+        "stock_code": "21733",
+        "score": 0.7342,
+        "reason": "Frequently Bought Together (51 Shared Invoices)",
+        "shared_invoices": 51
       },
       {
-        "id": "mig-001",
-        "score": 0.5065,
-        "reason": "Complete Your Beauty Routine"
-      }
-    ],
-    "mig-027": [
-      {
-        "id": "mig-012",
-        "score": 0.6687,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-016",
-        "score": 0.482,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-002",
-        "score": 0.4755,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-019",
-        "score": 0.4755,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-030",
-        "score": 0.4754,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-003",
-        "score": 0.4178,
-        "reason": "Formula & Ingredient Synergy"
-      },
-      {
-        "id": "mig-039",
-        "score": 0.4032,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-028",
-        "score": 0.3635,
-        "reason": "Frequently Paired Routine"
-      }
-    ],
-    "mig-028": [
-      {
-        "id": "mig-012",
-        "score": 0.5816,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-016",
-        "score": 0.4844,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-002",
-        "score": 0.4806,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-019",
-        "score": 0.4754,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-030",
-        "score": 0.4754,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-003",
-        "score": 0.4037,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-013",
-        "score": 0.3927,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-039",
-        "score": 0.3708,
-        "reason": "Frequently Paired Routine"
-      }
-    ],
-    "mig-029": [
-      {
-        "id": "mig-007",
-        "score": 0.4731,
-        "reason": "Formula & Ingredient Synergy"
-      },
-      {
-        "id": "mig-004",
-        "score": 0.3921,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-009",
-        "score": 0.3827,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-024",
-        "score": 0.3814,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-022",
-        "score": 0.378,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-023",
-        "score": 0.3676,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-038",
-        "score": 0.3665,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-018",
-        "score": 0.3657,
-        "reason": "Frequently Paired Routine"
-      }
-    ],
-    "mig-030": [
-      {
-        "id": "mig-038",
-        "score": 0.6092,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-001",
-        "score": 0.5359,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-031",
-        "score": 0.5357,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-032",
-        "score": 0.535,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-010",
-        "score": 0.5339,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-006",
-        "score": 0.5296,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-017",
-        "score": 0.5279,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-020",
-        "score": 0.5255,
-        "reason": "Complete Your Beauty Routine"
-      }
-    ],
-    "mig-031": [
-      {
-        "id": "mig-002",
-        "score": 0.6681,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-019",
-        "score": 0.6517,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-021",
-        "score": 0.6312,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-008",
-        "score": 0.6031,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-015",
-        "score": 0.5991,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-034",
-        "score": 0.5814,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-030",
-        "score": 0.5507,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-012",
-        "score": 0.5423,
-        "reason": "Complete Your Beauty Routine"
-      }
-    ],
-    "mig-032": [
-      {
-        "id": "mig-019",
-        "score": 0.6502,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-002",
-        "score": 0.6455,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-021",
-        "score": 0.6172,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-008",
-        "score": 0.6123,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-015",
-        "score": 0.5978,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-034",
-        "score": 0.5973,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-030",
-        "score": 0.55,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-016",
-        "score": 0.5436,
-        "reason": "Complete Your Beauty Routine"
-      }
-    ],
-    "mig-033": [
-      {
-        "id": "mig-002",
-        "score": 0.413,
-        "reason": "Formula & Ingredient Synergy"
-      },
-      {
-        "id": "mig-001",
-        "score": 0.3878,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-021",
-        "score": 0.3856,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-019",
-        "score": 0.3748,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-040",
-        "score": 0.3744,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-015",
-        "score": 0.3716,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-031",
-        "score": 0.3649,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-032",
-        "score": 0.3629,
-        "reason": "Frequently Paired Routine"
-      }
-    ],
-    "mig-034": [
-      {
-        "id": "mig-001",
-        "score": 0.6837,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-032",
-        "score": 0.6623,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-017",
-        "score": 0.6552,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-006",
-        "score": 0.6526,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-031",
-        "score": 0.6464,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-019",
-        "score": 0.6109,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-002",
-        "score": 0.6108,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-014",
-        "score": 0.5812,
-        "reason": "Complete Your Beauty Routine"
-      }
-    ],
-    "mig-035": [
-      {
-        "id": "mig-010",
-        "score": 0.7275,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-020",
-        "score": 0.6468,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-031",
-        "score": 0.5544,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-017",
-        "score": 0.5524,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-001",
-        "score": 0.5442,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-032",
-        "score": 0.5419,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-006",
-        "score": 0.5405,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-019",
-        "score": 0.5081,
-        "reason": "Complete Your Beauty Routine"
-      }
-    ],
-    "mig-036": [
-      {
-        "id": "mig-026",
-        "score": 0.4077,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-011",
-        "score": 0.4019,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-010",
-        "score": 0.3957,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-025",
-        "score": 0.3701,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-037",
-        "score": 0.3646,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-035",
-        "score": 0.3631,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-020",
-        "score": 0.3563,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-006",
-        "score": 0.199,
-        "reason": "Complementary Glow Match"
-      }
-    ],
-    "mig-037": [
-      {
-        "id": "mig-020",
-        "score": 0.4383,
-        "reason": "Formula & Ingredient Synergy"
-      },
-      {
-        "id": "mig-011",
-        "score": 0.3836,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-010",
-        "score": 0.3754,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-026",
-        "score": 0.3702,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-025",
-        "score": 0.3658,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-036",
-        "score": 0.3646,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-035",
-        "score": 0.3561,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-006",
-        "score": 0.1877,
-        "reason": "Complementary Glow Match"
-      }
-    ],
-    "mig-038": [
-      {
-        "id": "mig-016",
-        "score": 0.6372,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-030",
-        "score": 0.6192,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-002",
-        "score": 0.5106,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-012",
-        "score": 0.508,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-019",
-        "score": 0.5059,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-001",
-        "score": 0.503,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-010",
-        "score": 0.5015,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-006",
-        "score": 0.5014,
-        "reason": "Complete Your Beauty Routine"
-      }
-    ],
-    "mig-039": [
-      {
-        "id": "mig-012",
-        "score": 0.6514,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-002",
-        "score": 0.482,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-016",
-        "score": 0.4755,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-019",
-        "score": 0.4755,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-030",
-        "score": 0.4754,
-        "reason": "Complete Your Beauty Routine"
-      },
-      {
-        "id": "mig-003",
-        "score": 0.4596,
-        "reason": "Formula & Ingredient Synergy"
-      },
-      {
-        "id": "mig-027",
-        "score": 0.4032,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-013",
-        "score": 0.3717,
-        "reason": "Frequently Paired Routine"
-      }
-    ],
-    "mig-040": [
-      {
-        "id": "mig-034",
-        "score": 0.4115,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-002",
-        "score": 0.4052,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-001",
-        "score": 0.3824,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-006",
-        "score": 0.3796,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-033",
-        "score": 0.3744,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-031",
-        "score": 0.3659,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-014",
-        "score": 0.3649,
-        "reason": "Frequently Paired Routine"
-      },
-      {
-        "id": "mig-019",
-        "score": 0.3627,
-        "reason": "Frequently Paired Routine"
+        "id": "ret-48138",
+        "stock_code": "48138",
+        "score": 0.734,
+        "reason": "Frequently Bought Together (56 Shared Invoices)",
+        "shared_invoices": 56
       }
     ]
   },
   "trending": [
     {
-      "id": "mig-001",
+      "id": "ret-85123a",
+      "stock_code": "85123A",
       "popularity_rank": 1,
-      "reason": "MIGRIGA Icon Bestseller"
+      "reason": "UK Retail Bestseller (#1)"
     },
     {
-      "id": "mig-002",
+      "id": "ret-22423",
+      "stock_code": "22423",
       "popularity_rank": 2,
-      "reason": "MIGRIGA Icon Bestseller"
+      "reason": "UK Retail Bestseller (#2)"
     },
     {
-      "id": "mig-003",
+      "id": "ret-85099b",
+      "stock_code": "85099B",
       "popularity_rank": 3,
-      "reason": "MIGRIGA Icon Bestseller"
+      "reason": "UK Retail Bestseller (#3)"
     },
     {
-      "id": "mig-004",
+      "id": "ret-20725",
+      "stock_code": "20725",
       "popularity_rank": 4,
-      "reason": "MIGRIGA Icon Bestseller"
+      "reason": "UK Retail Bestseller (#4)"
     },
     {
-      "id": "mig-005",
+      "id": "ret-84879",
+      "stock_code": "84879",
       "popularity_rank": 5,
-      "reason": "High Customer Synergy"
+      "reason": "UK Retail Bestseller (#5)"
     },
     {
-      "id": "mig-006",
+      "id": "ret-20914",
+      "stock_code": "20914",
       "popularity_rank": 6,
-      "reason": "High Customer Synergy"
+      "reason": "UK Retail Bestseller (#6)"
     },
     {
-      "id": "mig-007",
+      "id": "ret-48138",
+      "stock_code": "48138",
       "popularity_rank": 7,
-      "reason": "High Customer Synergy"
+      "reason": "UK Retail Bestseller (#7)"
     },
     {
-      "id": "mig-008",
+      "id": "ret-20685",
+      "stock_code": "20685",
       "popularity_rank": 8,
-      "reason": "High Customer Synergy"
+      "reason": "UK Retail Bestseller (#8)"
     },
     {
-      "id": "mig-009",
+      "id": "ret-85099f",
+      "stock_code": "85099F",
       "popularity_rank": 9,
-      "reason": "High Customer Synergy"
+      "reason": "UK Retail Bestseller (#9)"
     },
     {
-      "id": "mig-010",
+      "id": "ret-21843",
+      "stock_code": "21843",
       "popularity_rank": 10,
-      "reason": "High Customer Synergy"
+      "reason": "UK Retail Bestseller (#10)"
     },
     {
-      "id": "mig-011",
+      "id": "ret-47566",
+      "stock_code": "47566",
       "popularity_rank": 11,
-      "reason": "High Customer Synergy"
+      "reason": "UK Retail Bestseller (#11)"
     },
     {
-      "id": "mig-012",
+      "id": "ret-22086",
+      "stock_code": "22086",
       "popularity_rank": 12,
-      "reason": "High Customer Synergy"
+      "reason": "UK Retail Bestseller (#12)"
     }
   ]
 }

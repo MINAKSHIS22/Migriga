@@ -1,5 +1,5 @@
-# MIGRIGA Beauty - Recommendation Engine Module
-# Hybrid Recommendation: Collaborative Filtering (Co-Occurrence / Market Basket) + Content-Based Similarity
+# MIGRIGA Retail - Recommendation Engine Module
+# Hybrid Recommendation: Market Basket Co-Occurrence + Content-Based TF-IDF Similarity
 import os
 import json
 import sqlite3
@@ -22,12 +22,12 @@ class RecommendationEngine:
         self.trending_products: List[Dict[str, Any]] = []
         self.metadata: Dict[str, Any] = {
             "status": "uninitialized",
-            "model_type": "Hybrid (Collaborative Filtering + Content-Based TF-IDF)",
+            "model_type": "Hybrid (Market Basket Co-Occurrence + TF-IDF)",
             "trained_at": None,
             "total_transactions_analyzed": 0,
             "total_products_indexed": 0,
             "coverage_percent": 0.0,
-            "dataset_source": None
+            "dataset_source": "UK Online Retail Dataset"
         }
         self.load_cache()
 
@@ -104,14 +104,29 @@ class RecommendationEngine:
             products.append(p)
         return products
 
+    def normalize_id(self, product_id: str) -> str:
+        """Resolves both '22423' and 'ret-22423'."""
+        if not product_id:
+            return ""
+        if product_id in self.hybrid_recommendations:
+            return product_id
+        prefixed = f"ret-{product_id.lower()}"
+        if prefixed in self.hybrid_recommendations:
+            return prefixed
+        unprefixed = product_id.replace("ret-", "")
+        if unprefixed in self.hybrid_recommendations:
+            return unprefixed
+        return product_id
+
     def get_recommendations_for_product(self, product_id: str, limit: int = 4) -> List[Dict[str, Any]]:
         """
         Returns top-N recommendations for a specific product.
         Uses precomputed hybrid model recommendations if available,
-        otherwise falls back to category-based similarity.
+        otherwise falls back to category-based market basket similarity.
         """
-        rec_entries = self.hybrid_recommendations.get(product_id, [])
-        rec_ids = [entry["id"] for entry in rec_entries if entry["id"] != product_id][:limit]
+        norm_id = self.normalize_id(product_id)
+        rec_entries = self.hybrid_recommendations.get(norm_id, [])
+        rec_ids = [entry["id"] for entry in rec_entries if entry["id"] != norm_id][:limit]
 
         # Fetch product metadata from DB
         product_dict = self.get_product_details_from_db(rec_ids)
@@ -119,10 +134,12 @@ class RecommendationEngine:
 
         for entry in rec_entries:
             pid = entry["id"]
-            if pid in product_dict and pid != product_id:
+            if pid in product_dict and pid != norm_id:
                 p = dict(product_dict[pid])
                 p["recommendation_score"] = entry.get("score", 0.85)
-                p["recommendation_reason"] = entry.get("reason", "Frequently Bought Together")
+                p["recommendation_reason"] = entry.get("reason", "Frequently Bought Together in UK Retail")
+                p["reason"] = p["recommendation_reason"]
+                p["shared_invoices"] = entry.get("shared_invoices", 0)
                 results.append(p)
                 if len(results) >= limit:
                     break
@@ -130,21 +147,20 @@ class RecommendationEngine:
         # Fallback if recommendations are insufficient (cold-start)
         if len(results) < limit:
             all_products = self.get_all_db_products()
-            # Find current product category
             target_cat = None
             for p in all_products:
-                if p["id"] == product_id:
+                if p["id"] == norm_id:
                     target_cat = p.get("category")
                     break
 
-            existing_ids = {r["id"] for r in results} | {product_id}
+            existing_ids = {r["id"] for r in results} | {norm_id}
             # Add same-category items first
             if target_cat:
                 for p in all_products:
                     if p["id"] not in existing_ids and p.get("category") == target_cat:
                         p_copy = dict(p)
-                        p_copy["recommendation_score"] = 0.75
-                        p_copy["recommendation_reason"] = "Complimentary Skincare Routine"
+                        p_copy["recommendation_score"] = 0.78
+                        p_copy["recommendation_reason"] = f"Matching {p.get('category_name', 'Retail')} Collection"
                         results.append(p_copy)
                         existing_ids.add(p["id"])
                         if len(results) >= limit:
@@ -155,8 +171,8 @@ class RecommendationEngine:
                 for p in all_products:
                     if p["id"] not in existing_ids:
                         p_copy = dict(p)
-                        p_copy["recommendation_score"] = 0.65
-                        p_copy["recommendation_reason"] = "Haute Beauté Bestseller"
+                        p_copy["recommendation_score"] = 0.70
+                        p_copy["recommendation_reason"] = "British Heritage Living Bestseller"
                         results.append(p_copy)
                         existing_ids.add(p["id"])
                         if len(results) >= limit:
@@ -172,18 +188,19 @@ class RecommendationEngine:
         if not cart_ids:
             return self.get_trending_products(limit)
 
+        norm_cart = [self.normalize_id(cid) for cid in cart_ids]
+        cart_set = set(norm_cart)
         candidate_scores = defaultdict(float)
         reasons = {}
-        cart_set = set(cart_ids)
 
-        for cid in cart_ids:
+        for cid in norm_cart:
             rec_entries = self.hybrid_recommendations.get(cid, [])
             for entry in rec_entries:
                 rec_id = entry["id"]
                 if rec_id not in cart_set:
                     candidate_scores[rec_id] += entry.get("score", 1.0)
                     if rec_id not in reasons:
-                        reasons[rec_id] = entry.get("reason", "Pairs Perfectly With Your Bag")
+                        reasons[rec_id] = entry.get("reason", "Frequently Bought Together in UK Retail")
 
         ranked_ids = sorted(candidate_scores.keys(), key=lambda x: candidate_scores[x], reverse=True)[:limit]
         product_dict = self.get_product_details_from_db(ranked_ids)
@@ -193,7 +210,7 @@ class RecommendationEngine:
             if pid in product_dict:
                 p = dict(product_dict[pid])
                 p["recommendation_score"] = round(candidate_scores[pid], 3)
-                p["recommendation_reason"] = reasons.get(pid, "Recommended Cross-Sell")
+                p["recommendation_reason"] = reasons.get(pid, "Market Basket Co-Occurrence")
                 results.append(p)
 
         # Fallback if cart recs are fewer than limit
@@ -217,19 +234,21 @@ class RecommendationEngine:
                 pid = t["id"]
                 if pid in p_dict:
                     p = dict(p_dict[pid])
-                    p["recommendation_reason"] = "Trending Community Favorite"
+                    p["recommendation_reason"] = t.get("reason", "UK Retail Community Favorite")
                     results.append(p)
                     if len(results) >= limit:
-                        return results
-            if results:
+                        break
+            if len(results) >= limit:
                 return results
 
         # Fallback to DB bestsellers
-        all_products = self.get_all_db_products()
-        for p in all_products:
-            p["recommendation_reason"] = "Trending Glow Essential"
-        return all_products[:limit]
+        all_prods = self.get_all_db_products()
+        for p in all_prods:
+            if "recommendation_reason" not in p:
+                p["recommendation_reason"] = "Heritage Bestseller"
+        return all_prods[:limit]
 
 
-# Global singleton instance
-engine = RecommendationEngine()
+# Global recommendation engine instance
+rec_engine = RecommendationEngine()
+engine = rec_engine

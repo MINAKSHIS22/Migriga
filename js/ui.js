@@ -1,8 +1,8 @@
 // MIGRIGA UI Component Renderers & Interactions
 
-// Utility: format INR currency
+// Utility: format GBP currency
 function formatPrice(amount) {
-  return '₹' + Number(amount).toLocaleString('en-IN');
+  return '£' + Number(amount).toFixed(2);
 }
 
 // Toast Notification Manager
@@ -205,7 +205,7 @@ function renderCartDrawer() {
           </svg>
         </div>
         <h3>Your Shopping Bag is Empty</h3>
-        <p>Discover our bestsellers and enhance your daily beauty ritual.</p>
+        <p>Discover our classic homeware, dining pieces, and timeless gifts.</p>
         <button class="btn btn-primary" onclick="closeAllDrawers(); scrollToSection('bestsellers');">
           Start Shopping
         </button>
@@ -301,7 +301,7 @@ function renderWishlistDrawer() {
           </svg>
         </div>
         <h3>Your Wishlist is Empty</h3>
-        <p>Save your favorite beauty essentials here by clicking the heart icon on any product.</p>
+        <p>Save your favorite homeware, gifts, and vintage pieces here by clicking the heart icon on any product.</p>
         <button class="btn btn-primary" onclick="closeAllDrawers(); scrollToSection('shop');">
           Explore Products
         </button>
@@ -421,19 +421,19 @@ function renderQuickViewModal(productId) {
         <div class="qv-delivery-perks">
           <div class="perk-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B07D62" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-            <span>Free Express Delivery on orders over ₹999</span>
+            <span>Free UK Express Delivery on orders over £35</span>
           </div>
           <div class="perk-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B07D62" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            <span>100% Dermatologically Tested & Cruelty-Free</span>
+            <span>Authentic British Heritage Craftsmanship</span>
           </div>
         </div>
 
         <div class="qv-tabs">
           <div class="qv-tab-headers">
-            <button class="qv-tab-btn active" data-tab="benefits">Key Benefits</button>
-            <button class="qv-tab-btn" data-tab="ingredients">Ingredients</button>
-            <button class="qv-tab-btn" data-tab="howtouse">How to Use</button>
+            <button class="qv-tab-btn active" data-tab="benefits">Key Features</button>
+            <button class="qv-tab-btn" data-tab="ingredients">Materials & Specs</button>
+            <button class="qv-tab-btn" data-tab="howtouse">Care & Display</button>
           </div>
           <div class="qv-tab-content">
             <div class="tab-pane active" id="tab-benefits">
@@ -564,7 +564,7 @@ function renderSearchResults(query) {
   if (matches.length === 0) {
     container.innerHTML = `
       <div class="search-empty">
-        <p>No products match your search. Try searching for <em>serum</em>, <em>lipstick</em>, <em>fragrance</em> or <em>cream</em>.</p>
+        <p>No products match your search. Try searching for <em>cakestand</em>, <em>lantern</em>, <em>retrospot</em> or <em>bunting</em>.</p>
       </div>
     `;
   } else {
