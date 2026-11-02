@@ -9,9 +9,218 @@
   <title>MIGRIGA | Admin Portal & Retail Store Management</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>">
 
-  <link rel="stylesheet" href="css/style.css?v=retail-20261022" />
-  <link rel="stylesheet" href="css/components.css?v=retail-20261022" />
-  <link rel="stylesheet" href="css/admin.css?v=retail-20261022" />
+  <link rel="stylesheet" href="css/style.css?v=20261103_02" />
+  <link rel="stylesheet" href="css/components.css?v=20261103_02" />
+  <link rel="stylesheet" href="css/admin.css?v=20261103_02" />
+
+  <style id="admin-theme-css">
+    /* DIRECT LIGHT THEME OVERRIDES (Guaranteed Instant Application) */
+    html.light-mode body.admin-body,
+    body.admin-body.light-mode {
+      background-color: #FAF7F4 !important;
+      color: #3D3734 !important;
+    }
+
+    body.admin-body.light-mode .admin-navbar {
+      background-color: #FFFFFF !important;
+      border-bottom: 1px solid #E8DFD7 !important;
+      box-shadow: 0 1px 4px rgba(46, 42, 40, 0.04) !important;
+    }
+
+    body.admin-body.light-mode .admin-brand h1 {
+      color: #1A1817 !important;
+    }
+
+    body.admin-body.light-mode .theme-toggle-btn {
+      background: #F6F1EC !important;
+      color: #1A1817 !important;
+      border: 1px solid #D9CDC3 !important;
+    }
+
+    body.admin-body.light-mode .theme-toggle-btn:hover {
+      background: #B07D62 !important;
+      color: #FFFFFF !important;
+      border-color: #B07D62 !important;
+    }
+
+    body.admin-body.light-mode .btn-admin-viewstore {
+      color: #A07828 !important;
+      border-color: rgba(197, 160, 89, 0.45) !important;
+    }
+
+    body.admin-body.light-mode .btn-admin-viewstore:hover {
+      background-color: rgba(197, 160, 89, 0.15) !important;
+    }
+
+    body.admin-body.light-mode .admin-user-pill {
+      background: #F6F1EC !important;
+      border-color: #E8DFD7 !important;
+      color: #1A1817 !important;
+    }
+
+    body.admin-body.light-mode .admin-tabs-nav {
+      border-bottom: 1px solid #E8DFD7 !important;
+    }
+
+    body.admin-body.light-mode .admin-tab-btn {
+      background: #FFFFFF !important;
+      border: 1px solid #E8DFD7 !important;
+      color: #706762 !important;
+    }
+
+    body.admin-body.light-mode .admin-tab-btn:hover {
+      color: #1A1817 !important;
+      border-color: #B07D62 !important;
+    }
+
+    body.admin-body.light-mode .admin-tab-btn.active {
+      background: #B07D62 !important;
+      color: #FFFFFF !important;
+      border-color: #B07D62 !important;
+    }
+
+    body.admin-body.light-mode .admin-card,
+    body.admin-body.light-mode .kpi-card {
+      background: #FFFFFF !important;
+      border: 1px solid #E8DFD7 !important;
+      box-shadow: 0 2px 14px rgba(46, 42, 40, 0.06), 0 1px 3px rgba(46, 42, 40, 0.04) !important;
+    }
+
+    body.admin-body.light-mode .kpi-label {
+      color: #706762 !important;
+    }
+
+    body.admin-body.light-mode .kpi-value {
+      color: #1A1817 !important;
+    }
+
+    body.admin-body.light-mode .kpi-value.gold {
+      color: #A07828 !important;
+    }
+
+    body.admin-body.light-mode .kpi-sub {
+      color: #8E8580 !important;
+    }
+
+    body.admin-body.light-mode .admin-card-title {
+      color: #1A1817 !important;
+    }
+
+    body.admin-body.light-mode .admin-select,
+    body.admin-body.light-mode input[type="text"],
+    body.admin-body.light-mode input[type="number"],
+    body.admin-body.light-mode input[type="password"] {
+      background: #FFFFFF !important;
+      border: 1px solid #E8DFD7 !important;
+      color: #1A1817 !important;
+    }
+
+    body.admin-body.light-mode .admin-table th {
+      border-bottom: 1px solid #E8DFD7 !important;
+      color: #706762 !important;
+    }
+
+    body.admin-body.light-mode .admin-table td {
+      border-bottom: 1px solid #EFE8E2 !important;
+      color: #3D3734 !important;
+    }
+
+    body.admin-body.light-mode .admin-table td strong {
+      color: #1A1817 !important;
+    }
+
+    body.admin-body.light-mode .admin-table tr:hover td {
+      background-color: #F6F1EC !important;
+    }
+
+    body.admin-body.light-mode .action-btn-sm {
+      background: #F6F1EC !important;
+      color: #1A1817 !important;
+      border: 1px solid #D9CDC3 !important;
+    }
+
+    body.admin-body.light-mode .action-btn-sm:hover {
+      background: #B07D62 !important;
+      color: #FFFFFF !important;
+      border-color: #B07D62 !important;
+    }
+
+    body.admin-body.light-mode .admin-banner-card {
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.20) 0%, #FFFFFF 100%) !important;
+      border: 1px solid rgba(197, 160, 89, 0.45) !important;
+    }
+
+    body.admin-body.light-mode .admin-banner-card h3 {
+      color: #1A1817 !important;
+    }
+
+    body.admin-body.light-mode .admin-banner-card p {
+      color: #5C544F !important;
+    }
+
+    body.admin-body.light-mode .admin-analytics-banner {
+      background: #FFFFFF !important;
+      border: 1px solid rgba(176, 125, 98, 0.45) !important;
+    }
+
+    body.admin-body.light-mode .admin-analytics-banner h3 {
+      color: #1A1817 !important;
+    }
+
+    body.admin-body.light-mode .admin-analytics-banner p {
+      color: #706762 !important;
+    }
+
+    body.admin-body.light-mode .admin-detail-content {
+      background: #FFFFFF !important;
+      border: 1px solid #E8DFD7 !important;
+      color: #3D3734 !important;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    body.admin-body.light-mode #detail-order-id {
+      color: #1A1817 !important;
+    }
+
+    body.admin-body.light-mode #detail-modal-body > div > div:first-child {
+      background: #F6F1EC !important;
+      border: 1px solid #E8DFD7 !important;
+      color: #1A1817 !important;
+    }
+
+    body.admin-body.light-mode #rec-preview-grid > div {
+      background: #F6F1EC !important;
+      border: 1px solid #E8DFD7 !important;
+    }
+
+    body.admin-body.light-mode #rec-preview-grid > div > div:nth-child(2) {
+      color: #1A1817 !important;
+    }
+
+    body.admin-body.light-mode table code {
+      background: #F6F1EC !important;
+      color: #8E5840 !important;
+      padding: 2px 6px !important;
+      border-radius: 4px !important;
+      border: 1px solid #E8DFD7 !important;
+    }
+
+    body.admin-body.light-mode #ml-train-console {
+      background: #23201E !important;
+      border: 1px solid #453F3C !important;
+      color: #A5D6A7 !important;
+    }
+  </style>
+
+  <script>
+    // Immediate Theme Pre-loader to avoid flash of dark/light theme
+    (function() {
+      const savedTheme = localStorage.getItem('migriga_admin_theme');
+      if (savedTheme === 'light') {
+        document.documentElement.classList.add('light-mode');
+      }
+    })();
+  </script>
 </head>
 <body class="admin-body">
 
@@ -23,6 +232,12 @@
     </div>
 
     <div class="admin-nav-actions">
+      <!-- Light / Dark Mode Toggle Switch -->
+      <button class="theme-toggle-btn" id="admin-theme-toggle" onclick="toggleTheme()" title="Switch Light / Dark Mode" aria-label="Toggle theme">
+        <span class="theme-toggle-icon" id="theme-toggle-icon">☀️</span>
+        <span class="theme-toggle-label" id="theme-toggle-label">Light Mode</span>
+      </button>
+
       <a href="/analytics" target="_blank" rel="noopener noreferrer" class="btn-admin-viewstore">Migriga Analytics ↗</a>
       <a href="/index.html" target="_blank" rel="noopener noreferrer" class="btn-admin-viewstore">Storefront ↗</a>
       
@@ -50,12 +265,12 @@
     <!-- TAB 1: OVERVIEW -->
     <section class="admin-tab-pane" id="pane-overview">
       <!-- Active ML Dataset Notification Banner -->
-      <div class="admin-card" style="background: linear-gradient(135deg, rgba(197, 160, 89, 0.15) 0%, rgba(32, 29, 28, 0.85) 100%); border: 1px solid rgba(197, 160, 89, 0.35); margin-bottom: 24px;">
+      <div class="admin-card admin-banner-card">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
           <div>
-            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: #C5A059; font-weight: 700;">⚡ PRIMARY MACHINE LEARNING DATASET</div>
-            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: #FFFFFF; margin: 4px 0;">UK Online Retail Dataset (convert_retail_dataset.py / migriga_warehouse.db)</h3>
-            <p style="font-size: 0.84rem; color: #C4BBB3; margin: 0;">
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--admin-gold); font-weight: 700;">⚡ PRIMARY MACHINE LEARNING DATASET</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin: 4px 0;">UK Online Retail Dataset (convert_retail_dataset.py / migriga_warehouse.db)</h3>
+            <p style="font-size: 0.84rem; margin: 0;">
               <strong>4,082</strong> unique retail products mined from <strong>525,461</strong> transactions • <strong>320</strong> Market Basket Co-Occurrence &amp; Content Synergy links trained and active.
             </p>
           </div>
@@ -67,12 +282,12 @@
       </div>
 
       <!-- Migriga Analytics (Data Warehousing & Data Mining) entry point -->
-      <div class="admin-card" style="border: 1px solid rgba(176, 125, 98, 0.45); margin-bottom: 24px;">
+      <div class="admin-card admin-analytics-banner">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
           <div>
-            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: #B07D62; font-weight: 700;">📈 MIGRIGA ANALYTICS · DATA WAREHOUSE &amp; DATA MINING</div>
-            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: #FFFFFF; margin: 4px 0;">Star-schema warehouse, OLAP, Apriori &amp; RFM segmentation</h3>
-            <p style="font-size: 0.84rem; color: #C4BBB3; margin: 0;">
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--admin-accent); font-weight: 700;">📈 MIGRIGA ANALYTICS · DATA WAREHOUSE &amp; DATA MINING</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin: 4px 0;">Star-schema warehouse, OLAP, Apriori &amp; RFM segmentation</h3>
+            <p style="font-size: 0.84rem; margin: 0;">
               Built from 525,461 historical UK retail transactions (Online Retail II, UCI). Fully unified with the storefront model.
             </p>
           </div>
@@ -422,7 +637,55 @@
     let adminToken = localStorage.getItem('migriga_admin_token');
     let allOrders = [];
 
+    // --- THEME MANAGEMENT (Light & Dark Mode) ---
+    function initTheme() {
+      const savedTheme = localStorage.getItem('migriga_admin_theme') || 'dark';
+      applyTheme(savedTheme, false);
+    }
+
+    function toggleTheme() {
+      const isLight = document.body.classList.contains('light-mode') || 
+                      document.documentElement.classList.contains('light-mode') ||
+                      document.documentElement.getAttribute('data-theme') === 'light';
+      const newTheme = isLight ? 'dark' : 'light';
+      applyTheme(newTheme, true);
+    }
+
+    function applyTheme(theme, save = true) {
+      const icon = document.getElementById('theme-toggle-icon');
+      const label = document.getElementById('theme-toggle-label');
+
+      if (theme === 'light') {
+        document.body.classList.add('light-mode');
+        document.documentElement.classList.add('light-mode');
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.body.setAttribute('data-theme', 'light');
+        if (icon) icon.textContent = '🌙';
+        if (label) label.textContent = 'Dark Mode';
+      } else {
+        document.body.classList.remove('light-mode');
+        document.documentElement.classList.remove('light-mode');
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.body.setAttribute('data-theme', 'dark');
+        if (icon) icon.textContent = '☀️';
+        if (label) label.textContent = 'Light Mode';
+      }
+
+      if (save) {
+        localStorage.setItem('migriga_admin_theme', theme);
+      }
+      console.log('MIGRIGA Admin theme changed to:', theme);
+    }
+
+    window.toggleTheme = toggleTheme;
+    window.applyTheme = applyTheme;
+
     document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      const themeBtn = document.getElementById('admin-theme-toggle');
+      if (themeBtn) {
+        themeBtn.onclick = toggleTheme;
+      }
       checkAdminAuth();
       setupTabs();
       setupLoginForm();

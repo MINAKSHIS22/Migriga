@@ -24,7 +24,7 @@ app = FastAPI(title="MIGRIGA British Heritage Living API", version="2.0.0")
 async def add_no_cache_headers(request: Request, call_next):
     response = await call_next(request)
     path = request.url.path
-    if path.endswith((".html", ".js", ".json")) or path in ("/", "/welcome", "/store", "/admin", "/login", "/analytics"):
+    if path.endswith((".html", ".js", ".json", ".css")) or path in ("/", "/welcome", "/store", "/admin", "/login", "/analytics"):
         response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, max-age=0"
         response.headers["Pragma"] = "no-cache"
         response.headers["Expires"] = "0"

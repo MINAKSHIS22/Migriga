@@ -2,7 +2,7 @@
   "metadata": {
     "status": "trained",
     "model_type": "Hybrid Market Basket Co-Occurrence + TF-IDF Content Similarity",
-    "trained_at": "2026-10-22T12:58:20.746655",
+    "trained_at": "2026-11-02T23:55:08.110520",
     "dataset_source": "UK Online Retail Dataset (online_retail_09_10.csv / migriga_warehouse.db)",
     "total_transactions_analyzed": 525461,
     "total_products_indexed": 40,
